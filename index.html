@@ -16,11 +16,11 @@
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
-    <div class="intro deep-orange lighten-2 z-depth-2">
-        <h1 class="grey-text text-lighten-5">miles budden</h1>
-        <h5 class="grey lighten-4 grey-text text-darken-1">coder · web developer · mapper</h5>
-    </div>
+
+    <img class="responsive-img" src="images/miles.jpg">
+
     <div class="container portfolio">
+        <br>
         <h6>MY CURRENT PROJECTS</h6>
         <hr>
         <div class="row">
@@ -106,35 +106,7 @@
         </div>
         <h6>CONTACT ME</h6>
         <hr>
-        <form action="MAILTO:miles@budden.net" method="post" enctype="text/plain">
-            <div class="row">
-                <div class="input-field col s12 m8 l6">
-                    <input id="name" type="text" class="validate" name="name">
-                    <label for="name">Name</label>
-                </div>
-
-
-                <div class="input-field col s12">
-                    <input id="email" type="email" class="validate" name="mail">
-                    <label for="email" data-error="wrong" data-success="right">Email</label>
-                </div>
-
-
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="textarea1" class="materialize-textarea" name="comment"></textarea>
-                    <label for="textarea1">Comment</label>
-                </div>
-            </div>
-
-            <button class="btn waves-effect waves-light deep-orange lighten-1" type="submit" name="action">Submit
-                <i class="material-icons right">send</i>
-            </button>
-            <button class="btn waves-effect waves-light deep-orange lighten-1" type="reset" name="action">Reset
-                <i class="material-icons right">replay</i>
-            </button>
-        </form>
+        <a href="mailto:miles@budden.net">miles@budden.net</a>
 
 
 
@@ -147,6 +119,11 @@
             </div>
         </div>
     </footer>
+    <script>
+        $(document).ready(function () {
+            $('.parallax').parallax();
+        });
+    </script>
 </body>
 
 </html>
