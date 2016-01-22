@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +16,7 @@
 
 <hr>
 
-<p><div class="toc"><div class="toc">
+<p><div class="toc">
 <ul>
 <li><a href="#computing-notes">Computing notes</a><ul>
 <li><a href="#numbers">Numbers</a><ul>
@@ -76,6 +77,7 @@
 <li><a href="#indefinite-loops">Indefinite loops</a></li>
 </ul>
 </li>
+<li><a href="#procedure-vs-function">Procedure vs Function</a></li>
 </ul>
 </li>
 <li><a href="#data-structures">Data structures</a><ul>
@@ -95,6 +97,11 @@
 </li>
 <li><a href="#relational-operators">Relational Operators</a></li>
 <li><a href="#boolean-operators">Boolean Operators</a></li>
+<li><a href="#graphs">Graphs</a><ul>
+<li><a href="#describing-graphs">Describing graphs</a></li>
+</ul>
+</li>
+<li><a href="#paths-and-cycles">Paths and cycles</a></li>
 <li><a href="#string-operations">String Operations</a></li>
 <li><a href="#type-conversion">Type conversion</a></li>
 </ul>
@@ -104,7 +111,6 @@
 </ul>
 </li>
 </ul>
-</div>
 </div>
 </p>
 
@@ -720,6 +726,8 @@ Which equates to <script type="math/tex" id="MathJax-Element-112">1100.11_2</scr
 
 <p>ASCII has now been superseded by Unicode for most applications. Unicode uses as minimum of 8 bits but can use up to 48 bits. UTF-8 uses 8 bits for encoding Western text. Unicode has the advantage that it can encode most of the character sets used in the world.</p>
 
+
+
 <h3 id="error-checking-and-correction">Error checking and correction</h3>
 
 <dl>
@@ -1083,6 +1091,12 @@ default:
 
 
 
+<h4 id="procedure-vs-function"><strong>Procedure vs Function</strong></h4>
+
+<p>Quite simply, a function returns a value; A procedure doesn’t.</p>
+
+
+
 <h3 id="data-structures">Data structures</h3>
 
 <p>Data can be stored in a variety of different forms:</p>
@@ -1367,12 +1381,12 @@ c ←  a + b</code></pre>
   <td align="right"><code>if x != 6:</code></td>
 </tr>
 <tr>
-  <td align="right"><code>&lt;=</code> or <script type="math/tex" id="MathJax-Element-137">\leq</script></td>
+  <td align="right"><code>&lt;=</code> or <script type="math/tex" id="MathJax-Element-134">\leq</script></td>
   <td align="right">Less than or equal to</td>
   <td align="right"><code>if x &lt;= 6:</code></td>
 </tr>
 <tr>
-  <td align="right"><code>&gt;=</code> or <script type="math/tex" id="MathJax-Element-138">\geq</script></td>
+  <td align="right"><code>&gt;=</code> or <script type="math/tex" id="MathJax-Element-135">\geq</script></td>
   <td align="right">Greater than or equal to</td>
   <td align="right"><code>if x &gt;= 6:</code></td>
 </tr>
@@ -1383,7 +1397,7 @@ c ←  a + b</code></pre>
 
 <h4 id="boolean-operators"><strong>Boolean Operators</strong></h4>
 
-<p><script type="math/tex" id="MathJax-Element-139">  
+<p><script type="math/tex" id="MathJax-Element-136">  
 \mathsf{These\;are\;best\;described\;using\;examples}=\begin{cases}
  \mathsf{ AND}\\
   \mathsf{OR}\\
@@ -1411,6 +1425,55 @@ c ←  a + b</code></pre>
 </code></pre>
 
 
+
+<h4 id="graphs"><strong>Graphs</strong></h4>
+
+<p><img src="http://i.imgur.com/nwmEXoA.png" alt="" title=""></p>
+
+<p>This can be used to display data such as a subway map.</p>
+
+<p>Metadata can be attached to the nodes. This is called weighting the edges. An example of this is distances on a metro map.</p>
+
+
+
+<h5 id="describing-graphs"><strong>Describing graphs</strong></h5>
+
+<p>A graph can be represented as a set of nodes:</p>
+
+
+
+<pre class="prettyprint"><code class="language-python hljs ">nodes = {<span class="hljs-string">"A"</span>,<span class="hljs-string">"B"</span>,<span class="hljs-string">"C"</span>,<span class="hljs-string">"D"</span>}</code></pre>
+
+<p>and edges</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs ini"><span class="hljs-setting">edges = <span class="hljs-value">{(<span class="hljs-string">"A"</span>,<span class="hljs-string">"B"</span>,<span class="hljs-string">"→"</span>,<span class="hljs-number">3</span>),(<span class="hljs-string">"B"</span>,<span class="hljs-string">"C"</span>,<span class="hljs-string">"→"</span>,<span class="hljs-number">5</span>),(<span class="hljs-string">"B"</span>,<span class="hljs-string">"C"</span>,<span class="hljs-string">"←"</span>,<span class="hljs-number">4</span>),(<span class="hljs-string">"C"</span>,<span class="hljs-string">"D"</span>,<span class="hljs-string">"→"</span>,<span class="hljs-number">9</span>),(<span class="hljs-string">"A"</span>,<span class="hljs-string">"D"</span>,<span class="hljs-string">"→"</span>,<span class="hljs-number">2</span>),(<span class="hljs-string">"A"</span>,<span class="hljs-string">"D"</span>,<span class="hljs-string">"←"</span>,<span class="hljs-number">6</span>)}</span></span></code></pre>
+
+<blockquote>
+  <p><strong>Note</strong> <br>
+  Nodes are also called vertices and edges can be called arcs.</p>
+</blockquote>
+
+
+
+<h4 id="paths-and-cycles"><strong>Paths and cycles</strong></h4>
+
+<p>A path is the description of the nodes and edges between a pair of nodes on a graph. <br>
+eg: The path between 2 nodes could be <code>("B","C",D")</code> and the edge sequence could be <code>{("C","D",5),("C","D",9)}</code>. <br>
+A cycle in a graph is where the path starts and ends in the same place. The graph above, however, is acyclic so this is not possible. In a graph where this is possible, there can be more than one possible cycle.</p>
+
+
+
+<h4 id="implementing-a-graph-as-an-abstract-data-type-or-structure"><strong>Implementing a Graph as an abstract data type (or structure)</strong></h4>
+
+<p><code>Graph()</code> - Creates a new empty graph. <br>
+<code>addNode(node)</code> - Adds a new node. <br>
+<code>addEdge(from, to)</code> - Adds a new (directed) edge to the graph. <br>
+<code>addEdge(from, to, weight)</code> - Adds a new weighted, directed edge to the graph. <br>
+<code>getNode(nodeKey)</code> - Finds a particular node, called a nodeKey. <br>
+<code>getNodes()</code> - Returns a list of all nodes in the graph. <br>
+<code>inGraph()</code> - Returns a bool for whether a node is in a graph or not.</p>
 
 <h4 id="string-operations"><strong>String Operations</strong></h4>
 
@@ -1467,6 +1530,8 @@ eg:</p>
 </ul>
 
 <p>An example of data conversion in python:</p>
+
+
 
 <pre class="prettyprint"><code class="language-python hljs "><span class="hljs-prompt">&gt;&gt;&gt; </span>x = <span class="hljs-number">6</span>
 <span class="hljs-prompt">&gt;&gt;&gt; </span>y = str(<span class="hljs-number">6</span>)
