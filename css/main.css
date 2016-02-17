@@ -5,3 +5,29 @@ html {
     -o-background-size: cover;
     background-size: cover;
 }
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#feed {
+    height: 100px;
+    overflow: scroll;
+}
+
+#test {
+    overflow: scroll;
+}
+
+.card {
+    overflow: scroll !important;
+}
+
+.gha-feed {
+    height: 200px !important
+}
+
+.scroll1::-webkit-scrollbar {
+    width: 5px;
+}

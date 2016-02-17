@@ -5,14 +5,20 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
     <title>Miles Budden</title>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <link href="css/materialdesignicons.css" media="all" rel="stylesheet" type="text/css" />
     <link href="css/materialize.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="//cdn.materialdesignicons.com/1.4.57/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
+    <link rel="stylesheet" href="css/github-activity.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
+    <script type="text/javascript" src="js/github-activity.js"></script>
+
 
 </head>
 
 <body class="blue darken-2">
-    <!-- bell -->
+
     <main>
         <div class="container  grey-text text-darken-2">
             <br>
@@ -60,6 +66,10 @@
                             <p><a href="http://steamcommunity.com/sharedfiles/filedetails/?id=537713719">steamcommunity.com</a></p>
                         </div>
                     </div>
+                    <div class="card-pannel z-depth-1">
+                        <div id="feed"></div>
+                    </div>
+
 
 
                 </div>
@@ -118,10 +128,11 @@
 
                 </div>
             </div>
+
         </div>
     </main>
     <!--  Scripts-->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
     <script src="js/bin/materialize.js"></script>
     <script>
         (function (i, s, o, g, r, a, m) {
@@ -138,6 +149,11 @@
 
         ga('create', 'UA-69483987-1', 'auto');
         ga('send', 'pageview');
+        GitHubActivity.feed({
+            username: "pbexe",
+            selector: '#feed',
+            limit: 100
+        });
     </script>
 </body>
 
