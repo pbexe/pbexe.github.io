@@ -1,0 +1,1359 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notes</title>
+<link rel="stylesheet" href="http://app.classeur.io/base-min.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="export-container"><h1 id="computing-notes">Computing notes</h1>
+<blockquote>
+<p><strong>Miles Budden</strong> W-APJ</p>
+</blockquote>
+<hr>
+<div class="toc"><ul><li><a href="#computing-notes">Computing notes</a><ul><li><a href="#numbers">Numbers</a><ul><li><a href="#number-systems">Number systems</a></li><li><a href="#number-types">Number types</a><ul><li><a href="#natural-numbers">Natural numbers</a></li><li><a href="#integer-numbers">Integer numbers</a></li><li><a href="#irrational-numbers">Irrational Numbers</a></li></ul></li><li><a href="#number-bases">Number bases</a><ul><li><a href="#counting-in-binary-decimal-and-hexadecimal">Counting in binary, decimal and hexadecimal</a></li><li><a href="#place-values">Place values</a></li><li><a href="#units-of-binary">Units of binary</a></li><li><a href="#multiples-of-bytes-and-bits">Multiples of bytes and bits</a></li><li><a href="#bytes-and-hexadecimal">Bytes and hexadecimal</a><ul><li><a href="#to-convert-hex-to-decimal">To convert hex to decimal</a></li></ul></li><li><a href="#number-conversion-exercises">Number conversion exercises</a></li><li><a href="#more-about-binary-numbers">More about binary numbers</a><ul><li><a href="#addition-of-unsigned-binary-integers">Addition of unsigned binary integers</a></li><li><a href="#multiplying-unsigned-binary-integers">Multiplying unsigned binary integers</a></li></ul></li><li><a href="#numbers-with-a-fractional-part">Numbers with a fractional part</a></li><li><a href="#floating-point-form">Floating point form</a><ul><li><a href="#floating-points-in-binary">Floating points in binary</a></li></ul></li><li><a href="#converting-from-unsigned-decimal-numbers-to-unsigned-binary">Converting from unsigned decimal numbers to unsigned binary</a></li><li><a href="#research-task">Research task</a></li></ul></li><li><a href="#information-coding-systems">Information coding systems</a></li><li><a href="#error-checking-and-correction">Error checking and correction</a></li><li><a href="#bit-mapped-graphics">Bit-mapped graphics</a></li></ul></li><li><a href="#pseudocode">Pseudocode</a><ul><li><a href="#variables-and-constants">Variables and CONSTANTS</a><ul><li><a href="#data-types.">Data types.</a></li><li><a href="#naming-conventions">Naming conventions</a></li></ul></li></ul></li><li><a href="#programming">Programming</a><ul><li><a href="#programming-basics">Programming basics</a><ul><li><a href="#sequence">Sequence</a></li><li><a href="#selection">Selection</a><ul><li><a href="#selection-using-case-not-available-in-python">Selection using case (not available in python)</a></li></ul></li><li><a href="#iteration">Iteration</a><ul><li><a href="#definite-loops">Definite loops</a></li><li><a href="#indefinite-loops">Indefinite loops</a></li></ul></li><li><a href="#procedure-vs-function">Procedure vs Function</a></li></ul></li><li><a href="#data-structures">Data structures</a><ul><li><a href="#abstract-data-structures">Abstract data structures</a><ul><li><a href="#stack">Stack</a></li><li><a href="#queues">Queues</a></li><li><a href="#linked-lists">Linked lists</a></li></ul></li></ul></li><li><a href="#basic-programming-operations">Basic Programming Operations</a><ul><li><a href="#arithmetical-operations">Arithmetical Operations</a></li><li><a href="#assignment-operators">Assignment Operators</a><ul><li><a href="#arithmetic-characters">Arithmetic characters</a></li></ul></li><li><a href="#relational-operators">Relational Operators</a></li><li><a href="#boolean-operators">Boolean Operators</a></li><li><a href="#graphs">Graphs</a><ul><li><a href="#describing-graphs">Describing graphs</a></li><li><a href="#paths-and-cycles">Paths and cycles</a></li><li><a href="#implementing-a-graph-as-an-abstract-data-type-or-structure">Implementing a Graph as an abstract data type (or structure)</a></li><li><a href="#adjacency-list">Adjacency List</a></li><li><a href="#trees">Trees</a></li><li><a href="#tree-terminology">Tree terminology</a></li><li><a href="#definition-of-a-tree">Definition of a tree</a></li><li><a href="#expressing-a-tree-in-code">Expressing a tree in code</a></li><li><a href="#parse-trees">Parse Trees</a></li><li><a href="#creating-the-parse-tree">Creating the parse tree</a></li></ul></li><li><a href="#string-operations">String Operations</a></li><li><a href="#type-conversion">Type conversion</a></li><li><a href="#algorithm-efficiency">Algorithm efficiency</a><ul><li><a href="#big-o-notation">Big O Notation</a></li></ul></li></ul></li></ul></li></ul></li></ul></div><hr>
+<h2 id="numbers">Numbers</h2>
+<blockquote>
+<dl>
+<dt>Dictionary definition of a number:</dt>
+<dd>“<em>An arithmetical value, expressed by a word, symbol, or figure, representing a particular quantity and used in counting and making calculations</em>” - Oxford dictionary</dd>
+</dl>
+</blockquote>
+<h3 id="number-systems">Number systems</h3>
+<blockquote>
+<p>Binary examples<br>
+<script type="math/tex" id="MathJax-Element-317">1101_2</script><br>
+The 2 stands for the number base. In this case binary.</p>
+</blockquote>
+<ul>
+<li>
+<p>Number base: <em>Number of individual digits in the number system.</em></p>
+</li>
+<li>
+<p>Base 10 (Decimal or denary)<br>
+Eg:<br>
+<script type="math/tex" id="MathJax-Element-318">62_{10} = \overset{10^1}{6}|\overset{10^0}{2}</script><br>
+<script type="math/tex" id="MathJax-Element-319">62_{10} = (6\times10) + (2\times1)</script></p>
+</li>
+<li>
+<p>Base 2 (binary)<br>
+Eg:<br>
+<script type="math/tex" id="MathJax-Element-320">1101_2 =\overset{2^3}{1}|\overset{2^2}{1}|\overset{2^1}{0}| \overset{2^0}{1}</script><br>
+<script type="math/tex" id="MathJax-Element-321">1101_2 = (1\times8) + (1\times4) + (0\times2) + (1\times1)</script></p>
+</li>
+<li>
+<p>Base 16 (Hexadecimal)<br>
+Eg:<br>
+<script type="math/tex" id="MathJax-Element-322">FF_{16} = \overset{16^1}{F}|\overset{16^0}{F}</script><br>
+<script type="math/tex" id="MathJax-Element-323">(15\times16) + (15\times1)</script></p>
+</li>
+</ul>
+<h3 id="number-types">Number types</h3>
+<h4 id="natural-numbers"><strong>Natural numbers</strong></h4>
+<p>Numbers that are used by people every day for counting and ordering:<br>
+<script type="math/tex" id="MathJax-Element-324">0,1,2,3,4,5,6,7,8,9</script><br>
+This is called <em>decimal</em> or <em>base-10</em>. With a single digit, the largest value that can be represented is <em>9</em>. To create large numbers we add a new digit to to the left to give the numbers 10…99 and so on.</p>
+<ul>
+<li>Each extra digit is worth ten times the previous digit.</li>
+<li>This idea is important because it applies to other number systems as well.</li>
+<li>We can use this number system to represent an infinite range on numbers.
+<ul>
+<li>The natural numbers range from <script type="math/tex" id="MathJax-Element-325">0 \to \infty</script></li>
+</ul>
+</li>
+<li>The inclusion of zero is important in programming because arrays and looping structures usually start from 0.</li>
+</ul>
+<p>The set of natural numbers has the symbol <script type="math/tex" id="MathJax-Element-326">\mathbb{N}</script> so we can write:<br>
+<script type="math/tex; mode=display" id="MathJax-Element-327">\mathbb{N} = \{0,1,2,3,4,5,6,7,8,9,...\}</script></p>
+<h4 id="integer-numbers"><strong>Integer numbers</strong></h4>
+<p>An integer is a whole number whose value can be either negative or positive. <em>0</em> is classed as an integer.<br>
+A whole number does not contain a fractional part (ie. No fractions or decimal points).</p>
+<ul>
+<li>Negative values are pre-seeded by a minus sign ("<script type="math/tex" id="MathJax-Element-328">-</script>"). <script type="math/tex; mode=display" id="MathJax-Element-329">
+(-3 + 3 = 0) \equiv (3 + (-3) = 0)</script></li>
+</ul>
+<blockquote>
+<p>The word <strong>Bit</strong> is a contraction of <b>Bi</b>nary dig<b>it</b></p>
+</blockquote>
+<p>Integers are a standard data type used in most programming languages. They are used for variables and constants.<br>
+For example in visual basic, an integer is stored in 4 bytes and can store values from -214748364<b>8</b> to 214748364<b>7</b>. The positive numbers are smaller because the range includes 0. Values out of this range are stored in a different data type called <em>Long</em> in visual basic.<br>
+The symbol for integers is <script type="math/tex" id="MathJax-Element-330">\mathbb{Z}</script> (Zahlen). So we can write:</p>
+<p><script type="math/tex; mode=display" id="MathJax-Element-331">\mathbb{Z} = \{\ldots,-2,-1,0,1,2,3,4,5,6,7,8,9,\ldots\}</script></p>
+<p>####<strong>Rational Numbers</strong><br>
+A rational number is one that can be expressed as a fraction. Fractions are made up from 2 integers, with the value being the ration between the 2 integers.<br>
+Rational numbers can be represented by a fraction or the decimal equivalent.:</p>
+<p><script type="math/tex; mode=display" id="MathJax-Element-332">\frac{1}{2}\; or  \;0.5</script></p>
+<p>The top integer is called the <strong>numerator</strong> and the bottom integer is called the <strong>denominator</strong>. The number can be any integer - any whole number. The values of fractions can be positive or negative, and greater or less than 1 (or 0).</p>
+<p><script type="math/tex; mode=display" id="MathJax-Element-333">
+\frac{5}{5}=1
+</script><br>
+<script type="math/tex; mode=display" id="MathJax-Element-334">
+\frac{12}{12}= 1
+</script><br>
+<script type="math/tex; mode=display" id="MathJax-Element-335">
+\frac{12}{6}= 2
+</script></p>
+<p>As these examples show, all integers can also be expressed as rational numbers. The denominator can have any value except 0. Dividing by 0 gives an indeterminate value and a divide by 0 gives a zero-error in most languages.<br>
+The symbol for the set of rational numbers is <script type="math/tex" id="MathJax-Element-336">\mathbb{Q}</script>.</p>
+<h4 id="irrational-numbers"><strong>Irrational Numbers</strong></h4>
+<p>An irrational number is any number that cannot be represented as a ratio of integers because the decimal equivalent goes on forever without repeating. A classic example of an irrational number is <script type="math/tex" id="MathJax-Element-337">\pi</script> (pi). The commonly used approximation for <script type="math/tex" id="MathJax-Element-338">\pi</script> is <script type="math/tex" id="MathJax-Element-339">^{22}\!/\!_7</script>. In decimal form the number has an infinite number of decimal places so it has to be truncated to a set of decimal places.</p>
+<p>Eg: <script type="math/tex" id="MathJax-Element-340">3.14159265...</script> or <script type="math/tex" id="MathJax-Element-341">3.141</script></p>
+<p>More decimal places gives greater <strong>precision</strong>.</p>
+<p><script type="math/tex" id="MathJax-Element-342">\sqrt{2} = 1.414</script> to 3 decimal places.</p>
+<blockquote>
+<p>NB:<br>
+<script type="math/tex" id="MathJax-Element-343">1.414^2\neq2</script> so be careful when approximating.</p>
+<p>Also,</p>
+<p><script type="math/tex" id="MathJax-Element-344">^{1}\!/\!_3 = 0.3333\dot{3}</script> is <strong>NOT</strong> an irratioinal number because:</p>
+<ol>
+<li>It is the ratio between 2 integers</li>
+<li>The digits of the decimal <strong>do</strong> repeat.</li>
+</ol>
+</blockquote>
+<p>For programmers it is important to consider the precision that is needed when using irrational numbers. The programmer needs to decide what precision to use. However, this option is not always available.</p>
+<p>For example, in Python:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">import</span> math
+<span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span> math<span class="token punctuation">.</span>pi
+<span class="token number">3.141592653589793</span>
+<span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span> <span class="token comment" spellcheck="true"># You have no choice as to how many decimal places pi is given to.
+</span></code></pre>
+<h3 id="number-bases">Number bases</h3>
+<p>The number base of a number is the number of unique digits possible in that number. eg:</p>
+<ul>
+<li>Binary - Base-2 contains 2 digits: 1 and 0</li>
+<li>Hexadecimal - Base-16 contains 16 digits: 0-F</li>
+<li>Decimal - Base-10 contains 10 digits: 0-9</li>
+<li>Octal - Base-8 contains 8 digits: 0-7</li>
+</ul>
+<h4 id="counting-in-binary-decimal-and-hexadecimal"><strong>Counting in binary, decimal and hexadecimal</strong></h4>
+<p>In each nummber system, we count from 0 up to the maximum value in a single digit.<br>
+eg in decimal:</p>
+<p>0<br>
+1<br>
+2<br>
+3<br>
+4<br>
+5<br>
+6<br>
+7<br>
+8<br>
+9</p>
+<p>When we reach a maximum in one digit, we start a new column of digits and reset the first column.</p>
+<pre><code>                        .
+                        .
+                        .
+                        8
+                        9 - Max digit
+Second column set to -  10
+ one                    11
+                        12
+                        13
+                        .
+                        .
+                        .
+</code></pre>
+<h4 id="place-values"><strong>Place values</strong></h4>
+<p>In decimal, the place values increase by a factor of 10 as new columns are added.</p>
+<h4 id="units-of-binary"><strong>Units of binary</strong></h4>
+<p>1 <b>bi</b>nary digi<b>t</b> = 1 bit<br>
+8 bits = 1 byte<br>
+4 bits = 1 nybble <script type="math/tex" id="MathJax-Element-345">\gets</script> Joke unit<br>
+2 bits = crumb <script type="math/tex" id="MathJax-Element-346">\gets</script> Joke unit</p>
+<h4 id="multiples-of-bytes-and-bits"><strong>Multiples of bytes and bits</strong></h4>
+<p>The unit multipliers of bits and bytes follow the S.I. convention:</p>
+<ul>
+<li>Kilo = 1,000 = k</li>
+<li>Mega = 1,000,000 = M</li>
+<li>Giga = 1,000,000,000 = G</li>
+<li>Terra = 1,000,000,000,000 = T</li>
+<li>Peta = 1,000,000,000,000,000 = P</li>
+<li>Exa = 1,000,000,000,000,000,000 = E</li>
+<li>Zetta = 1,000,000,000,000,000,000,000 = Z</li>
+<li>Yotta = 1,000,000,000,000,000,000,000,000 = Y</li>
+</ul>
+<p>These prefixes are in common use but are not the best units to use for binary data. Becuase of this, we have <strong>preferred units</strong>:</p>
+<ul>
+<li>(ki) Kibi = <script type="math/tex" id="MathJax-Element-347">1024</script> = <script type="math/tex" id="MathJax-Element-348">2^1</script></li>
+<li>(Mi) Mebi = <script type="math/tex" id="MathJax-Element-349">1024^2</script> = <script type="math/tex" id="MathJax-Element-350">2^{20}</script></li>
+<li>(Gi) Gibi = <script type="math/tex" id="MathJax-Element-351">1024^3</script> = <script type="math/tex" id="MathJax-Element-352">2^{30}</script></li>
+</ul>
+<h4 id="bytes-and-hexadecimal"><strong>Bytes and hexadecimal</strong></h4>
+<p>1 byte is 2 nybbles.</p>
+<p>Hexadecimal uses the digits 0-9 A-F to represent 16 different values. A binary nybble can contain 16 different values so it maps neatly to hexadecimal.</p>
+<table>
+<thead>
+<tr>
+<th align="right">Decimal</th>
+<th align="right">Hexadecimal</th>
+<th align="right">Binary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0000</td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td align="right">7</td>
+<td align="right">0111</td>
+</tr>
+<tr>
+<td align="right">12</td>
+<td align="right">C</td>
+<td align="right">1100</td>
+</tr>
+</tbody>
+</table>
+<h5 id="to-convert-hex-to-decimal"><strong>To convert hex to decimal</strong></h5>
+<p><code>6f</code> to decimal<br>
+<script type="math/tex; mode=display" id="MathJax-Element-353">
+6\times16^1+F\times16^0 = 6\times16+F\\
+6\times16 + 15 = 111_{10}
+</script></p>
+<blockquote>
+<p><strong>Note:</strong><br>
+It is unlikely but <strong>possible</strong> that you might need to convert a multi-digit hex number to decimal.<br>
+eg:<br>
+<script type="math/tex; mode=display" id="MathJax-Element-354">
+6\times16^2+F\times16^1+C\times16^0=1788_{10}
+</script></p>
+</blockquote>
+<h4 id="number-conversion-exercises"><strong>Number conversion exercises</strong></h4>
+<table>
+<thead>
+<tr>
+<th align="right">Decimal</th>
+<th align="right">Hexadecimal</th>
+<th align="right">Binary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">243</td>
+<td align="right">F3</td>
+<td align="right">11110011</td>
+</tr>
+<tr>
+<td align="right">97</td>
+<td align="right">61</td>
+<td align="right">01100001</td>
+</tr>
+<tr>
+<td align="right">123</td>
+<td align="right">7B</td>
+<td align="right">01111011</td>
+</tr>
+<tr>
+<td align="right">195</td>
+<td align="right">C3</td>
+<td align="right">11000011</td>
+</tr>
+<tr>
+<td align="right">189</td>
+<td align="right">BD</td>
+<td align="right">10111101</td>
+</tr>
+<tr>
+<td align="right">251</td>
+<td align="right">FB</td>
+<td align="right">11111011</td>
+</tr>
+<tr>
+<td align="right">26</td>
+<td align="right">1A</td>
+<td align="right">00011010</td>
+</tr>
+<tr>
+<td align="right">90</td>
+<td align="right">5A</td>
+<td align="right">01011010</td>
+</tr>
+</tbody>
+</table>
+<h4 id="more-about-binary-numbers"><strong>More about binary numbers</strong></h4>
+<p>In <script type="math/tex" id="MathJax-Element-355">1001 111</script>, the first <script type="math/tex" id="MathJax-Element-356">1</script> is the most significant bit (<strong>MSB</strong>), and the last <script type="math/tex" id="MathJax-Element-357">1</script> is the least significant bit (<strong>LSB</strong>). This example is also an unsigned binary integer. This means that the kind of number this is is never specified.</p>
+<blockquote>
+<p><strong>Note</strong><br>
+The type of binary number needs to be specified if you are using anything other than an unsigned binary integer, because pure binary numbers are ambiguous.</p>
+</blockquote>
+<h5 id="addition-of-unsigned-binary-integers"><strong>Addition of unsigned binary integers</strong></h5>
+<p><script type="math/tex; mode=display" id="MathJax-Element-358">
+\begin{align}
+&01101010& \\
+&\underline{00101001}+&\\
+&\underline{10010011}&\\
+&^{1\,1\,\;\,1}&
+\end{align}
+</script></p>
+<blockquote>
+<p><strong>Overflow</strong><br>
+If 2 numbers are added together and the sum is bigger than the spaaaaaace allocated, an overflow will occur.</p>
+</blockquote>
+<h5 id="multiplying-unsigned-binary-integers"><strong>Multiplying unsigned binary integers</strong></h5>
+<p>eg:</p>
+<p><script type="math/tex; mode=display" id="MathJax-Element-359">
+10111\\
+\; \;\;\;\;\;\;\;\;\;11  \times \\
+\overline{101110  }\;\;\\
+\,\underline{10111} \\
+1000101\;\;\;
+</script></p>
+<h4 id="numbers-with-a-fractional-part"><strong>Numbers with a fractional part</strong></h4>
+<p>Often, calculations produce numbers that have fractional parts, such as <script type="math/tex" id="MathJax-Element-360">5\div3</script>. The decimal system is very similar to the binary system.:<br>
+Decimal:</p>
+<table>
+<thead>
+<tr>
+<th><script type="math/tex" id="MathJax-Element-361">100</script></th>
+<th><script type="math/tex" id="MathJax-Element-362">10</script></th>
+<th><script type="math/tex" id="MathJax-Element-363">1</script></th>
+<th><script type="math/tex" id="MathJax-Element-364">.</script></th>
+<th><script type="math/tex" id="MathJax-Element-365">\frac{1}{10}</script></th>
+<th><script type="math/tex" id="MathJax-Element-366">\frac{1}{100}</script></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><script type="math/tex" id="MathJax-Element-367">2</script></td>
+<td><script type="math/tex" id="MathJax-Element-368">5</script></td>
+<td><script type="math/tex" id="MathJax-Element-369">6</script></td>
+<td><script type="math/tex" id="MathJax-Element-370">.</script></td>
+<td><script type="math/tex" id="MathJax-Element-371">7</script></td>
+<td><script type="math/tex" id="MathJax-Element-372">1</script></td>
+</tr>
+</tbody>
+</table>
+<p>Binary:</p>
+<table>
+<thead>
+<tr>
+<th><script type="math/tex" id="MathJax-Element-373">16</script></th>
+<th><script type="math/tex" id="MathJax-Element-374">8</script></th>
+<th><script type="math/tex" id="MathJax-Element-375">4</script></th>
+<th><script type="math/tex" id="MathJax-Element-376">2</script></th>
+<th><script type="math/tex" id="MathJax-Element-377">1</script></th>
+<th><script type="math/tex" id="MathJax-Element-378">.</script></th>
+<th><script type="math/tex" id="MathJax-Element-379">\frac{1}{2}</script></th>
+<th><script type="math/tex" id="MathJax-Element-380">\frac{1}{4}</script></th>
+<th><script type="math/tex" id="MathJax-Element-381">\frac{1}{8}</script></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><script type="math/tex" id="MathJax-Element-382">1</script></td>
+<td><script type="math/tex" id="MathJax-Element-383">1</script></td>
+<td><script type="math/tex" id="MathJax-Element-384">0</script></td>
+<td><script type="math/tex" id="MathJax-Element-385">1</script></td>
+<td><script type="math/tex" id="MathJax-Element-386">0</script></td>
+<td><script type="math/tex" id="MathJax-Element-387">.</script></td>
+<td><script type="math/tex" id="MathJax-Element-388">1</script></td>
+<td><script type="math/tex" id="MathJax-Element-389">0</script></td>
+<td><script type="math/tex" id="MathJax-Element-390">1</script></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note</strong><br>
+In the binary example, it was assumed that the 3 LSBs were the fractional part becuase in binary, there is no symbol for "<script type="math/tex" id="MathJax-Element-391">.</script>" and so the position of the "<script type="math/tex" id="MathJax-Element-392">.</script>" must be assumed. This assumption is known as <strong>fixed point coding</strong>.</p>
+</blockquote>
+<p>We can also use 2’s compliment with this fixed point coding.<br>
+eg:</p>
+<table>
+<thead>
+<tr>
+<th><script type="math/tex" id="MathJax-Element-393">-16</script></th>
+<th><script type="math/tex" id="MathJax-Element-394">8</script></th>
+<th><script type="math/tex" id="MathJax-Element-395">4</script></th>
+<th><script type="math/tex" id="MathJax-Element-396">2</script></th>
+<th><script type="math/tex" id="MathJax-Element-397">1</script></th>
+<th><script type="math/tex" id="MathJax-Element-398">.</script></th>
+<th><script type="math/tex" id="MathJax-Element-399">\frac{1}{2}</script></th>
+<th><script type="math/tex" id="MathJax-Element-400">\frac{1}{4}</script></th>
+<th><script type="math/tex" id="MathJax-Element-401">\frac{1}{8}</script></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><script type="math/tex" id="MathJax-Element-402">1</script></td>
+<td><script type="math/tex" id="MathJax-Element-403">1</script></td>
+<td><script type="math/tex" id="MathJax-Element-404">0</script></td>
+<td><script type="math/tex" id="MathJax-Element-405">1</script></td>
+<td><script type="math/tex" id="MathJax-Element-406">0</script></td>
+<td><script type="math/tex" id="MathJax-Element-407">.</script></td>
+<td><script type="math/tex" id="MathJax-Element-408">1</script></td>
+<td><script type="math/tex" id="MathJax-Element-409">0</script></td>
+<td><script type="math/tex" id="MathJax-Element-410">1</script></td>
+</tr>
+</tbody>
+</table>
+<h4 id="floating-point-form"><strong>Floating point form</strong></h4>
+<p>Often, scientific notation is used to write numbers. for example:<br>
+<script type="math/tex; mode=display" id="MathJax-Element-411">
+A\times10^8
+</script></p>
+<p>A similar notation is used when 2’s compliment is used to to represent signed numbers that range from small to large:  M<script type="math/tex" id="MathJax-Element-412">\times</script>Base<script type="math/tex" id="MathJax-Element-413">^E</script></p>
+<h5 id="floating-points-in-binary"><strong>Floating points in binary</strong></h5>
+<p>Floating point gets around the limitations of fixed point by using a format similar to scientific notation. eg:<br>
+<script type="math/tex; mode=display" id="MathJax-Element-414">
+3.141\times10^3
+</script></p>
+<p>The "<script type="math/tex" id="MathJax-Element-415">3.141</script>" is known as the <em>Mantissa</em> and the "<script type="math/tex" id="MathJax-Element-416">\times10^3</script>" is known as the exponent. So say there was a 32 bit system, the mantissa would be 24 bits and the exponent would be 8 bits.</p>
+<blockquote>
+<p><strong>Recap of 2’s compliment</strong><br>
+If it is positive, convert to binary normally.<br>
+If it is negative, convert to binary, invert the bits and add 1.</p>
+</blockquote>
+<p><script type="math/tex; mode=display" id="MathJax-Element-417">
+\overset{\mathsf{Mantissa}}{\overset{-2^{0}}{0}\ \overset{•}{}\ \overset{2^{-1}}{1}\ \overset{2^{-2}}{1}\ \overset{2^{-3}}{0}\ \overset{2^{-4}}{1}\ \overset{2^{-5}}{0}}\ \ \ \ \ \ \ \ \overset{\mathsf{Exponent}}{\overset{-2^3}{0}\ \overset{2^2}{1}\ \overset{2^1}{0}\ \overset{2^0}{1}}
+</script><br>
+This can be written as <script type="math/tex" id="MathJax-Element-418">0.11010\times10^{0101}</script>.<br>
+The exponent evaluates to <script type="math/tex" id="MathJax-Element-419">+5_{10}</script><br>
+This means that the binary point is moved 5 places to the right:<br>
+<script type="math/tex; mode=display" id="MathJax-Element-420">
+0.\overset{↷}{1}\overset{↷}{1}\overset{↷}{0}\overset{↷}{1}\overset{↷}{0}_2 = 011010.0_2 \mathsf{\ or\ just\ }011010_2
+</script><br>
+Which evaluates to <script type="math/tex" id="MathJax-Element-421">16 + 8 + 2 = 26_{10}</script></p>
+<p>It is also easy to convert back:<br>
+You simply convert the decimal number to binary. You then work out how many places you need to move the binary point to move it to before the MSB. The "<script type="math/tex" id="MathJax-Element-422">.</script>" is implied after the MSB.</p>
+<p>Negative mantissas can also be used:<br>
+<script type="math/tex; mode=display" id="MathJax-Element-423">
+\overset{\mathsf{Mantissa}}{\overset{-2^{0}}{1}\ \overset{2^{-1}}{1}\ \overset{2^{-2}}{0}\ \overset{2^{-3}}{0}\ \overset{2^{-4}}{1}\ \overset{2^{-5}}{1}}\ \ \ \ \ \ \ \ \overset{\mathsf{Exponent}}{\overset{-2^3}{0}\ \overset{2^2}{0}\ \overset{2^1}{1}\ \overset{2^0}{1}}
+</script><br>
+So the point is implied after the MSB:<br>
+<script type="math/tex; mode=display" id="MathJax-Element-424">
+\overset{\mathsf{Mantissa}}{\overset{-2^{0}}{1}\ \overset{•}{}\ \overset{2^{-1}}{1}\ \overset{2^{-2}}{0}\ \overset{2^{-3}}{0}\ \overset{2^{-4}}{1}\ \overset{2^{-5}}{1}}\ \ \ \ \ \ \ \ \overset{\mathsf{Exponent}}{\overset{-2^3}{0}\ \overset{2^2}{0}\ \overset{2^1}{1}\ \overset{2^0}{1}}
+</script><br>
+The exponent moves the binary point <script type="math/tex" id="MathJax-Element-425">11_2</script> or <script type="math/tex" id="MathJax-Element-426">3_{10}</script> positions to the right:<br>
+<script type="math/tex; mode=display" id="MathJax-Element-427">
+\overset{\mathsf{Mantissa}}{\overset{-2^{3}}{1}\ \overset{2^{2}}{1}\ \overset{2^{1}}{0}\ \overset{2^{0}}{0}\ \overset{•}{}\ \overset{2^{-1}}{1}\ \overset{2^{-2}}{1}}\ \ \ \ \ \ \ \ \overset{\mathsf{Exponent}}{\overset{-2^3}{0}\ \overset{2^2}{0}\ \overset{2^1}{1}\ \overset{2^0}{1}}
+</script><br>
+Which equates to <script type="math/tex" id="MathJax-Element-428">1100.11_2</script> or <script type="math/tex" id="MathJax-Element-429">-3.25_{10}</script></p>
+<h4 id="converting-from-unsigned-decimal-numbers-to-unsigned-binary">Converting from unsigned decimal numbers to unsigned binary</h4>
+<p>With integers this is easy:<script type="math/tex; mode=display" id="MathJax-Element-430">15_{10} \to 1111_2</script>And with some decimal:<br>
+<script type="math/tex; mode=display" id="MathJax-Element-431">15.625_{10} \to 1111.101_2\ \ \ =\ \ \ .\overset{0.5}{1}\ \overset{0.25}{0}\ \overset{0.125}{0}</script>But with others:<br>
+<script type="math/tex; mode=display" id="MathJax-Element-432">15.6_{10} \to 1111.1010\dots_2</script>Which has to be rounded and when converted back <script type="math/tex" id="MathJax-Element-433">\neq15.6</script>.</p>
+<blockquote>
+<p><strong>Note</strong><br>
+Converting decimal numbers to fixed point unsigned binary introduces errors.</p>
+</blockquote>
+<h4 id="research-task"><strong>Research task</strong></h4>
+<p><strong>Find out how signed binary integers can be stored using 2’s compliment.</strong></p>
+<p>Two’s complement is a clever way of storing integers so that common math problems are very simple to implement.</p>
+<p>To understand, you have to think of the numbers in binary.</p>
+<p>It basically says,</p>
+<ul>
+<li>for zero, use all 0’s.</li>
+<li>for positive integers, start counting up, with a maximum of 2<sup>(number of bits - 1)</sup>-1.</li>
+<li>for negative integers, do exactly the same thing, but switch the role of 0’s and 1’s (so instead of starting with 0000, start with 1111 - that’s the “complement” part).</li>
+</ul>
+<p>Let’s try it with a mini-byte of 4 bits (we’ll call it a [nibble][1] - 1/2 a byte).</p>
+<ul>
+<li><code>0000</code> - zero</li>
+<li><code>0001</code> - one</li>
+<li><code>0010</code> - two</li>
+<li><code>0011</code> - three</li>
+<li><code>0100</code> to <code>0111</code> - four to seven</li>
+</ul>
+<p>That’s as far as we can go in positives. 2<sup>3</sup>-1 = 7.</p>
+<p>For negatives:</p>
+<ul>
+<li><code>1111</code> - negative one</li>
+<li><code>1110</code> - negative two</li>
+<li><code>1101</code> - negative three</li>
+<li><code>1100</code> to <code>1000</code> - negative four to negative eight</li>
+</ul>
+<p>Note that you get one extra value for negatives (<code>1000</code> = -8) that you don’t for positives. This is because <code>0000</code> is used for zero.</p>
+<p>Doing this, the first bit gets the role of the “sign” bit, since it is always ‘1’ for negative numbers, and ‘0’ for non-negatives (zero and positive).</p>
+<h3 id="information-coding-systems">Information coding systems</h3>
+<p>The problem of storing text in a digital form pre-dates the computer era. A variety of different digital coding schemes have been used from prehistoric times (ie: beacon fires) to relay predetermined messages. Other examples include Morse code and semaphore systems.</p>
+<p>With the introduction of computer systems in the 1940s and 50s it became clear that text as well as numbers would need to be stored and manipulated by computers and a number of systems for encoding text characters were developed. The best being known as ASCII (“<em>The American standard code for information exchange</em>”). This used 7 bits to encode the standard English language character set along with a number of punctuation and control characters and numbers 0-8.</p>
+<p>ASCII has now been superseded by Unicode for most applications. Unicode uses as minimum of 8 bits but can use up to 48 bits. UTF-8 uses 8 bits for encoding Western text. Unicode has the advantage that it can encode most of the character sets used in the world.</p>
+<h3 id="error-checking-and-correction">Error checking and correction</h3>
+<dl>
+<dt>Parity Check:</dt>
+<dd>Data encoded in binary can be sent electronically. The quality of the electronic communication may not be perfect so there may be errors when the data is received. For example the letter “A” in ASCII is <script type="math/tex" id="MathJax-Element-434">1000001_2</script>. An error may cause the data received to get corrupted to <script type="math/tex" id="MathJax-Element-435">1100001_2</script> which has as different meaning (<script type="math/tex" id="MathJax-Element-436">1100001_2</script> means “b”).<br><br><br>
+To help find errors in transmission, messages can be encoded using more bits and then using the extra bits to store values that allow parity checks to be carried out:<br>
+We decide whether we are going to use <strong>even parity</strong> or <strong>odd parity</strong>. Even parity means using a value for the parity bit that makes the total number of ones in the byte even. eg <script type="math/tex" id="MathJax-Element-437">01000001_2</script> and <script type="math/tex" id="MathJax-Element-438">11000011_2</script><br>
+If an error occurs and any one of the bits gets swapped, even parity will be broken and the recipient will know that the value is incorrect. eg <script type="math/tex" id="MathJax-Element-439">11100011_2</script><br>
+Parity checks do <strong>not</strong> provide a means to correct errors but do highlight an error.<br>
+A parity check will only detect one error, not two. ie odd number of errors. eg <script type="math/tex" id="MathJax-Element-440">11\color{red}{1}0\color{red}{1}011</script> where the red numbers that are incorrect are red. There is even parity but the number is wrong.</dd>
+<dt>Majority voting</dt>
+<dd>One other way to detect and correct errors in a transmission is to send a message 3 or more times:<br>
+<script type="math/tex" id="MathJax-Element-441">\overset{\color{orange}{\downarrow}}{1}\overset{\color{red}{\downarrow}}{1}\overset{\color{purple}{\downarrow}}{1}\ \overset{\color{orange}{\downarrow}}{0}\overset{\color{red}{\downarrow}}{0}\overset{\color{purple}{\downarrow}}{0}\ \overset{\color{orange}{\downarrow}}{0}\overset{\color{red}{\downarrow}}{0}\overset{\color{purple}{\downarrow}}{0}\ \overset{\color{orange}{\downarrow}}{1}\overset{\color{red}{\downarrow}}{1}\overset{\color{purple}{\downarrow}}{1}</script><br>
+where each colour arrow shows a different message. If an error occurs it looks like this:<br>
+<script type="math/tex" id="MathJax-Element-442">\overset{\color{orange}{\downarrow}}{1}\overset{\color{red}{\downarrow}}{1}\overset{\color{purple}{\downarrow}}{1}\ \overset{\color{orange}{\downarrow}}{0}\overset{\color{red}{\downarrow}}{1}\overset{\color{purple}{\downarrow}}{0}\ \overset{\color{orange}{\downarrow}}{0}\overset{\color{red}{\downarrow}}{0}\overset{\color{purple}{\downarrow}}{0}\ \overset{\color{orange}{\downarrow}}{1}\overset{\color{red}{\downarrow}}{1}\overset{\color{purple}{\downarrow}}{1}</script><br>
+The error has only occurred in copy 2 so copies 1 and 3 are can be assumed to be correct as they are in the majority.<br>
+Broken down into individual steps:
+<ol>
+<li>The first digit is 1 in all 3 copies so it must be correct.</li>
+<li>The second digit is 0 in copies 1 and 3 so majority voting concludes that is the correct number.</li>
+<li>The remaining digits are all the same in all the copies so they must be correct.</li>
+</ol>
+Majority voting is used most often is safety critical systems.</dd>
+<dt>Check digits</dt>
+<dd>A check digit is a number added to a set of data that ensures that the data has been correctly received. Check digits are commonly used for bar-codes. A simple example may be a system that works by adding up the digits of a number and adding a check digit to make a standard total. The only problem with this is that it doesn’t check whether the numbers are out of order.</dd>
+</dl>
+<h3 id="bit-mapped-graphics">Bit-mapped graphics</h3>
+<p>Images are displayed on a computer monitor as bitmaps. A bitmap is a grid of pixels. The pixels may be represented using different numbers of bits which correspond to the number of colours present in the available range.</p>
+<dl>
+<dt>For example:</dt>
+<dd>If 1 bit is used to represent the colour of a pixel, it can have 2 values - black and white (colours may vary from monitor to monitor). This is properly described as a <strong>monochrome</strong> although monochrome is usually used to describe a grey scale picture.<br>
+Grey scale</dd>
+<dd>Uses 8 bits to give 256 colours of grey, from black (0) to white (255)</dd>
+<dt>Colour</dt>
+<dd>Normally uses 24 bits to represent levels of red, green and blue:<br>
+<script type="math/tex; mode=display" id="MathJax-Element-443">\color{red}{\overset{11111111}{\mathsf{Red}}}\ \ \color{green}{\overset{11111111}{\mathsf{Green}}}\ \ \color{Blue}{\overset{11111111}{\mathsf{Blue}}}</script><br>
+These values are often rtepresented as decimal or hex values such as <code>255,0,255</code> or <code>#FF00FF</code>.<br>
+24 bit colour allows for up to <script type="math/tex" id="MathJax-Element-444">256\times256\times256</script>. ie <script type="math/tex" id="MathJax-Element-445">16,777,216</script> different colours.<br>
+The number of bits used to represent colours in bit maps are called the <strong>bit depth</strong>.</dd>
+</dl>
+<blockquote>
+<p><strong>Note about printing</strong><br>
+Computer displays use (effectively) coloured lights to produce an image. 24-bit colour displays use RGB to represent as many colours as possible. Printers usually use 4 colours: Cyan, Magenta, Yellow and black. Accurate conversion from RGB to CMYK is difficult to achieve</p>
+</blockquote>
+<h2 id="pseudocode">Pseudocode</h2>
+<p>Variables: Storage for data.</p>
+<dl>
+<dt>eg:</dt>
+<dd>Number</dd>
+<dd>Name</dd>
+<dd>Colours</dd>
+</dl>
+<p>Values are assigned to variables.</p>
+<dl>
+<dt>eg:</dt>
+<dd>Number <script type="math/tex" id="MathJax-Element-446">\gets</script> 16</dd>
+<dd>Name <script type="math/tex" id="MathJax-Element-447">\gets</script> “Jack”</dd>
+<dd>Colour <script type="math/tex" id="MathJax-Element-448">\gets</script> “Red”</dd>
+</dl>
+<p>"<script type="math/tex" id="MathJax-Element-449">\gets</script>" is the pseudo code assignment operator.</p>
+<blockquote>
+<p>In real languages, an assignment operator is normally something like:<br>
+Pascal: <code>number := 16</code><br>
+Python : <code>number = 16</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Memory Location</strong></td>
+<td align="right">1001</td>
+<td align="right">1002</td>
+<td align="right">1003</td>
+<td align="right">1004</td>
+</tr>
+<tr>
+<td><strong>Variable name</strong></td>
+<td align="right">Number</td>
+<td align="right">Name</td>
+<td align="right">Colour</td>
+<td align="right">Guilty</td>
+</tr>
+<tr>
+<td><strong>Value</strong></td>
+<td align="right">16</td>
+<td align="right">“Jack”</td>
+<td align="right">“Red”</td>
+<td align="right">TRUE</td>
+</tr>
+</tbody>
+</table>
+<p>Variable names are labels for memory locations.</p>
+<p>Example pseudo code program:</p>
+<pre><code class="prism language-pseudocode">Number1 &lt;- 6
+Number2 &lt;- 9
+Answer &lt;- Number1 + Number2
+</code></pre>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Memory Location</strong></td>
+<td align="right">1000</td>
+<td align="right">1001</td>
+<td align="right">1002</td>
+</tr>
+<tr>
+<td><strong>Variable name</strong></td>
+<td align="right">Number1</td>
+<td align="right">Number2</td>
+<td align="right">Answer</td>
+</tr>
+<tr>
+<td><strong>Value</strong></td>
+<td align="right">6</td>
+<td align="right">9</td>
+<td align="right">15</td>
+</tr>
+</tbody>
+</table>
+<h3 id="variables-and-constants">Variables and CONSTANTS</h3>
+<ul>
+<li>The value of variables can be assigned during the running of the program.</li>
+<li>The value of a CONSTANT is fixed and cannot be changed.</li>
+<li>CONSTANTS are useful for storing values that shouldn’t be changed. eg:</li>
+</ul>
+<pre><code>CM_IN_A_METRE = 100
+METRES_IN_A_MILE = 1609
+</code></pre>
+<p>Constants should not be used for values that can change.<br>
+eg:</p>
+<pre><code>eurosToPounds = 1.44
+</code></pre>
+<h4 id="data-types."><strong>Data types.</strong></h4>
+<p>A data type determines what sort of data is being sorted and how it will be handled by the program. eg:</p>
+<ul>
+<li>Integer - Whole numbers</li>
+<li>Float - Numbers with a fractional part</li>
+<li>String - One or more chars to be treated as text.</li>
+<li>Boolean - True/False</li>
+<li>Character - Single chars</li>
+<li>Date/time - The date/time</li>
+</ul>
+<p>Examples in python:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token comment" spellcheck="true"># String
+</span>string <span class="token operator">=</span> <span class="token string">"Hello world"</span>
+
+<span class="token comment" spellcheck="true"># Boolean
+</span>Boolean <span class="token operator">=</span> <span class="token boolean">True</span>
+
+<span class="token comment" spellcheck="true">#Integer
+</span>integer <span class="token operator">=</span> <span class="token number">17</span>
+
+<span class="token comment" spellcheck="true">#Float
+</span>float <span class="token operator">=</span> <span class="token number">12.78</span>
+
+<span class="token comment" spellcheck="true">#Character
+</span>char <span class="token operator">=</span> <span class="token string">"n"</span>
+
+<span class="token comment" spellcheck="true">#Date/Time
+</span><span class="token keyword">import</span> datetime
+t <span class="token operator">=</span> datetime<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+</code></pre>
+<h4 id="naming-conventions"><strong>Naming conventions</strong></h4>
+<p>Variable names should be meaningful.</p>
+<h2 id="programming">Programming</h2>
+<h3 id="programming-basics">Programming basics</h3>
+<p>3 basic ideas:</p>
+<h4 id="sequence"><strong>Sequence</strong></h4>
+<p>eg:</p>
+<pre><code>Set TV set-top box to record a program
+Set time to record = 21:00
+Set channel to record = TV5
+Check time
+If time = 21:00 then record
+</code></pre>
+<p>If any of the steps are missing, the program will not record. The sequence of instructions is important too. If they are in the wrong order, the program will not record.</p>
+<h4 id="selection"><strong>Selection</strong></h4>
+<p>In programming, statements are said to be <em>nested</em> if one statement is placed inside of another statement. eg in python:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token comment" spellcheck="true"># Python3 example
+</span><span class="token keyword">if</span> x <span class="token operator">==</span> <span class="token number">6</span><span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"You win"</span><span class="token punctuation">)</span>
+<span class="token keyword">elif</span> x <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"You loose"</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"IDK if you win"</span><span class="token punctuation">)</span>
+</code></pre>
+<p>The selection process allows a computer to decide which operations to carry out.<br>
+eg in python:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token comment" spellcheck="true"># Python3 example
+</span>passw <span class="token operator">=</span> <span class="token string">"elephant"</span>
+password <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"Type your password&gt;&gt;&gt; "</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> password <span class="token operator">==</span> passw<span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Access allowed"</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Access denied"</span><span class="token punctuation">)</span>
+</code></pre>
+<h5 id="selection-using-case-not-available-in-python"><strong>Selection using case (not available in python)</strong></h5>
+<p>The following example shows the use of a case statement:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token comment" spellcheck="true"># select case parcel destination
+</span>
+case1<span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Arrived"</span><span class="token punctuation">)</span>
+case2<span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Dispatched"</span><span class="token punctuation">)</span>
+case3<span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Lost"</span><span class="token punctuation">)</span>
+default<span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Not tracked"</span><span class="token punctuation">)</span>
+</code></pre>
+<h4 id="iteration"><strong>Iteration</strong></h4>
+<h5 id="definite-loops"><strong>Definite loops</strong></h5>
+<p>To iterate means to repeat something. eg:</p>
+<pre class=" language-python"><code class="prism  language-python">x <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+</code></pre>
+<p>This is called a for loop. It prints odd numbers from 1 to 10. For loops are definite loops. This means that they iterate a fixed number of times.</p>
+<h5 id="indefinite-loops"><strong>Indefinite loops</strong></h5>
+<p>These loops repeat an undefined number of times. Either, while something is true or until something is true. eg:</p>
+<pre class=" language-python"><code class="prism  language-python">x <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">while</span> x <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"x is still smaller than 10. HA HA HA"</span><span class="token punctuation">)</span>
+	x <span class="token operator">=</span> x <span class="token operator">+</span> <span class="token number">1</span>
+</code></pre>
+<p>With indefinite loops, infinite loops can be easily created:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"lel"</span><span class="token punctuation">)</span>
+</code></pre>
+<h4 id="procedure-vs-function"><strong>Procedure vs Function</strong></h4>
+<p>Quite simply, a function returns a value; A procedure doesn’t.</p>
+<h3 id="data-structures">Data structures</h3>
+<p>Data can be stored in a variety of different forms:</p>
+<p><strong>Using variables of different data types.</strong><br>
+eg:</p>
+<pre class=" language-python"><code class="prism  language-python">name   <span class="token operator">=</span> <span class="token string">"smith"</span>  <span class="token comment" spellcheck="true"># String data type
+</span>age    <span class="token operator">=</span> <span class="token number">16</span>       <span class="token comment" spellcheck="true"># Integer data type
+</span>height <span class="token operator">=</span> <span class="token number">1.98</span>     <span class="token comment" spellcheck="true"># Float data type
+</span><span class="token number">dead</span>   <span class="token operator">=</span> <span class="token boolean">False</span>    <span class="token comment" spellcheck="true"># Boolean data type
+</span></code></pre>
+<blockquote>
+<p><strong>Note</strong><br>
+Other languages may use or include other data types and may use different names.</p>
+</blockquote>
+<p><strong>Using collections.</strong><br>
+These are described as enumerable data types in Python:</p>
+<pre class=" language-python"><code class="prism  language-python">myList  <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Smith"</span><span class="token punctuation">,</span> <span class="token string">"Jones"</span><span class="token punctuation">,</span> <span class="token string">"Brown"</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># List data type
+</span>myTuple <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">"Smith"</span><span class="token punctuation">,</span> <span class="token string">"Jones"</span><span class="token punctuation">,</span> <span class="token string">"Brown"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># Tuple data type
+</span>myDict  <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"Smith"</span><span class="token punctuation">:</span><span class="token string">"Bob"</span><span class="token punctuation">,</span> <span class="token string">"Jones"</span><span class="token punctuation">:</span><span class="token string">"Bobby"</span><span class="token punctuation">,</span> <span class="token string">"Brown"</span><span class="token punctuation">:</span><span class="token string">"Bobbington"</span><span class="token punctuation">}</span> <span class="token comment" spellcheck="true"># Dictionary data type
+</span></code></pre>
+<p>In a dictionary, a key-value pair is a key and a value. The key is used instead of an index to find a value. They are useful to look up data as the key cannot change instead of an index which could change.<br>
+Tuples are immutable which means that they cannot be changed. This means that they are a lot more efficient than lists.</p>
+<h4 id="abstract-data-structures"><strong>Abstract data structures</strong></h4>
+<p>Abstract data structures are commonly used for data that is not specific to any one programming language. The simplest example is a stack. Stacks can be used to solve many problems, such as reversing a string and may also be used to implement features of a programming language.<br>
+Describing abstract data structures also helps us to understand another important programming concept: <em>object orientation</em>.</p>
+<h5 id="stack"><strong>Stack</strong></h5>
+<p>A stack is a data structure which can be accessed from only one end:<br>
+<img src="http://i.imgur.com/2PfgYeD.png" alt=""><br>
+In python, a stack may be described using a class:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">class</span> Stack<span class="token punctuation">:</span>
+    <span class="token keyword">def</span> __init__<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        
+    <span class="token keyword">def</span> isEmpty<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>items <span class="token operator">==</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    
+    <span class="token keyword">def</span> push<span class="token punctuation">(</span>self<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>items<span class="token punctuation">.</span>append<span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+        
+    <span class="token keyword">def</span> pop<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>items<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        
+    <span class="token keyword">def</span> peek<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>items<span class="token punctuation">[</span>len<span class="token punctuation">(</span>self<span class="token punctuation">.</span>items<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+    
+    <span class="token keyword">def</span> size<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> len<span class="token punctuation">(</span>self<span class="token punctuation">.</span>items<span class="token punctuation">)</span>
+</code></pre>
+<p>To use this stack class, you use the following code:</p>
+<pre class=" language-python"><code class="prism  language-python">myStack <span class="token operator">=</span> Stack<span class="token punctuation">(</span><span class="token punctuation">)</span>           <span class="token comment" spellcheck="true"># Creates a new stack
+</span><span class="token keyword">print</span><span class="token punctuation">(</span>myStack<span class="token punctuation">.</span>isEmpty<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># Prints True because the stack is empty
+</span>myStack<span class="token punctuation">.</span>push<span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># Pushes "Hello World" to the stack
+</span><span class="token keyword">print</span><span class="token punctuation">(</span>myStack<span class="token punctuation">.</span>isEmpty<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># Prints False because the stack isn't empty
+</span><span class="token keyword">print</span><span class="token punctuation">(</span>myStack<span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>       <span class="token comment" spellcheck="true"># Prints 1 because there is one item in the stack
+</span><span class="token keyword">print</span><span class="token punctuation">(</span>myStack<span class="token punctuation">.</span>peek<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>       <span class="token comment" spellcheck="true"># Prints "Hello World" because it is at the top of the stack
+</span></code></pre>
+<h5 id="queues"><strong>Queues</strong></h5>
+<p>A queue is an <strong>ordered</strong> collection of items where addition of new items occurs at the end and removal of items occurs at the head.<br>
+As items are added and removed from the queue, items already in the queue are moved towards the head.<br>
+<img src="http://i.imgur.com/5BGdgp6.png?1" alt=""></p>
+<p>Queues can be used to buffer data. For example in a multi-user printer system, where print jobs are submitted to a networked printer and then printed in order of arrival.<br>
+Another example is a keyboard buffer. Keystrokes are stored in order until they are processed. Streamed video is also buffered (obviously).</p>
+<p><strong>Queue operations</strong></p>
+<ol>
+<li>
+<p>Enqueue<br>
+: Add an item to a queue</p>
+</li>
+<li>
+<p>Dequeue<br>
+: Remove an item from a queue</p>
+</li>
+<li>
+<p>IsEmpty<br>
+: Check to see if the queue is empty</p>
+</li>
+<li>
+<p>Size<br>
+: Find the size of the queue</p>
+</li>
+</ol>
+<p>Python definition of a queue:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">class</span> Queue<span class="token punctuation">:</span>
+    <span class="token keyword">def</span> __init__<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        
+    <span class="token keyword">def</span> isEmpty<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>items <span class="token operator">==</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    
+    <span class="token keyword">def</span> enqueue<span class="token punctuation">(</span>self<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>items<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>item<span class="token punctuation">)</span>
+        
+    <span class="token keyword">def</span> dequeue<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>items<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">def</span> size<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> len<span class="token punctuation">(</span>self<span class="token punctuation">)</span>
+</code></pre>
+<h5 id="linked-lists"><strong>Linked lists</strong></h5>
+<p>A linked list is a list where each item in a list is given a label, a link to the next item in the list and a value.</p>
+<p><img src="http://i.imgur.com/z5PWsIU.png" alt=""></p>
+<p>You can also have a double linked list where an item links to the previous item as well as the next item.</p>
+<p><img src="http://i.imgur.com/LqwFu19.png" alt=""></p>
+<h3 id="basic-programming-operations">Basic Programming Operations</h3>
+<h4 id="arithmetical-operations"><strong>Arithmetical Operations</strong></h4>
+<blockquote>
+<p><strong>Note</strong><br>
+All operations can involve numbers/variables or constants to the right of the assignment operator, but only variables to the left.<br>
+eg:</p>
+</blockquote>
+<pre class=" language-python"><code class="prism  language-python"><span class="token number">a</span> ←  <span class="token number">6</span> <span class="token operator">+</span> <span class="token number">4</span>
+<span class="token number">b</span> ←  <span class="token number">a</span> <span class="token operator">+</span> <span class="token number">4</span>
+<span class="token number">c</span> ←  <span class="token number">a</span> <span class="token operator">+</span> <span class="token number">b</span>
+</code></pre>
+<h4 id="assignment-operators"><strong>Assignment Operators</strong></h4>
+<p>In many languages, the assignment operator is <code>=</code>, but some, like Pascal use <code>:=</code>.</p>
+<h5 id="arithmetic-characters"><strong>Arithmetic characters</strong></h5>
+<table>
+<thead>
+<tr>
+<th align="left">Operation</th>
+<th align="right">Symbol</th>
+<th align="right">Pseudo Code Example</th>
+<th align="right">Python Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Addition</td>
+<td align="right"><code>+</code></td>
+<td align="right"><code>x ← a + b</code></td>
+<td align="right"><code>x = a + b</code></td>
+</tr>
+<tr>
+<td align="left">Subtraction</td>
+<td align="right"><code>-</code></td>
+<td align="right"><code>x ← a - b</code></td>
+<td align="right"><code>x = a - b</code></td>
+</tr>
+<tr>
+<td align="left">Multiplication</td>
+<td align="right"><code>*</code></td>
+<td align="right"><code>x ← a * b</code></td>
+<td align="right"><code>x = a * b</code></td>
+</tr>
+<tr>
+<td align="left">Division</td>
+<td align="right"><code>/</code></td>
+<td align="right"><code>x ← a / b</code></td>
+<td align="right"><code>x = a / b</code></td>
+</tr>
+<tr>
+<td align="left">Exponentiation</td>
+<td align="right"><code>^</code></td>
+<td align="right"><code>x ← a ^ b</code></td>
+<td align="right"><code>x = a ** b</code></td>
+</tr>
+<tr>
+<td align="left">Integer division</td>
+<td align="right"><code>div</code></td>
+<td align="right"><code>x ← a div b</code></td>
+<td align="right"><code>x = a // b</code></td>
+</tr>
+<tr>
+<td align="left">Modulo</td>
+<td align="right"><code>mod</code></td>
+<td align="right"><code>x ← a mod b</code></td>
+<td align="right"><code>x = a % b</code></td>
+</tr>
+<tr>
+<td align="left">Rounding</td>
+<td align="right"><code>round</code></td>
+<td align="right"><code>y ← round(x, 2)</code></td>
+<td align="right"><code>y = round(x, n)</code></td>
+</tr>
+<tr>
+<td align="left">Truncating</td>
+<td align="right"><code>truncate</code></td>
+<td align="right"><code>y ← truncate(x)</code></td>
+<td align="right"><code>y = math.floor(x)</code></td>
+</tr>
+<tr>
+<td align="left">Random number</td>
+<td align="right"><code>random</code></td>
+<td align="right"><code>y ← random(x, n)</code></td>
+<td align="right"><code>y = random.randint(x, n)</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note</strong><br>
+Random number generation can be performed in a large number of different ways. Not all of them (if any) produce truly random numbers. The ability to produce pseudo-random numbers is useful in testing.</p>
+</blockquote>
+<h4 id="relational-operators"><strong>Relational Operators</strong></h4>
+<table>
+<thead>
+<tr>
+<th align="right">Symbol</th>
+<th align="right">Definition</th>
+<th align="right">Python Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right"><code>=</code> or <code>==</code></td>
+<td align="right">Equal to</td>
+<td align="right"><code>if x == 6:</code></td>
+</tr>
+<tr>
+<td align="right"><code>&lt;</code></td>
+<td align="right">Less than</td>
+<td align="right"><code>if x &lt; 6:</code></td>
+</tr>
+<tr>
+<td align="right"><code>&gt;</code></td>
+<td align="right">More than</td>
+<td align="right"><code>if x &gt; 6:</code></td>
+</tr>
+<tr>
+<td align="right"><code>&lt;&gt;</code> or <code>!=</code></td>
+<td align="right">Not equal to</td>
+<td align="right"><code>if x != 6:</code></td>
+</tr>
+<tr>
+<td align="right"><code>&lt;=</code> or <script type="math/tex" id="MathJax-Element-450">\leq</script></td>
+<td align="right">Less than or equal to</td>
+<td align="right"><code>if x &lt;= 6:</code></td>
+</tr>
+<tr>
+<td align="right"><code>&gt;=</code> or <script type="math/tex" id="MathJax-Element-451">\geq</script></td>
+<td align="right">Greater than or equal to</td>
+<td align="right"><code>if x &gt;= 6:</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="boolean-operators"><strong>Boolean Operators</strong></h4>
+<p>These are best described suing examples <code>AND</code>, <code>OR</code>, <code>NOT</code> and <code>XOR</code>.</p>
+<p>Eg in Python:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">if</span> <span class="token punctuation">(</span>x<span class="token operator">==</span><span class="token number">6</span><span class="token punctuation">)</span> <span class="token operator">and</span> <span class="token punctuation">(</span>y<span class="token operator">==</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Example of an AND operator"</span><span class="token punctuation">)</span>
+	
+<span class="token comment" spellcheck="true">#---------------------
+</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>x<span class="token operator">==</span><span class="token number">6</span><span class="token punctuation">)</span> <span class="token operator">or</span> <span class="token punctuation">(</span>y<span class="token operator">==</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Example of an OR operator"</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">#---------------------
+</span>
+<span class="token keyword">if</span> x <span class="token operator">!</span><span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">:</span>
+	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Example of a NOT operator"</span><span class="token punctuation">)</span>
+
+</code></pre>
+<h4 id="graphs"><strong>Graphs</strong></h4>
+<p><img src="http://i.imgur.com/nwmEXoA.png" alt=""></p>
+<p>This can be used to display data such as a subway map.</p>
+<p>Metadata can be attached to the nodes. This is called weighting the edges. An example of this is distances on a metro map.</p>
+<h5 id="describing-graphs"><strong>Describing graphs</strong></h5>
+<p>A graph can be represented as a set of nodes:</p>
+<pre class=" language-python"><code class="prism  language-python">nodes <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"A"</span><span class="token punctuation">,</span><span class="token string">"B"</span><span class="token punctuation">,</span><span class="token string">"C"</span><span class="token punctuation">,</span><span class="token string">"D"</span><span class="token punctuation">}</span>
+</code></pre>
+<p>and edges</p>
+<pre><code>edges = {("A","B","→",3),("B","C","→",5),("B","C","←",4),("C","D","→",9),("A","D","→",2),("A","D","←",6)}
+</code></pre>
+<blockquote>
+<p><strong>Note</strong><br>
+Nodes are also called vertices and edges can be called arcs.</p>
+</blockquote>
+<h5 id="paths-and-cycles"><strong>Paths and cycles</strong></h5>
+<p>A path is the description of the nodes and edges between a pair of nodes on a graph.<br>
+eg: The path between 2 nodes could be <code>("B","C",D")</code> and the edge sequence could be <code>{("C","D",5),("C","D",9)}</code>.<br>
+A cycle in a graph is where the path starts and ends in the same place. The graph above, however, is acyclic so this is not possible. In a graph where this is possible, there can be more than one possible cycle.</p>
+<h5 id="implementing-a-graph-as-an-abstract-data-type-or-structure"><strong>Implementing a Graph as an abstract data type (or structure)</strong></h5>
+<p><code>Graph()</code> - Creates a new empty graph.<br>
+<code>addNode(node)</code> - Adds a new node.<br>
+<code>addEdge(from, to)</code> - Adds a new (directed) edge to the graph.<br>
+<code>addEdge(from, to, weight)</code> - Adds a new weighted, directed edge to the graph.<br>
+<code>getNode(nodeKey)</code> - Finds a particular node, called a nodeKey.<br>
+<code>getNodes()</code> - Returns a list of all nodes in the graph.<br>
+<code>inGraph()</code> - Returns a bool for whether a node is in a graph or not.</p>
+<p><script type="math/tex; mode=display" id="MathJax-Element-452">
+\begin{array}{|c|c|c|c|c|c|c|}
+\hline
+  & \mathbf{N_0 }& \mathbf{N_1 }& \mathbf{N_2} & \mathbf{N_3 }& \mathbf{N_4 }& \mathbf{N_5} \\ \hline
+  \mathbf{N_0 } &  & \bullet &  &  & &\bullet \\ \hline
+  \mathbf{N_1 } &  &  & \bullet &  & &\\ \hline
+  \mathbf{N_2 } &  &  &  & \bullet & &\\ \hline
+  \mathbf{N_3 } &  &  &  &  &\bullet &\bullet\\ \hline
+  \mathbf{N_4 } & \bullet &  &  &  & &\\ \hline
+  \mathbf{N_5 } &  &  &\bullet  &  & \bullet& \\ \hline
+\end{array}
+</script><br>
+With the rows being start nodes and the columns being end nodes.<br>
+The dots can be replaced with numbers to become weighed nodes:</p>
+<p><script type="math/tex; mode=display" id="MathJax-Element-453">
+\begin{array}{|c|c|c|c|c|c|c|}
+\hline
+  & \mathbf{N_0 }& \mathbf{N_1 }& \mathbf{N_2} & \mathbf{N_3 }& \mathbf{N_4 }& \mathbf{N_5} \\ \hline
+  \mathbf{N_0 } &  & 5&  &  & &2 \\ \hline
+  \mathbf{N_1 } &  &  & 4 &  & &\\ \hline
+  \mathbf{N_2 } &  &  &  & 9 & &\\ \hline
+  \mathbf{N_3 } &  &  &  &  &7 &3\\ \hline
+  \mathbf{N_4 } &1 &  &  &  & &\\ \hline
+  \mathbf{N_5 } &  &  &1 &  & 8& \\ \hline
+\end{array}
+</script></p>
+<blockquote>
+<p><strong>Note</strong><br>
+These graphs are described as being “sparsely connected”. ie, there are relatively few edges between the nodes.</p>
+</blockquote>
+<p>A graph can be expressed in python as the following class:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">class</span> Node<span class="token punctuation">:</span>
+    <span class="token keyword">def</span> __init__<span class="token punctuation">(</span>self<span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>id <span class="token operator">=</span> key
+        self<span class="token punctuation">.</span>connectedTo <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">def</span> addNeighbour<span class="token punctuation">(</span>self<span class="token punctuation">,</span> nbr<span class="token punctuation">,</span> weight<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>connectedTo<span class="token punctuation">[</span>nbr<span class="token punctuation">]</span> <span class="token operator">=</span> weight
+    <span class="token keyword">def</span> __str__<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> str<span class="token punctuation">(</span>self<span class="token punctuation">.</span>id<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" connected to "</span> <span class="token operator">+</span> str<span class="token punctuation">(</span><span class="token punctuation">[</span>x<span class="token punctuation">.</span>id <span class="token keyword">for</span> x <span class="token keyword">in</span> self<span class="token punctuation">.</span>connectedTo<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">def</span> getConnections<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>connectedTo<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">def</span> getId<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>id
+    <span class="token keyword">def</span> getWeight<span class="token punctuation">(</span>self<span class="token punctuation">,</span> nbr<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>connectedTo<span class="token punctuation">[</span>nbr<span class="token punctuation">]</span>
+<span class="token keyword">class</span> Graph<span class="token punctuation">:</span>
+    <span class="token keyword">def</span> __init__<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>nodeList <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+        self<span class="token punctuation">.</span>numNodes <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">def</span> addNode<span class="token punctuation">(</span>self<span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>numNodes <span class="token operator">=</span> self<span class="token punctuation">.</span>numNodes <span class="token operator">+</span> <span class="token number">1</span>
+        newNode <span class="token operator">=</span> Node<span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>nodeList<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> newNode
+        <span class="token keyword">return</span> newNode
+    <span class="token keyword">def</span> getNode<span class="token punctuation">(</span>self<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> n <span class="token keyword">in</span> self<span class="token punctuation">.</span>nodeList<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> self<span class="token punctuation">.</span>nodeList<span class="token punctuation">[</span>n<span class="token punctuation">]</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> Node
+    <span class="token keyword">def</span> __contains__<span class="token punctuation">(</span>self<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> n <span class="token keyword">in</span> self<span class="token punctuation">.</span>nodeList
+    <span class="token keyword">def</span> addEdge<span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token number">f</span><span class="token punctuation">,</span> t<span class="token punctuation">,</span> cost<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token number">f</span> <span class="token operator">not</span> <span class="token keyword">in</span> self<span class="token punctuation">.</span>nodeList<span class="token punctuation">:</span>
+            nv <span class="token operator">=</span> self<span class="token punctuation">.</span>addNode<span class="token punctuation">(</span><span class="token number">f</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> t <span class="token operator">not</span> <span class="token keyword">in</span> self<span class="token punctuation">.</span>nodeList<span class="token punctuation">:</span>
+            nv <span class="token operator">=</span> self<span class="token punctuation">.</span>addNode<span class="token punctuation">(</span>t<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>nodeList<span class="token punctuation">[</span><span class="token number">f</span><span class="token punctuation">]</span><span class="token punctuation">.</span>addNeighbour<span class="token punctuation">(</span>self<span class="token punctuation">.</span>nodeList<span class="token punctuation">[</span>t<span class="token punctuation">]</span><span class="token punctuation">,</span> cost<span class="token punctuation">)</span>
+    <span class="token keyword">def</span> getNodes<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>nodeList<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">def</span> __iter__<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> iter<span class="token punctuation">(</span>self<span class="token punctuation">.</span>nodeList<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<h5 id="adjacency-list"><strong>Adjacency List</strong></h5>
+<p>In graph theory and computer science, an adjacency list is a collection of unordered lists used to represent a finite graph. Each list describes the set of neighbors of a vertex in the graph. This is one of several commonly used representations of graphs for use in computer programs.</p>
+<h5 id="trees"><strong>Trees</strong></h5>
+<p><img src="http://i.imgur.com/ifxkTZj.png" alt=""></p>
+<blockquote>
+<p><strong>Note 1</strong>: All children of one node are independant of the children of every other node.<br>
+<strong>Note 2</strong>:  Each leaf is and must be unique.</p>
+</blockquote>
+<p>An example of a tree is the windows file system:</p>
+<pre><code>├───Corel PHOTO-PAINT X5 Samples
+├───CorelDRAW X5 Samples
+└───VSTA
+    ├───Corel PHOTO-PAINT
+    │   ├───Addins
+    │   └───Templates
+    │       ├───ItemTemplates
+    │       │   ├───Visual Basic
+    │       │   └───Visual C#
+    │       └───ProjectTemplates
+    │           ├───Visual Basic
+    │           └───Visual C#
+    └───CorelDRAW
+        ├───Addins
+        └───Templates
+            ├───ItemTemplates
+            │   ├───Visual Basic
+            │   └───Visual C#
+            └───ProjectTemplates
+                ├───Visual Basic
+                └───Visual C#
+</code></pre>
+<p>Another example is the HTML Parse Tree:</p>
+<pre class=" language-html"><code class="prism  language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equir</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Content Type<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/html; charset<span class="token punctuation">=</span>utf8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>
+        Example page
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>An example web page<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Item one<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Item two<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.woodbridge.suffolk.sch.uk/<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>School<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>This HTML can be illustrated by the following tree:<br>
+<img src="http://i.imgur.com/7eiBbVk.png" alt=""></p>
+<h5 id="tree-terminology"><strong>Tree terminology</strong></h5>
+<p>Nodes and edges are the same as graphs.</p>
+<blockquote>
+<p><strong>Note</strong><br>
+Each node (except the root node) has one incoming node but one or more outgoing nodes.</p>
+</blockquote>
+<dl>
+<dt>Root</dt>
+<dd>The only node that has no incomming edges.</dd>
+<dt>Path</dt>
+<dd>An ordered list of nodes connected by edges.</dd>
+<dt>Children</dt>
+<dd>Set of nodes that have incoming edges <strong>from the same node</strong>.</dd>
+<dt>Parent</dt>
+<dd>A node is the parent of all nodes that connect to it’s outgoing edges.</dd>
+<dt>Sibling</dt>
+<dd>Child nodes of the same parent nodes are called siblings.</dd>
+<dt>Subtree</dt>
+<dd>A subtree is a set of nodes and edges comprised of of a parent and all the descendants of that parent.</dd>
+<dt>Leaf node</dt>
+<dd>A node with no children.</dd>
+<dt>Level</dt>
+<dd>The level of a node is how many edges it is away from the root node.</dd>
+<dt>Height</dt>
+<dd>The height of a tree is equal to the maximum level of any node in the tree.</dd>
+</dl>
+<h5 id="definition-of-a-tree"><strong>Definition of a tree</strong></h5>
+<p>A tree consists of a set of nodes and a set of edges that connect pairs of nodes. A tree has the folowng properties:</p>
+<ul>
+<li>One node of a tree is designated as the root node.</li>
+<li>every node n, except the root node is connected by an edge to exactly one other node, where that node is the parent node.</li>
+<li>A unique path traverses from each node ot teh root.</li>
+<li>If each node has a maximum of 2 children, the tree is binary.</li>
+</ul>
+<h5 id="expressing-a-tree-in-code"><strong>Expressing a tree in code</strong></h5>
+<p>Take the following tree:</p>
+<p><img src="http://i.imgur.com/CKp4sNn.png" alt=""></p>
+<p>You can express it using the following code</p>
+<pre class=" language-python"><code class="prism  language-python">myTree <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">'d'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">'e'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'f'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+</code></pre>
+<p>To use this method of defining trees, we can use the following code:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">def</span> binaryTree<span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>r<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token keyword">def</span> insertLeft<span class="token punctuation">(</span>root<span class="token punctuation">,</span> newBranch<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    t <span class="token operator">=</span> root<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> len<span class="token punctuation">(</span>t<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        root<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>newBranch<span class="token punctuation">,</span> t<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        root<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>newBranch<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> root
+<span class="token keyword">def</span> insertRight<span class="token punctuation">(</span>root<span class="token punctuation">,</span> newBranch<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    t <span class="token operator">=</span> root<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> len<span class="token punctuation">(</span>t<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        root<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>newBranch<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> t<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        root<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>newBranch<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> root
+<span class="token keyword">def</span> getRootVal<span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> root<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token keyword">def</span> setRootVal<span class="token punctuation">(</span>root<span class="token punctuation">,</span> newVal<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    root<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> newVal
+<span class="token keyword">def</span> getLeftChild<span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> root<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token keyword">def</span> getRightChild<span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> root<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+
+donald <span class="token operator">=</span> binaryTree<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+insertLeft<span class="token punctuation">(</span>donald<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+insertLeft<span class="token punctuation">(</span>donald<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+insertRight<span class="token punctuation">(</span>donald<span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span>
+insertRight<span class="token punctuation">(</span>donald<span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span>
+sarah <span class="token operator">=</span> getLeftChild<span class="token punctuation">(</span>donald<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>sarah<span class="token punctuation">)</span>
+setRootVal<span class="token punctuation">(</span>sarah<span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>donald<span class="token punctuation">)</span>
+insertLeft<span class="token punctuation">(</span>sarah<span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>donald<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>getRightChild<span class="token punctuation">(</span>getRightChild<span class="token punctuation">(</span>donald<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Another way of representing a tree is through object orientation:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">class</span> BinaryTree<span class="token punctuation">:</span>
+    <span class="token keyword">def</span> __init__<span class="token punctuation">(</span>self<span class="token punctuation">,</span> rootObj<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>key <span class="token operator">=</span> rootObj
+        self<span class="token punctuation">.</span>leftChild <span class="token operator">=</span> None
+        self<span class="token punctuation">.</span>rightChild <span class="token operator">=</span> None
+    <span class="token keyword">def</span> insertLeft<span class="token punctuation">(</span>self<span class="token punctuation">,</span> newNode<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>leftChild <span class="token operator">==</span> None<span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>leftChild <span class="token operator">=</span> BinaryTree<span class="token punctuation">(</span>newNode<span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            t <span class="token operator">=</span> BinaryTree<span class="token punctuation">(</span>newNode<span class="token punctuation">)</span>
+            t<span class="token punctuation">.</span>leftChild <span class="token operator">=</span> self<span class="token punctuation">.</span>leftChild
+            self<span class="token punctuation">.</span>leftChild <span class="token operator">=</span> t
+    <span class="token keyword">def</span> insertRight<span class="token punctuation">(</span>self<span class="token punctuation">,</span> newNode<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>rightChild <span class="token operator">==</span> None<span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>rightChild <span class="token operator">=</span> BinaryTree<span class="token punctuation">(</span>newNode<span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            t <span class="token operator">=</span> BinaryTree<span class="token punctuation">(</span>newNode<span class="token punctuation">)</span>
+            t<span class="token punctuation">.</span>rightChild <span class="token operator">=</span> self<span class="token punctuation">.</span>rightChild
+            self<span class="token punctuation">.</span>rightChild <span class="token operator">=</span> t
+    <span class="token keyword">def</span> getLeftChild<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>leftChild
+    <span class="token keyword">def</span> getRightChild<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>rightChild
+    <span class="token keyword">def</span> setRootValue<span class="token punctuation">(</span>self<span class="token punctuation">,</span> obj<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>key <span class="token operator">=</span> obj
+    <span class="token keyword">def</span> getRootValue<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>key
+    <span class="token keyword">def</span> __str__<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>key
+
+hilary <span class="token operator">=</span> BinaryTree<span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>hilary<span class="token punctuation">.</span>getRootValue<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>hilary<span class="token punctuation">.</span>getLeftChild<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+hilary<span class="token punctuation">.</span>insertLeft<span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>hilary<span class="token punctuation">.</span>getLeftChild<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>hilary<span class="token punctuation">.</span>getLeftChild<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>getRootValue<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+hilary<span class="token punctuation">.</span>insertRight<span class="token punctuation">(</span><span class="token string">"c"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>hilary<span class="token punctuation">.</span>getRightChild<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>hilary<span class="token punctuation">.</span>getRightChild<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>getRootValue<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+hilary<span class="token punctuation">.</span>getRightChild<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>setRootValue<span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>hilary<span class="token punctuation">.</span>getRightChild<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>getRootValue<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+</code></pre>
+<h5 id="parse-trees"><strong>Parse Trees</strong></h5>
+<p>Parse trees can be used to depict many data types and objects. An example is the following mathmatical expression:<br>
+<script type="math/tex; mode=display" id="MathJax-Element-454">(7+3)\times(5-2)</script></p>
+<p>It can be expresses as the following tree:<br>
+<img src="http://i.imgur.com/X0Kckqw.png" alt=""></p>
+<p>We need to:</p>
+<ol>
+<li>Generate a parse tree from an expression.</li>
+<li>Evaluate the expression using the parse tree.</li>
+<li>Use the parse tree to recreate the original expression.</li>
+</ol>
+<h5 id="creating-the-parse-tree"><strong>Creating the parse tree</strong></h5>
+<ol>
+<li>Tokenise the expression.</li>
+<li>If the token is <code>(</code> make a new node as the left child of the current node.  Decend to the left child.</li>
+<li>If the current token is in the list <code>["+", "-", "/", "*"]</code>, set the root value of the current node to the operator represented by the current token. Add a right child to the current node and descend to the right.</li>
+<li>If the current token is a number, set the root value of the current node to the number and return to the parent.</li>
+<li>If the token is <code>)</code> go to the parent of the current node.</li>
+</ol>
+<h4 id="string-operations"><strong>String Operations</strong></h4>
+<p>A string is a piece of text usually written using quotation marks. for example, <code>"Hello World"</code> is a string as well as <code>"322324"</code> and <code>"$%£%$£^£^%£$$%£"</code>. However, <code>11</code> or <code>True</code> aren’t strings.</p>
+<p>Strings are treated differently to numbers in programming languages. Take care not to use a string when you need to make calculations.<br>
+eg:</p>
+<pre><code>"6" * 4 → "6666"
+
+6 * 4 → 24
+</code></pre>
+<p>Strings can also be concatenated.<br>
+eg in Python:</p>
+<pre><code class="prism language-python3">&gt;&gt;&gt; a = "Hello"
+&gt;&gt;&gt; b = " world"
+&gt;&gt;&gt; c = a + b
+&gt;&gt;&gt; print(c)
+'Hello world'
+</code></pre>
+<p>as well as split up:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span> str <span class="token operator">=</span> <span class="token string">"HelloWorld"</span>
+<span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span> str<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token string">'Hel'</span>
+<span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span> str<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">]</span>
+<span class="token string">'ll'</span>
+<span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span> str<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+<span class="token string">'World'</span>
+<span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span> str<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+<span class="token string">'HelloWorld'</span>
+</code></pre>
+<h4 id="type-conversion"><strong>Type conversion</strong></h4>
+<p>Data is stored using a variety of data types:<br>
+eg:</p>
+<ul>
+<li>String</li>
+<li>Integer</li>
+<li>Real</li>
+<li>Char</li>
+<li>Boolean</li>
+<li>Enum</li>
+</ul>
+<p>An example of data conversion in python:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span> x <span class="token operator">=</span> <span class="token number">6</span>
+<span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span> y <span class="token operator">=</span> str<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span> y
+<span class="token string">'6'</span>
+<span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span> z <span class="token operator">=</span> int<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+<span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span> z
+<span class="token number">6</span>
+</code></pre>
+<p>In this example, <code>x</code> is declared as <code>6</code>. It is then converted to a string and stored as <code>y</code> which is then printed implicitly. It could be printed explicitly with a <code>print()</code> statement. It is then converted back to an integer and stored as <code>z</code> which is then printed implicitly.</p>
+<h4 id="algorithm-efficiency"><strong>Algorithm efficiency</strong></h4>
+<p>The topic of algorithms is a topic that is central to computer science. Measuring an algorithm’s efficiency is important because your choice of an algorithm for a given application often has a great impact. Word processors, ATMs, video games and life support systems all depend on efficient algorithms.</p>
+<p>Consider two searching algorithms. What does it mean to compare the algorithms and conclude that one is better than the other?</p>
+<p>The <strong>analysis of algorithms</strong> is the area of computer science that provides tools for contrasting the efficiency of different methods of solution. Notice the use of the term methods of solution rather than programs; it is important to emphasize that the analysis concerns itself primarily with significant differences in efficiency – differences that you can usually obtain only through superior methods of solution and rarely through clever tricks in coding.</p>
+<p>Although the efficient use of both time and space is important, inexpensive memory has reduced the significance of space efficiency. Thus, we will focus primarily on time efficiency. How do you compare the time efficiency of two algorithms that solve the same problem? One possible approach is to implement the two algorithms in C++ and run the programs. There are three difficulties with this approach:</p>
+<ol>
+<li>How are the algorithms coded? Does one algorithm run faster than another because of better programming? We should not compare implementations rather than the algorithms. Implementations are sensitive to factors such as programming style that cloud the issue.</li>
+<li>What computer should you use? The only fair way would be to use the same computer for both programs. But even then, the particular operations that one algorithm uses may be faster or slower than the other – and may be just the reverse on a different computer. In short, we should compare the efficiency of the algorithms independent of a particular computer.</li>
+<li>What data should the programs use? There is always a danger that we will select instances of the problem for which one of the algorithms runs uncharacteristically fast. For example, when comparing a sequential search and a binary search of a sorted array. If the test case happens to be that we are searching for an item that happens to be the smallest in the array, the sequential search will find the item more quickly than the binary search.</li>
+</ol>
+<p>To overcome these difficulties, computer scientists employ mathematical techniques that analyse algorithms independently of specific implementations, computers or data. You begin this analysis by counting the number of significant operations in a particular solution.</p>
+<p>As an example of calculating the time it takes to execute a piece of code, consider the nested for loops below:</p>
+<pre class=" language-js"><code class="prism  language-js"><span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> N<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span>j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> i<span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">)</span><span class="token punctuation">:</span>
+		<span class="token keyword">for</span> <span class="token punctuation">(</span>k <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> k <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> <span class="token operator">++</span>k<span class="token punctuation">)</span><span class="token punctuation">:</span>
+			Task T<span class="token punctuation">;</span>
+</code></pre>
+<p>If task <span class="MathJax_SVG" id="MathJax-Element-597-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>T</mi></math>" role="presentation" style="font-size: 100%; display: inline-block; position: relative;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.636ex" height="1.901ex" viewBox="0 -725.9 704.5 818.4" role="img" focusable="false" style="vertical-align: -0.215ex;" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-54" x="0" y="0"></use></g></svg><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi></math></span></span><script type="math/tex" id="MathJax-Element-597">T</script> requires <span class="MathJax_SVG" id="MathJax-Element-598-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>t</mi></math>" role="presentation" style="font-size: 100%; display: inline-block; position: relative;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="0.84ex" height="1.796ex" viewBox="0 -680.6 361.5 773.1" role="img" focusable="false" style="vertical-align: -0.215ex;" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-74" x="0" y="0"></use></g></svg><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>t</mi></math></span></span><script type="math/tex" id="MathJax-Element-598">t</script> time units, the innermost loop on <span class="MathJax_SVG" id="MathJax-Element-599-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>K</mi></math>" role="presentation" style="font-size: 100%; display: inline-block; position: relative;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.066ex" height="2.006ex" viewBox="0 -771.1 889.5 863.6" role="img" focusable="false" style="vertical-align: -0.215ex;" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-4B" x="0" y="0"></use></g></svg><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>K</mi></math></span></span><script type="math/tex" id="MathJax-Element-599">K</script> requires <span class="MathJax_SVG" id="MathJax-Element-600-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mn>5</mn><mi>t</mi></math>" role="presentation" style="font-size: 100%; display: inline-block; position: relative;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.002ex" height="1.901ex" viewBox="0 -725.9 862 818.4" role="img" focusable="false" style="vertical-align: -0.215ex;" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-35" x="0" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-74" x="500" y="0"></use></g></svg><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>5</mn><mi>t</mi></math></span></span><script type="math/tex" id="MathJax-Element-600">5t</script> time units. We will discuss how to calculate the total time, which is: <span class="MathJax_SVG" id="MathJax-Element-601-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mn>5</mn><mo>&amp;#x00D7;</mo><mi>t</mi><mo>&amp;#x00D7;</mo><mi>N</mi><mo>&amp;#x00D7;</mo><mo stretchy=&quot;false&quot;>(</mo><mi>N</mi><mo>+</mo><mn>1</mn><mo stretchy=&quot;false&quot;>)</mo><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>/</mo></mrow><mn>2</mn></math>" role="presentation" style="font-size: 100%; display: inline-block; position: relative;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="22.788ex" height="2.636ex" viewBox="0 -816.4 9811.3 1135.1" role="img" focusable="false" style="vertical-align: -0.74ex;" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-35" x="0" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-D7" x="722" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-74" x="1723" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-D7" x="2307" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-4E" x="3307" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-D7" x="4418" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-28" x="5419" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-4E" x="5808" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-2B" x="6919" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-31" x="7920" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-29" x="8420" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-2F" x="8810" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-32" x="9310" y="0"></use></g></svg><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>5</mn><mo>×</mo><mi>t</mi><mo>×</mo><mi>N</mi><mo>×</mo><mo stretchy="false">(</mo><mi>N</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mrow class="MJX-TeXAtom-ORD"><mo>/</mo></mrow><mn>2</mn></math></span></span><script type="math/tex" id="MathJax-Element-601">5\times t \times N\times (N+1)/2</script> time units.</p>
+<p>This example derives an algorithm’s time requirements as a function of problem size. The way to measure a problem’s size depends on the application. The searches we have discussed depend on the size of the array we are searching. The most important thing to learn is how quickly the algorithm’s time requirement grows as a function of the problem size. A statement such as:</p>
+<p>Algorithm <span class="MathJax_SVG" id="MathJax-Element-604-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>A</mi></math>" role="presentation" style="font-size: 100%; display: inline-block; position: relative;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.743ex" height="2.006ex" viewBox="0 -771.1 750.5 863.6" role="img" focusable="false" style="vertical-align: -0.215ex;" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-41" x="0" y="0"></use></g></svg><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>A</mi></math></span></span><script type="math/tex" id="MathJax-Element-604">A</script> requires time proportional to <span class="MathJax_SVG" id="MathJax-Element-605-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>f</mi><mo stretchy=&quot;false&quot;>(</mo><mi>N</mi><mo stretchy=&quot;false&quot;>)</mo></math>" role="presentation" style="font-size: 100%; display: inline-block; position: relative;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="5.152ex" height="2.636ex" viewBox="0 -816.4 2218 1135.1" role="img" focusable="false" style="vertical-align: -0.74ex;" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-66" x="0" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-28" x="550" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-4E" x="940" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-29" x="1828" y="0"></use></g></svg><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-605">f(N)</script></p>
+<p>enables you to compare algorithm <span class="MathJax_SVG" id="MathJax-Element-843-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>A</mi></math>" role="presentation" style="font-size: 100%; display: inline-block; position: relative;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.743ex" height="2.139ex" viewBox="0 -817.3 750.5 921.2" role="img" focusable="false" aria-hidden="true" style="vertical-align: -0.241ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-41" x="0" y="0"></use></g></svg><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>A</mi></math></span></span><script type="math/tex" id="MathJax-Element-843">A</script> with another algorithm <span class="MathJax_SVG" id="MathJax-Element-844-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>B</mi></math>" role="presentation" style="font-size: 100%; display: inline-block; position: relative;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.764ex" height="2.021ex" viewBox="0 -766.3 759.5 870.2" role="img" focusable="false" aria-hidden="true" style="vertical-align: -0.241ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-42" x="0" y="0"></use></g></svg><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>B</mi></math></span></span><script type="math/tex" id="MathJax-Element-844">B</script> which requires <span class="MathJax_SVG" id="MathJax-Element-845-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>g</mi><mo stretchy=&quot;false&quot;>(</mo><mi>N</mi><mo stretchy=&quot;false&quot;>)</mo></math>" role="presentation" style="font-size: 100%; display: inline-block; position: relative;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="4.989ex" height="2.613ex" viewBox="0 -817.3 2148 1125" role="img" focusable="false" aria-hidden="true" style="vertical-align: -0.715ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-67" x="0" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-28" x="480" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-4E" x="870" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-29" x="1758" y="0"></use></g></svg><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>g</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-845">g(N)</script> time units. Algorithm A is said to be order <span class="MathJax_SVG" id="MathJax-Element-846-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>f</mi><mo stretchy=&quot;false&quot;>(</mo><mi>N</mi><mo stretchy=&quot;false&quot;>)</mo></math>" role="presentation" style="font-size: 100%; display: inline-block; position: relative;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="5.152ex" height="2.613ex" viewBox="0 -817.3 2218 1125" role="img" focusable="false" aria-hidden="true" style="vertical-align: -0.715ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-66" x="0" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-28" x="550" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-4E" x="940" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-29" x="1828" y="0"></use></g></svg><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-846">f(N)</script>, which is denoted as <span class="MathJax_SVG" id="MathJax-Element-847-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>O</mi><mo stretchy=&quot;false&quot;>(</mo><mi>f</mi><mo stretchy=&quot;false&quot;>(</mo><mi>N</mi><mo stretchy=&quot;false&quot;>)</mo><mo stretchy=&quot;false&quot;>)</mo></math>" role="presentation" style="font-size: 100%; display: inline-block; position: relative;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="8.734ex" height="2.613ex" viewBox="0 -817.3 3760.5 1125" role="img" focusable="false" aria-hidden="true" style="vertical-align: -0.715ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-4F" x="0" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-28" x="763" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-66" x="1153" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-28" x="1703" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-4E" x="2093" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-29" x="2981" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-29" x="3371" y="0"></use></g></svg><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>O</mi><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-847">O(f(N))</script>; <span class="MathJax_SVG" id="MathJax-Element-848-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>f</mi><mo stretchy=&quot;false&quot;>(</mo><mi>N</mi><mo stretchy=&quot;false&quot;>)</mo></math>" role="presentation" style="font-size: 100%; display: inline-block; position: relative;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="5.152ex" height="2.613ex" viewBox="0 -817.3 2218 1125" role="img" focusable="false" aria-hidden="true" style="vertical-align: -0.715ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-66" x="0" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-28" x="550" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-4E" x="940" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-29" x="1828" y="0"></use></g></svg><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-848">f(N)</script> is called the algorithm’s growth rate function. Because the notation uses the capital letter <span class="MathJax_SVG" id="MathJax-Element-849-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>O</mi></math>" role="presentation" style="font-size: 100%; display: inline-block; position: relative;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.773ex" height="2.021ex" viewBox="0 -766.3 763.5 870.2" role="img" focusable="false" aria-hidden="true" style="vertical-align: -0.241ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-4F" x="0" y="0"></use></g></svg><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>O</mi></math></span></span><script type="math/tex" id="MathJax-Element-849">O</script> to denote order, it is called Big O notation. If a problem of size <span class="MathJax_SVG" id="MathJax-Element-850-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>N</mi></math>" role="presentation" style="font-size: 100%; display: inline-block; position: relative;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.064ex" height="2.021ex" viewBox="0 -766.3 888.5 870.2" role="img" focusable="false" aria-hidden="true" style="vertical-align: -0.241ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-4E" x="0" y="0"></use></g></svg><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>N</mi></math></span></span><script type="math/tex" id="MathJax-Element-850">N</script> requires time that is directly proportional to <span class="MathJax_SVG" id="MathJax-Element-851-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>N</mi></math>" role="presentation" style="font-size: 100%; display: inline-block; position: relative;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.064ex" height="2.021ex" viewBox="0 -766.3 888.5 870.2" role="img" focusable="false" aria-hidden="true" style="vertical-align: -0.241ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-4E" x="0" y="0"></use></g></svg><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>N</mi></math></span></span><script type="math/tex" id="MathJax-Element-851">N</script>, the problem is <span class="MathJax_SVG" id="MathJax-Element-852-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>O</mi><mo stretchy=&quot;false&quot;>(</mo><mi>N</mi><mo stretchy=&quot;false&quot;>)</mo></math>" role="presentation" style="font-size: 100%; display: inline-block; position: relative;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="5.646ex" height="2.613ex" viewBox="0 -817.3 2431 1125" role="img" focusable="false" aria-hidden="true" style="vertical-align: -0.715ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-4F" x="0" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-28" x="763" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-4E" x="1153" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-29" x="2041" y="0"></use></g></svg><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-852">O(N)</script> – that is, order <span class="MathJax_SVG" id="MathJax-Element-853-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>N</mi></math>" role="presentation" style="font-size: 100%; display: inline-block; position: relative;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.064ex" height="2.021ex" viewBox="0 -766.3 888.5 870.2" role="img" focusable="false" aria-hidden="true" style="vertical-align: -0.241ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-4E" x="0" y="0"></use></g></svg><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>N</mi></math></span></span><script type="math/tex" id="MathJax-Element-853">N</script>. If the time requirement is directly proportional to <span class="MathJax_SVG" id="MathJax-Element-854-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><msup><mi>N</mi><mn>2</mn></msup></math>" role="presentation" style="font-size: 100%; display: inline-block; position: relative;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="3.177ex" height="2.376ex" viewBox="0 -919.2 1368 1023.1" role="img" focusable="false" aria-hidden="true" style="vertical-align: -0.241ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-4E" x="0" y="0"></use><use transform="scale(0.707)" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-32" x="1292" y="513"></use></g></svg><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>N</mi><mn>2</mn></msup></math></span></span><script type="math/tex" id="MathJax-Element-854">N^2</script>, the problem is <span class="MathJax_SVG" id="MathJax-Element-855-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>O</mi><mo stretchy=&quot;false&quot;>(</mo><msup><mi>N</mi><mn>2</mn></msup><mo stretchy=&quot;false&quot;>)</mo></math>" role="presentation" style="font-size: 100%; display: inline-block; position: relative;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="6.76ex" height="2.85ex" viewBox="0 -919.2 2910.5 1226.9" role="img" focusable="false" aria-hidden="true" style="vertical-align: -0.715ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-4F" x="0" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-28" x="763" y="0"></use><g transform="translate(1153,0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMATHI-4E" x="0" y="0"></use><use transform="scale(0.707)" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-32" x="1292" y="513"></use></g><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJMAIN-29" x="2520" y="0"></use></g></svg><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>O</mi><mo stretchy="false">(</mo><msup><mi>N</mi><mn>2</mn></msup><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-855">O(N^2)</script>, and so on.</p>
+<h5 id="big-o-notation"><strong>Big O Notation</strong></h5>
+<p>Big-O notation is used to express the efficiency of algorithms. It is need because different computers may process the same algorithm at different speeds, making direct comparisons of running time difficult.<br>
+<strong>eg:</strong><br>
+It may take computer A 0.3 seconds to perform a linear search on 100000 items and computer B 0.1 seconds to do the same task. These times compare the speed of the computer and not the efficiency of the algorithm. Some examples of big-O notation are as follows:</p>
+<p>\(O(1)\to\) Pop from stack<br>
+\(O(n) \to\) Search an array<br>
+\(O(\log n) \to\) Skip List search<br>
+\(O(n^2) \to\) Bubble sort<br>
+\(O(2n) = O(n)\) as they are both linear<br>
+\(O(2^n) \to\) Recursive computation of Fibonacci numbers<br>
+\(O(2!) \to\) Generate all the permutations of a list</p>
+<dl>
+<dt>Linear search</dt>
+<dd><code>["Smith", "Jones",...,"Mallard", "Brown", "Green"]</code></dd>
+<dd>The list is searched from the left to the right and each item is examined until the item required is found.  In the best case, the item will be the first one examined, so using the best case to describe the efficiency of a linear search isn’t very helpful either. The sequence has \(n\) items so on average it will be found in \(^n/_2\) searches. In the worst case \(n\) items will be searched and so the time taken will be proportional to \(n\). This can be expressed as \(O(n)\).</dd>
+<dt>Binary search</dt>
+<dd>A binary search of the same list won’t be possible but if the list is sorted into order, binary search divides the list in half repeatedly until the item is found. This means that it is quicker than the linear algorithm with an efficiency of \(O(\log _2 n)\).</dd>
+</dl>
+<blockquote>
+<p><strong>Note</strong><br>
+In a binary search, it is much more efficient to use \(O(\log _2 n)\) than \(O(n)\) but the time taken to sort must be considered.</p>
+<p><strong>Another note</strong><br>
+in big-O notation, only the most significant term is important. For example, an algorithm that has a running time dependant on \(n^2 + n\) would be considered \(O(n^2)\). An algorithm that was dependant on \(n^2 +n!\) would usually be considered \(O(n!)\) unless \(n\) was very small.</p>
+</blockquote></div></body>
+</html>
