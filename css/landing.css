@@ -1,0 +1,16 @@
+html,
+body {
+    margin: 0;
+    height: 100%;
+}
+
+.band {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.first {
+    background: url(http://i.imgur.com/4HpyIUh.jpg) no-repeat center center fixed;
+}
