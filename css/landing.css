@@ -4,11 +4,11 @@
 }
 
 .mdl-card {
-    height: 537px;
+    height: 100%;
 }
 
 .mdl-card__supporting-text {
-    height: 100px;
+    height: 100%;
     overflow: visible;
 }
 
