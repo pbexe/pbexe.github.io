@@ -85,7 +85,7 @@ span.gha-time {
     width: calc(100%);
     padding: 10px;
     padding-bottom: 70px;
-    height: 67px;
+    height: 0px;
     border-bottom: 1px solid #ddd;
     background: #ffffff;
     /* Old browsers */
