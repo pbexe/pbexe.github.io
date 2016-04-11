@@ -134,6 +134,12 @@
             selector: '#feed',
             limit: 100
         });
+        $(document).ready(function () {
+            $(".set-height-btn").click(function () {
+                var newHeight = $(".input-height").val();
+                $(".box").height(newHeight);
+            });
+        });
     </script>
 </body>
 
