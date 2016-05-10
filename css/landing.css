@@ -46,3 +46,7 @@
 .layout-transparent {
     background: url('../images/back.jpg') center / cover;
 }
+
+.contacts {
+    list-style: none;
+}

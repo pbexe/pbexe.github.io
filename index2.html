@@ -33,10 +33,7 @@
         <div class="mdl-layout__drawer">
             <span class="mdl-layout-title">Miles Budden</span>
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="">Link</a>
-                <a class="mdl-navigation__link" href="">Link</a>
-                <a class="mdl-navigation__link" href="">Link</a>
-                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">I don't know what to put here but is could be usefull later...</a>
             </nav>
         </div>
         <main class="mdl-layout__content">
@@ -121,6 +118,31 @@
                     <div class="git mdl-card mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet mdl-shadow--2dp">
                         <div id="feed"></div>
                     </div>
+                    <div class="contact mdl-card mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet mdl-shadow--2dp">
+                        <div class="mdl-card__supporting-text">
+
+                            <ul class="contacts">
+                                <li>
+                                    <h4>Contact</h4></li>
+                                <li>
+                                    <i class="mdi mdi-email"></i> miles@budden.net
+                                </li>
+                                <li>
+                                    <i class="mdi mdi-twitter"></i> @milesbudden
+                                </li>
+                                <li>
+                                    <i class="mdi mdi-github-circle"></i> pbexe
+                                </li>
+                                <li>
+                                    <i class="mdi mdi-steam"></i> pbexe
+                                </li>
+                                <li>
+                                    <i class="mdi mdi-facebook"></i> miles.budden
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
 
                 </div>
 
@@ -131,22 +153,27 @@
 
         </main>
     </div>
-
+    <link rel="stylesheet" href="//cdn.materialdesignicons.com/1.4.57/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
     <link rel="stylesheet" href="css/github-activity.css">
+
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
     <script type="text/javascript" src="js/github-activity.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script defer src="//code.getmdl.io/1.1.3/material.min.js"></script>
     <script>
-        GitHubActivity.feed({
+        ! function (e, t, n, c, i, a, o) {
+            e.GoogleAnalyticsObject = i, e[i] = e[i] || function () {
+                (e[i].q = e[i].q || []).push(arguments)
+            }, e[i].l = 1 * new Date, a = t.createElement(n), o = t.getElementsByTagName(n)[0], a.async = 1, a.src = c, o.parentNode.insertBefore(a, o)
+        }(window, document, "script", "//www.google-analytics.com/analytics.js", "ga"), GitHubActivity.feed({
             username: "pbexe",
-            selector: '#feed',
-            limit: 100
-        });
-
-        $(document).ready(function () {
-            $(".git").css("height", $(".before").height());
+            selector: "#feed",
+            limit: 300
+        }), $(document).ready(function () {
+            console.log($(".before").height())
+            $(".git").css("height", $(".before").height())
+            $(".contact").css("height", $(".before").height())
         });
     </script>
 </body>
