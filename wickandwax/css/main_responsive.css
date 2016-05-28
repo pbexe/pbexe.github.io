@@ -407,6 +407,7 @@ header ul.social li a.gplus {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+    background-position: center;
 }
 
 .info_details {
