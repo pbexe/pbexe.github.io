@@ -1,19 +1,19 @@
+
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Notes</title>
-<link rel="stylesheet" href="http://app.classeur.io/base-min.css" />
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes</title>
+  <link rel="stylesheet" href="http://app.classeur.io/base-min.css" />
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
-<body><div class="export-container"><h1 id="computing-notes">Computing notes</h1>
-<blockquote>
+
+<body>
+  <div class="export-container"><h1 id="computing-notes">Computing notes</h1>
 <p><strong>Miles Budden</strong> W-APJ</p>
-</blockquote>
-<hr>
-<div class="toc"><ul><li><a href="#computing-notes">Computing notes</a><ul><li><a href="#numbers">Numbers</a><ul><li><a href="#number-systems">Number systems</a></li><li><a href="#number-types">Number types</a><ul><li><a href="#natural-numbers">Natural numbers</a></li><li><a href="#integer-numbers">Integer numbers</a></li><li><a href="#irrational-numbers">Irrational Numbers</a></li></ul></li><li><a href="#number-bases">Number bases</a><ul><li><a href="#counting-in-binary-decimal-and-hexadecimal">Counting in binary, decimal and hexadecimal</a></li><li><a href="#place-values">Place values</a></li><li><a href="#units-of-binary">Units of binary</a></li><li><a href="#multiples-of-bytes-and-bits">Multiples of bytes and bits</a></li><li><a href="#bytes-and-hexadecimal">Bytes and hexadecimal</a><ul><li><a href="#to-convert-hex-to-decimal">To convert hex to decimal</a></li></ul></li><li><a href="#number-conversion-exercises">Number conversion exercises</a></li><li><a href="#more-about-binary-numbers">More about binary numbers</a><ul><li><a href="#addition-of-unsigned-binary-integers">Addition of unsigned binary integers</a></li><li><a href="#multiplying-unsigned-binary-integers">Multiplying unsigned binary integers</a></li></ul></li><li><a href="#numbers-with-a-fractional-part">Numbers with a fractional part</a></li><li><a href="#floating-point-form">Floating point form</a><ul><li><a href="#floating-points-in-binary">Floating points in binary</a></li></ul></li><li><a href="#converting-from-unsigned-decimal-numbers-to-unsigned-binary">Converting from unsigned decimal numbers to unsigned binary</a></li><li><a href="#research-task">Research task</a></li></ul></li><li><a href="#information-coding-systems">Information coding systems</a></li><li><a href="#error-checking-and-correction">Error checking and correction</a></li><li><a href="#bit-mapped-graphics">Bit-mapped graphics</a></li></ul></li><li><a href="#pseudocode">Pseudocode</a><ul><li><a href="#variables-and-constants">Variables and CONSTANTS</a><ul><li><a href="#data-types.">Data types.</a></li><li><a href="#naming-conventions">Naming conventions</a></li></ul></li></ul></li><li><a href="#programming">Programming</a><ul><li><a href="#programming-basics">Programming basics</a><ul><li><a href="#sequence">Sequence</a></li><li><a href="#selection">Selection</a><ul><li><a href="#selection-using-case-not-available-in-python">Selection using case (not available in python)</a></li></ul></li><li><a href="#iteration">Iteration</a><ul><li><a href="#definite-loops">Definite loops</a></li><li><a href="#indefinite-loops">Indefinite loops</a></li></ul></li><li><a href="#procedure-vs-function">Procedure vs Function</a></li></ul></li><li><a href="#data-structures">Data structures</a><ul><li><a href="#abstract-data-structures">Abstract data structures</a><ul><li><a href="#stack">Stack</a></li><li><a href="#queues">Queues</a></li><li><a href="#linked-lists">Linked lists</a></li></ul></li></ul></li><li><a href="#basic-programming-operations">Basic Programming Operations</a><ul><li><a href="#arithmetical-operations">Arithmetical Operations</a></li><li><a href="#assignment-operators">Assignment Operators</a><ul><li><a href="#arithmetic-characters">Arithmetic characters</a></li></ul></li><li><a href="#relational-operators">Relational Operators</a></li><li><a href="#boolean-operators">Boolean Operators</a></li><li><a href="#graphs">Graphs</a><ul><li><a href="#describing-graphs">Describing graphs</a></li><li><a href="#paths-and-cycles">Paths and cycles</a></li><li><a href="#implementing-a-graph-as-an-abstract-data-type-or-structure">Implementing a Graph as an abstract data type (or structure)</a></li><li><a href="#adjacency-list">Adjacency List</a></li><li><a href="#trees">Trees</a></li><li><a href="#tree-terminology">Tree terminology</a></li><li><a href="#definition-of-a-tree">Definition of a tree</a></li><li><a href="#expressing-a-tree-in-code">Expressing a tree in code</a></li><li><a href="#parse-trees">Parse Trees</a></li><li><a href="#creating-the-parse-tree">Creating the parse tree</a></li></ul></li><li><a href="#string-operations">String Operations</a></li><li><a href="#type-conversion">Type conversion</a></li><li><a href="#algorithm-efficiency---big-o-notation">Algorithm efficiency - Big-O notation</a></li></ul></li></ul></li></ul></li></ul></div><hr>
-<h2 id="numbers">Numbers</h2>
+<div class="toc"><ul><li><a href="#computing-notes">Computing notes</a><ul><li><a href="#numbers">Numbers</a><ul><li><a href="#number-systems">Number systems</a></li><li><a href="#number-types">Number types</a><ul><li><a href="#natural-numbers">Natural numbers</a></li><li><a href="#integer-numbers">Integer numbers</a></li><li><a href="#rational-numbers">Rational Numbers</a></li><li><a href="#irrational-numbers">Irrational Numbers</a></li></ul></li><li><a href="#number-bases">Number bases</a><ul><li><a href="#counting-in-binary-decimal-and-hexadecimal">Counting in binary, decimal and hexadecimal</a></li><li><a href="#place-values">Place values</a></li><li><a href="#units-of-binary">Units of binary</a></li><li><a href="#multiples-of-bytes-and-bits">Multiples of bytes and bits</a></li><li><a href="#bytes-and-hexadecimal">Bytes and hexadecimal</a><ul><li><a href="#to-convert-hex-to-decimal">To convert hex to decimal</a></li></ul></li><li><a href="#number-conversion-exercises">Number conversion exercises</a></li><li><a href="#more-about-binary-numbers">More about binary numbers</a><ul><li><a href="#addition-of-unsigned-binary-integers">Addition of unsigned binary integers</a></li><li><a href="#multiplying-unsigned-binary-integers">Multiplying unsigned binary integers</a></li></ul></li><li><a href="#numbers-with-a-fractional-part">Numbers with a fractional part</a></li><li><a href="#floating-point-form">Floating point form</a><ul><li><a href="#floating-points-in-binary">Floating points in binary</a></li></ul></li><li><a href="#converting-from-unsigned-decimal-numbers-to-unsigned-binary">Converting from unsigned decimal numbers to unsigned binary</a></li><li><a href="#research-task">Research task</a></li></ul></li><li><a href="#information-coding-systems">Information coding systems</a></li><li><a href="#error-checking-and-correction">Error checking and correction</a></li><li><a href="#bit-mapped-graphics">Bit-mapped graphics</a></li></ul></li><li><a href="#programming">Programming</a><ul><li><a href="#programming-basics">Programming basics</a><ul><li><a href="#sequence">Sequence</a></li><li><a href="#selection">Selection</a><ul><li><a href="#selection-using-case-not-available-in-python">Selection using case (not available in python)</a></li></ul></li><li><a href="#iteration">Iteration</a><ul><li><a href="#definite-loops">Definite loops</a></li><li><a href="#indefinite-loops">Indefinite loops</a></li></ul></li><li><a href="#procedure-vs-function">Procedure vs Function</a></li></ul></li><li><a href="#pseudocode">Pseudocode</a><ul><li><a href="#variables-and-constants">Variables and CONSTANTS</a></li><li><a href="#data-types.">Data types.</a></li><li><a href="#naming-conventions">Naming conventions</a></li></ul></li><li><a href="#data-structures">Data structures</a><ul><li><a href="#abstract-data-structures">Abstract data structures</a><ul><li><a href="#stack">Stack</a></li><li><a href="#queues">Queues</a></li><li><a href="#linked-lists">Linked lists</a></li></ul></li></ul></li><li><a href="#basic-programming-operations">Basic Programming Operations</a><ul><li><a href="#arithmetical-operations">Arithmetical Operations</a></li><li><a href="#assignment-operators">Assignment Operators</a><ul><li><a href="#arithmetic-characters">Arithmetic characters</a></li></ul></li><li><a href="#relational-operators">Relational Operators</a></li><li><a href="#boolean-operators">Boolean Operators</a></li></ul></li><li><a href="#graphs">Graphs</a><ul><li><a href="#describing-graphs">Describing graphs</a></li><li><a href="#paths-and-cycles">Paths and cycles</a></li><li><a href="#implementing-a-graph-as-an-abstract-data-type-or-structure">Implementing a Graph as an abstract data type (or structure)</a></li><li><a href="#adjacency-list">Adjacency List</a></li><li><a href="#trees">Trees</a></li><li><a href="#tree-terminology">Tree terminology</a></li><li><a href="#definition-of-a-tree">Definition of a tree</a></li><li><a href="#expressing-a-tree-in-code">Expressing a tree in code</a></li><li><a href="#parse-trees">Parse Trees</a></li><li><a href="#creating-the-parse-tree">Creating the parse tree</a></li><li><a href="#binary-trees-and-pointers">Binary trees and pointers</a></li></ul></li><li><a href="#string-operations">String Operations</a></li><li><a href="#type-conversion">Type conversion</a><ul><li><a href="#algorithm-efficiency">Algorithm efficiency</a><ul><li><a href="#big-o-notation">Big O Notation</a></li></ul></li></ul></li></ul></li><li><a href="#data-representation">Data representation</a><ul><li><ul><li><a href="#vector-graphics">Vector graphics</a></li><li><a href="#representing-sound">Representing sound</a><ul><li><a href="#sampling">Sampling</a></li><li><a href="#midi">MIDI</a></li></ul></li><li><a href="#data-compression">Data Compression</a></li></ul></li><li><a href="#logic-gates">Logic Gates</a></li><li><a href="#logic-gates-1">Logic Gates</a><ul><li><a href="#boolean-variables">Boolean Variables</a></li><li><a href="#logical-or">Logical OR</a></li><li><a href="#logical-and">Logical AND</a></li><li><a href="#logical-not">Logical NOT</a></li><li><a href="#logical-nand">Logical NAND</a></li><li><a href="#logical-nor">Logical NOR</a></li><li><a href="#logical-xor">Logical XOR</a></li><li><a href="#drawing-logic-gates">Drawing Logic Gates</a></li><li><a href="#truth-table-of-logic-gate-circuits">Truth Table of Logic Gate Circuits</a></li><li><a href="#boolean-expression-equivalent-of-a-logic-gate-circuit">Boolean expression equivalent of a logic gate circuit</a></li><li><a href="#logic-gate-circuit-equivalent-of-a-given-boolean-expression">Logic gate circuit equivalent of a given Boolean expression</a></li><li><a href="#half-adder">Half adder</a></li><li><a href="#full-adder">Full adder</a></li><li><a href="#edge-triggered-d-type-flip-flop">Edge triggered D-type flip flop</a></li></ul></li><li><a href="#boolean-algebra">Boolean Algebra</a><ul><li><a href="#boolean-algebra-1">Boolean Algebra</a></li><li><a href="#boolean-identities">Boolean Identities</a></li><li><a href="#laws-of-boolean-algebra">Laws of Boolean Algebra</a><ul><li><a href="#commutative-law">Commutative Law</a></li><li><a href="#associative-law">Associative Law</a></li><li><a href="#distributive-law">Distributive Law</a></li></ul></li><li><a href="#de-morgans-laws">De Morgan's Laws</a></li><li><a href="#universality">Universality</a></li></ul></li></ul></li><li><a href="#computers">Computers</a><ul><li><a href="#simple-computer-concept">Simple Computer Concept</a></li><li><a href="#central-processing-unit-concepts">Central processing Unit Concepts</a><ul><li><a href="#addressable-memory">Addressable memory</a></li><li><a href="#bus">Bus</a></li><li><a href="#registers">Registers</a></li><li><a href="#io-controllers">I/O controllers</a></li><li><a href="#buffer">Buffer</a></li><li><a href="#computer-architecture---von-neumann-vs.-harvard">Computer architecture - von Neumann vs. Harvard</a></li><li><a href="#schematic-layout-of-the-cpu">Schematic layout of the CPU</a></li><li><a href="#fetch-execute-cycle">Fetch execute cycle</a></li><li><a href="#cpu-components">CPU Components</a></li></ul></li></ul></li></ul></li></ul></div><h2 id="numbers">Numbers</h2>
 <blockquote>
 <dl>
 <dt>Dictionary definition of a number:</dt>
@@ -23,7 +23,7 @@
 <h3 id="number-systems">Number systems</h3>
 <blockquote>
 <p>Binary examples<br>
-<script type="math/tex" id="MathJax-Element-982">1101_2</script><br>
+\(1101_2\)<br>
 The 2 stands for the number base. In this case binary.</p>
 </blockquote>
 <ul>
@@ -33,79 +33,79 @@ The 2 stands for the number base. In this case binary.</p>
 <li>
 <p>Base 10 (Decimal or denary)<br>
 Eg:<br>
-<script type="math/tex" id="MathJax-Element-983">62_{10} = \overset{10^1}{6}|\overset{10^0}{2}</script><br>
-<script type="math/tex" id="MathJax-Element-984">62_{10} = (6\times10) + (2\times1)</script></p>
+\(62_{10} = \overset{10^1}{6}|\overset{10^0}{2}\)<br>
+\(62_{10} = (6\times10) + (2\times1)\)</p>
 </li>
 <li>
 <p>Base 2 (binary)<br>
 Eg:<br>
-<script type="math/tex" id="MathJax-Element-985">1101_2 =\overset{2^3}{1}|\overset{2^2}{1}|\overset{2^1}{0}| \overset{2^0}{1}</script><br>
-<script type="math/tex" id="MathJax-Element-986">1101_2 = (1\times8) + (1\times4) + (0\times2) + (1\times1)</script></p>
+\(1101_2 =\overset{2^3}{1}|\overset{2^2}{1}|\overset{2^1}{0}| \overset{2^0}{1}\)<br>
+\(1101_2 = (1\times8) + (1\times4) + (0\times2) + (1\times1)\)</p>
 </li>
 <li>
 <p>Base 16 (Hexadecimal)<br>
 Eg:<br>
-<script type="math/tex" id="MathJax-Element-987">FF_{16} = \overset{16^1}{F}|\overset{16^0}{F}</script><br>
-<script type="math/tex" id="MathJax-Element-988">(15\times16) + (15\times1)</script></p>
+\(FF_{16} = \overset{16^1}{F}|\overset{16^0}{F}\)<br>
+\((15\times16) + (15\times1)\)</p>
 </li>
 </ul>
 <h3 id="number-types">Number types</h3>
 <h4 id="natural-numbers"><strong>Natural numbers</strong></h4>
 <p>Numbers that are used by people every day for counting and ordering:<br>
-<script type="math/tex" id="MathJax-Element-989">0,1,2,3,4,5,6,7,8,9</script><br>
+\(0,1,2,3,4,5,6,7,8,9\)<br>
 This is called <em>decimal</em> or <em>base-10</em>. With a single digit, the largest value that can be represented is <em>9</em>. To create large numbers we add a new digit to to the left to give the numbers 10…99 and so on.</p>
 <ul>
 <li>Each extra digit is worth ten times the previous digit.</li>
 <li>This idea is important because it applies to other number systems as well.</li>
 <li>We can use this number system to represent an infinite range on numbers.
 <ul>
-<li>The natural numbers range from <script type="math/tex" id="MathJax-Element-990">0 \to \infty</script></li>
+<li>The natural numbers range from \(0 \to \infty\)</li>
 </ul>
 </li>
 <li>The inclusion of zero is important in programming because arrays and looping structures usually start from 0.</li>
 </ul>
-<p>The set of natural numbers has the symbol <script type="math/tex" id="MathJax-Element-991">\mathbb{N}</script> so we can write:<br>
-<script type="math/tex; mode=display" id="MathJax-Element-992">\mathbb{N} = \{0,1,2,3,4,5,6,7,8,9,...\}</script></p>
+<p>The set of natural numbers has the symbol \(\mathbb{N}\) so we can write:<br>
+\[\mathbb{N} = \{0,1,2,3,4,5,6,7,8,9,...\}\]</p>
 <h4 id="integer-numbers"><strong>Integer numbers</strong></h4>
 <p>An integer is a whole number whose value can be either negative or positive. <em>0</em> is classed as an integer.<br>
 A whole number does not contain a fractional part (ie. No fractions or decimal points).</p>
 <ul>
-<li>Negative values are pre-seeded by a minus sign ("<script type="math/tex" id="MathJax-Element-993">-</script>"). <script type="math/tex; mode=display" id="MathJax-Element-994">
-(-3 + 3 = 0) \equiv (3 + (-3) = 0)</script></li>
+<li>Negative values are pre-seeded by a minus sign ("\(-\)"). \[
+(-3 + 3 = 0) \equiv (3 + (-3) = 0)\]</li>
 </ul>
 <blockquote>
 <p>The word <strong>Bit</strong> is a contraction of <b>Bi</b>nary dig<b>it</b></p>
 </blockquote>
 <p>Integers are a standard data type used in most programming languages. They are used for variables and constants.<br>
 For example in visual basic, an integer is stored in 4 bytes and can store values from -214748364<b>8</b> to 214748364<b>7</b>. The positive numbers are smaller because the range includes 0. Values out of this range are stored in a different data type called <em>Long</em> in visual basic.<br>
-The symbol for integers is <script type="math/tex" id="MathJax-Element-995">\mathbb{Z}</script> (Zahlen). So we can write:</p>
-<p><script type="math/tex; mode=display" id="MathJax-Element-996">\mathbb{Z} = \{\ldots,-2,-1,0,1,2,3,4,5,6,7,8,9,\ldots\}</script></p>
-<p>####<strong>Rational Numbers</strong><br>
-A rational number is one that can be expressed as a fraction. Fractions are made up from 2 integers, with the value being the ration between the 2 integers.<br>
+The symbol for integers is \(\mathbb{Z}\) (Zahlen). So we can write:</p>
+<p>\[\mathbb{Z} = \{\ldots,-2,-1,0,1,2,3,4,5,6,7,8,9,\ldots\}\]</p>
+<h4 id="rational-numbers"><strong>Rational Numbers</strong></h4>
+<p>A rational number is one that can be expressed as a fraction. Fractions are made up from 2 integers, with the value being the ration between the 2 integers.<br>
 Rational numbers can be represented by a fraction or the decimal equivalent.:</p>
-<p><script type="math/tex; mode=display" id="MathJax-Element-997">\frac{1}{2}\; or  \;0.5</script></p>
+<p>\[\frac{1}{2}\; or  \;0.5\]</p>
 <p>The top integer is called the <strong>numerator</strong> and the bottom integer is called the <strong>denominator</strong>. The number can be any integer - any whole number. The values of fractions can be positive or negative, and greater or less than 1 (or 0).</p>
-<p><script type="math/tex; mode=display" id="MathJax-Element-998">
+<p>\[
 \frac{5}{5}=1
-</script><br>
-<script type="math/tex; mode=display" id="MathJax-Element-999">
+\]<br>
+\[
 \frac{12}{12}= 1
-</script><br>
-<script type="math/tex; mode=display" id="MathJax-Element-1000">
+\]<br>
+\[
 \frac{12}{6}= 2
-</script></p>
+\]</p>
 <p>As these examples show, all integers can also be expressed as rational numbers. The denominator can have any value except 0. Dividing by 0 gives an indeterminate value and a divide by 0 gives a zero-error in most languages.<br>
-The symbol for the set of rational numbers is <script type="math/tex" id="MathJax-Element-1001">\mathbb{Q}</script>.</p>
+The symbol for the set of rational numbers is \(\mathbb{Q}\).</p>
 <h4 id="irrational-numbers"><strong>Irrational Numbers</strong></h4>
-<p>An irrational number is any number that cannot be represented as a ratio of integers because the decimal equivalent goes on forever without repeating. A classic example of an irrational number is <script type="math/tex" id="MathJax-Element-1002">\pi</script> (pi). The commonly used approximation for <script type="math/tex" id="MathJax-Element-1003">\pi</script> is <script type="math/tex" id="MathJax-Element-1004">^{22}\!/\!_7</script>. In decimal form the number has an infinite number of decimal places so it has to be truncated to a set of decimal places.</p>
-<p>Eg: <script type="math/tex" id="MathJax-Element-1005">3.14159265...</script> or <script type="math/tex" id="MathJax-Element-1006">3.141</script></p>
+<p>An irrational number is any number that cannot be represented as a ratio of integers because the decimal equivalent goes on forever without repeating. A classic example of an irrational number is \(\pi\) (pi). The commonly used approximation for \(\pi\) is \(^{22}\!/\!_7\). In decimal form the number has an infinite number of decimal places so it has to be truncated to a set of decimal places.</p>
+<p>Eg: \(3.14159265...\) or \(3.141\)</p>
 <p>More decimal places gives greater <strong>precision</strong>.</p>
-<p><script type="math/tex" id="MathJax-Element-1007">\sqrt{2} = 1.414</script> to 3 decimal places.</p>
+<p>\(\sqrt{2} = 1.414\) to 3 decimal places.</p>
 <blockquote>
 <p>NB:<br>
-<script type="math/tex" id="MathJax-Element-1008">1.414^2\neq2</script> so be careful when approximating.</p>
+\(1.414^2\neq2\) so be careful when approximating.</p>
 <p>Also,</p>
-<p><script type="math/tex" id="MathJax-Element-1009">^{1}\!/\!_3 = 0.3333\dot{3}</script> is <strong>NOT</strong> an irratioinal number because:</p>
+<p>\(^{1}\!/\!_3 = 0.3333\dot{3}\) is <strong>NOT</strong> an irratioinal number because:</p>
 <ol>
 <li>It is the ratio between 2 integers</li>
 <li>The digits of the decimal <strong>do</strong> repeat.</li>
@@ -158,8 +158,8 @@ Second column set to -  10
 <h4 id="units-of-binary"><strong>Units of binary</strong></h4>
 <p>1 <b>bi</b>nary digi<b>t</b> = 1 bit<br>
 8 bits = 1 byte<br>
-4 bits = 1 nybble <script type="math/tex" id="MathJax-Element-1010">\gets</script> Joke unit<br>
-2 bits = crumb <script type="math/tex" id="MathJax-Element-1011">\gets</script> Joke unit</p>
+4 bits = 1 nybble \(\gets\) Joke unit<br>
+2 bits = crumb \(\gets\) Joke unit</p>
 <h4 id="multiples-of-bytes-and-bits"><strong>Multiples of bytes and bits</strong></h4>
 <p>The unit multipliers of bits and bytes follow the S.I. convention:</p>
 <ul>
@@ -174,9 +174,9 @@ Second column set to -  10
 </ul>
 <p>These prefixes are in common use but are not the best units to use for binary data. Becuase of this, we have <strong>preferred units</strong>:</p>
 <ul>
-<li>(ki) Kibi = <script type="math/tex" id="MathJax-Element-1012">1024</script> = <script type="math/tex" id="MathJax-Element-1013">2^1</script></li>
-<li>(Mi) Mebi = <script type="math/tex" id="MathJax-Element-1014">1024^2</script> = <script type="math/tex" id="MathJax-Element-1015">2^{20}</script></li>
-<li>(Gi) Gibi = <script type="math/tex" id="MathJax-Element-1016">1024^3</script> = <script type="math/tex" id="MathJax-Element-1017">2^{30}</script></li>
+<li>(ki) Kibi = \(1024\) = \(2^1\)</li>
+<li>(Mi) Mebi = \(1024^2\) = \(2^{20}\)</li>
+<li>(Gi) Gibi = \(1024^3\) = \(2^{30}\)</li>
 </ul>
 <h4 id="bytes-and-hexadecimal"><strong>Bytes and hexadecimal</strong></h4>
 <p>1 byte is 2 nybbles.</p>
@@ -209,17 +209,17 @@ Second column set to -  10
 </table>
 <h5 id="to-convert-hex-to-decimal"><strong>To convert hex to decimal</strong></h5>
 <p><code>6f</code> to decimal<br>
-<script type="math/tex; mode=display" id="MathJax-Element-1018">
+\[
 6\times16^1+F\times16^0 = 6\times16+F\\
 6\times16 + 15 = 111_{10}
-</script></p>
+\]</p>
 <blockquote>
 <p><strong>Note:</strong><br>
 It is unlikely but <strong>possible</strong> that you might need to convert a multi-digit hex number to decimal.<br>
 eg:<br>
-<script type="math/tex; mode=display" id="MathJax-Element-1019">
+\[
 6\times16^2+F\times16^1+C\times16^0=1788_{10}
-</script></p>
+\]</p>
 </blockquote>
 <h4 id="number-conversion-exercises"><strong>Number conversion exercises</strong></h4>
 <table>
@@ -274,55 +274,55 @@ eg:<br>
 </tbody>
 </table>
 <h4 id="more-about-binary-numbers"><strong>More about binary numbers</strong></h4>
-<p>In <script type="math/tex" id="MathJax-Element-1020">1001 111</script>, the first <script type="math/tex" id="MathJax-Element-1021">1</script> is the most significant bit (<strong>MSB</strong>), and the last <script type="math/tex" id="MathJax-Element-1022">1</script> is the least significant bit (<strong>LSB</strong>). This example is also an unsigned binary integer. This means that the kind of number this is is never specified.</p>
+<p>In \(1001 111\), the first \(1\) is the most significant bit (<strong>MSB</strong>), and the last \(1\) is the least significant bit (<strong>LSB</strong>). This example is also an unsigned binary integer. This means that the kind of number this is is never specified.</p>
 <blockquote>
 <p><strong>Note</strong><br>
 The type of binary number needs to be specified if you are using anything other than an unsigned binary integer, because pure binary numbers are ambiguous.</p>
 </blockquote>
 <h5 id="addition-of-unsigned-binary-integers"><strong>Addition of unsigned binary integers</strong></h5>
-<p><script type="math/tex; mode=display" id="MathJax-Element-1023">
+<p>\[
 \begin{align}
-&01101010& \\
-&\underline{00101001}+&\\
-&\underline{10010011}&\\
-&^{1\,1\,\;\,1}&
+&amp;01101010&amp; \\
+&amp;\underline{00101001}+&amp;\\
+&amp;\underline{10010011}&amp;\\
+&amp;^{1\,1\,\;\,1}&amp;
 \end{align}
-</script></p>
+\]</p>
 <blockquote>
 <p><strong>Overflow</strong><br>
 If 2 numbers are added together and the sum is bigger than the spaaaaaace allocated, an overflow will occur.</p>
 </blockquote>
 <h5 id="multiplying-unsigned-binary-integers"><strong>Multiplying unsigned binary integers</strong></h5>
 <p>eg:</p>
-<p><script type="math/tex; mode=display" id="MathJax-Element-1024">
+<p>\[
 10111\\
 \; \;\;\;\;\;\;\;\;\;11  \times \\
 \overline{101110  }\;\;\\
 \,\underline{10111} \\
 1000101\;\;\;
-</script></p>
+\]</p>
 <h4 id="numbers-with-a-fractional-part"><strong>Numbers with a fractional part</strong></h4>
-<p>Often, calculations produce numbers that have fractional parts, such as <script type="math/tex" id="MathJax-Element-1025">5\div3</script>. The decimal system is very similar to the binary system.:<br>
+<p>Often, calculations produce numbers that have fractional parts, such as \(5\div3\). The decimal system is very similar to the binary system.:<br>
 Decimal:</p>
 <table>
 <thead>
 <tr>
-<th><script type="math/tex" id="MathJax-Element-1026">100</script></th>
-<th><script type="math/tex" id="MathJax-Element-1027">10</script></th>
-<th><script type="math/tex" id="MathJax-Element-1028">1</script></th>
-<th><script type="math/tex" id="MathJax-Element-1029">.</script></th>
-<th><script type="math/tex" id="MathJax-Element-1030">\frac{1}{10}</script></th>
-<th><script type="math/tex" id="MathJax-Element-1031">\frac{1}{100}</script></th>
+<th>\(100\)</th>
+<th>\(10\)</th>
+<th>\(1\)</th>
+<th>\(.\)</th>
+<th>\(\frac{1}{10}\)</th>
+<th>\(\frac{1}{100}\)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><script type="math/tex" id="MathJax-Element-1032">2</script></td>
-<td><script type="math/tex" id="MathJax-Element-1033">5</script></td>
-<td><script type="math/tex" id="MathJax-Element-1034">6</script></td>
-<td><script type="math/tex" id="MathJax-Element-1035">.</script></td>
-<td><script type="math/tex" id="MathJax-Element-1036">7</script></td>
-<td><script type="math/tex" id="MathJax-Element-1037">1</script></td>
+<td>\(2\)</td>
+<td>\(5\)</td>
+<td>\(6\)</td>
+<td>\(.\)</td>
+<td>\(7\)</td>
+<td>\(1\)</td>
 </tr>
 </tbody>
 </table>
@@ -330,111 +330,111 @@ Decimal:</p>
 <table>
 <thead>
 <tr>
-<th><script type="math/tex" id="MathJax-Element-1038">16</script></th>
-<th><script type="math/tex" id="MathJax-Element-1039">8</script></th>
-<th><script type="math/tex" id="MathJax-Element-1040">4</script></th>
-<th><script type="math/tex" id="MathJax-Element-1041">2</script></th>
-<th><script type="math/tex" id="MathJax-Element-1042">1</script></th>
-<th><script type="math/tex" id="MathJax-Element-1043">.</script></th>
-<th><script type="math/tex" id="MathJax-Element-1044">\frac{1}{2}</script></th>
-<th><script type="math/tex" id="MathJax-Element-1045">\frac{1}{4}</script></th>
-<th><script type="math/tex" id="MathJax-Element-1046">\frac{1}{8}</script></th>
+<th>\(16\)</th>
+<th>\(8\)</th>
+<th>\(4\)</th>
+<th>\(2\)</th>
+<th>\(1\)</th>
+<th>\(.\)</th>
+<th>\(\frac{1}{2}\)</th>
+<th>\(\frac{1}{4}\)</th>
+<th>\(\frac{1}{8}\)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><script type="math/tex" id="MathJax-Element-1047">1</script></td>
-<td><script type="math/tex" id="MathJax-Element-1048">1</script></td>
-<td><script type="math/tex" id="MathJax-Element-1049">0</script></td>
-<td><script type="math/tex" id="MathJax-Element-1050">1</script></td>
-<td><script type="math/tex" id="MathJax-Element-1051">0</script></td>
-<td><script type="math/tex" id="MathJax-Element-1052">.</script></td>
-<td><script type="math/tex" id="MathJax-Element-1053">1</script></td>
-<td><script type="math/tex" id="MathJax-Element-1054">0</script></td>
-<td><script type="math/tex" id="MathJax-Element-1055">1</script></td>
+<td>\(1\)</td>
+<td>\(1\)</td>
+<td>\(0\)</td>
+<td>\(1\)</td>
+<td>\(0\)</td>
+<td>\(.\)</td>
+<td>\(1\)</td>
+<td>\(0\)</td>
+<td>\(1\)</td>
 </tr>
 </tbody>
 </table>
 <blockquote>
 <p><strong>Note</strong><br>
-In the binary example, it was assumed that the 3 LSBs were the fractional part becuase in binary, there is no symbol for "<script type="math/tex" id="MathJax-Element-1056">.</script>" and so the position of the "<script type="math/tex" id="MathJax-Element-1057">.</script>" must be assumed. This assumption is known as <strong>fixed point coding</strong>.</p>
+In the binary example, it was assumed that the 3 LSBs were the fractional part becuase in binary, there is no symbol for “\(.\)” and so the position of the “\(.\)” must be assumed. This assumption is known as <strong>fixed point coding</strong>.</p>
 </blockquote>
 <p>We can also use 2’s compliment with this fixed point coding.<br>
 eg:</p>
 <table>
 <thead>
 <tr>
-<th><script type="math/tex" id="MathJax-Element-1058">-16</script></th>
-<th><script type="math/tex" id="MathJax-Element-1059">8</script></th>
-<th><script type="math/tex" id="MathJax-Element-1060">4</script></th>
-<th><script type="math/tex" id="MathJax-Element-1061">2</script></th>
-<th><script type="math/tex" id="MathJax-Element-1062">1</script></th>
-<th><script type="math/tex" id="MathJax-Element-1063">.</script></th>
-<th><script type="math/tex" id="MathJax-Element-1064">\frac{1}{2}</script></th>
-<th><script type="math/tex" id="MathJax-Element-1065">\frac{1}{4}</script></th>
-<th><script type="math/tex" id="MathJax-Element-1066">\frac{1}{8}</script></th>
+<th>\(-16\)</th>
+<th>\(8\)</th>
+<th>\(4\)</th>
+<th>\(2\)</th>
+<th>\(1\)</th>
+<th>\(.\)</th>
+<th>\(\frac{1}{2}\)</th>
+<th>\(\frac{1}{4}\)</th>
+<th>\(\frac{1}{8}\)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><script type="math/tex" id="MathJax-Element-1067">1</script></td>
-<td><script type="math/tex" id="MathJax-Element-1068">1</script></td>
-<td><script type="math/tex" id="MathJax-Element-1069">0</script></td>
-<td><script type="math/tex" id="MathJax-Element-1070">1</script></td>
-<td><script type="math/tex" id="MathJax-Element-1071">0</script></td>
-<td><script type="math/tex" id="MathJax-Element-1072">.</script></td>
-<td><script type="math/tex" id="MathJax-Element-1073">1</script></td>
-<td><script type="math/tex" id="MathJax-Element-1074">0</script></td>
-<td><script type="math/tex" id="MathJax-Element-1075">1</script></td>
+<td>\(1\)</td>
+<td>\(1\)</td>
+<td>\(0\)</td>
+<td>\(1\)</td>
+<td>\(0\)</td>
+<td>\(.\)</td>
+<td>\(1\)</td>
+<td>\(0\)</td>
+<td>\(1\)</td>
 </tr>
 </tbody>
 </table>
 <h4 id="floating-point-form"><strong>Floating point form</strong></h4>
 <p>Often, scientific notation is used to write numbers. for example:<br>
-<script type="math/tex; mode=display" id="MathJax-Element-1076">
+\[
 A\times10^8
-</script></p>
-<p>A similar notation is used when 2’s compliment is used to to represent signed numbers that range from small to large:  M<script type="math/tex" id="MathJax-Element-1077">\times</script>Base<script type="math/tex" id="MathJax-Element-1078">^E</script></p>
+\]</p>
+<p>A similar notation is used when 2’s compliment is used to to represent signed numbers that range from small to large:  M\(\times\)Base\(^E\)</p>
 <h5 id="floating-points-in-binary"><strong>Floating points in binary</strong></h5>
 <p>Floating point gets around the limitations of fixed point by using a format similar to scientific notation. eg:<br>
-<script type="math/tex; mode=display" id="MathJax-Element-1079">
+\[
 3.141\times10^3
-</script></p>
-<p>The "<script type="math/tex" id="MathJax-Element-1080">3.141</script>" is known as the <em>Mantissa</em> and the "<script type="math/tex" id="MathJax-Element-1081">\times10^3</script>" is known as the exponent. So say there was a 32 bit system, the mantissa would be 24 bits and the exponent would be 8 bits.</p>
+\]</p>
+<p>The “\(3.141\)” is known as the <em>Mantissa</em> and the “\(\times10^3\)” is known as the exponent. So say there was a 32 bit system, the mantissa would be 24 bits and the exponent would be 8 bits.</p>
 <blockquote>
 <p><strong>Recap of 2’s compliment</strong><br>
 If it is positive, convert to binary normally.<br>
 If it is negative, convert to binary, invert the bits and add 1.</p>
 </blockquote>
-<p><script type="math/tex; mode=display" id="MathJax-Element-1082">
+<p>\[
 \overset{\mathsf{Mantissa}}{\overset{-2^{0}}{0}\ \overset{•}{}\ \overset{2^{-1}}{1}\ \overset{2^{-2}}{1}\ \overset{2^{-3}}{0}\ \overset{2^{-4}}{1}\ \overset{2^{-5}}{0}}\ \ \ \ \ \ \ \ \overset{\mathsf{Exponent}}{\overset{-2^3}{0}\ \overset{2^2}{1}\ \overset{2^1}{0}\ \overset{2^0}{1}}
-</script><br>
-This can be written as <script type="math/tex" id="MathJax-Element-1083">0.11010\times10^{0101}</script>.<br>
-The exponent evaluates to <script type="math/tex" id="MathJax-Element-1084">+5_{10}</script><br>
+\]<br>
+This can be written as \(0.11010\times10^{0101}\).<br>
+The exponent evaluates to \(+5_{10}\)<br>
 This means that the binary point is moved 5 places to the right:<br>
-<script type="math/tex; mode=display" id="MathJax-Element-1085">
+\[
 0.\overset{↷}{1}\overset{↷}{1}\overset{↷}{0}\overset{↷}{1}\overset{↷}{0}_2 = 011010.0_2 \mathsf{\ or\ just\ }011010_2
-</script><br>
-Which evaluates to <script type="math/tex" id="MathJax-Element-1086">16 + 8 + 2 = 26_{10}</script></p>
+\]<br>
+Which evaluates to \(16 + 8 + 2 = 26_{10}\)</p>
 <p>It is also easy to convert back:<br>
-You simply convert the decimal number to binary. You then work out how many places you need to move the binary point to move it to before the MSB. The "<script type="math/tex" id="MathJax-Element-1087">.</script>" is implied after the MSB.</p>
+You simply convert the decimal number to binary. You then work out how many places you need to move the binary point to move it to before the MSB. The “\(.\)” is implied after the MSB.</p>
 <p>Negative mantissas can also be used:<br>
-<script type="math/tex; mode=display" id="MathJax-Element-1088">
+\[
 \overset{\mathsf{Mantissa}}{\overset{-2^{0}}{1}\ \overset{2^{-1}}{1}\ \overset{2^{-2}}{0}\ \overset{2^{-3}}{0}\ \overset{2^{-4}}{1}\ \overset{2^{-5}}{1}}\ \ \ \ \ \ \ \ \overset{\mathsf{Exponent}}{\overset{-2^3}{0}\ \overset{2^2}{0}\ \overset{2^1}{1}\ \overset{2^0}{1}}
-</script><br>
+\]<br>
 So the point is implied after the MSB:<br>
-<script type="math/tex; mode=display" id="MathJax-Element-1089">
+\[
 \overset{\mathsf{Mantissa}}{\overset{-2^{0}}{1}\ \overset{•}{}\ \overset{2^{-1}}{1}\ \overset{2^{-2}}{0}\ \overset{2^{-3}}{0}\ \overset{2^{-4}}{1}\ \overset{2^{-5}}{1}}\ \ \ \ \ \ \ \ \overset{\mathsf{Exponent}}{\overset{-2^3}{0}\ \overset{2^2}{0}\ \overset{2^1}{1}\ \overset{2^0}{1}}
-</script><br>
-The exponent moves the binary point <script type="math/tex" id="MathJax-Element-1090">11_2</script> or <script type="math/tex" id="MathJax-Element-1091">3_{10}</script> positions to the right:<br>
-<script type="math/tex; mode=display" id="MathJax-Element-1092">
+\]<br>
+The exponent moves the binary point \(11_2\) or \(3_{10}\) positions to the right:<br>
+\[
 \overset{\mathsf{Mantissa}}{\overset{-2^{3}}{1}\ \overset{2^{2}}{1}\ \overset{2^{1}}{0}\ \overset{2^{0}}{0}\ \overset{•}{}\ \overset{2^{-1}}{1}\ \overset{2^{-2}}{1}}\ \ \ \ \ \ \ \ \overset{\mathsf{Exponent}}{\overset{-2^3}{0}\ \overset{2^2}{0}\ \overset{2^1}{1}\ \overset{2^0}{1}}
-</script><br>
-Which equates to <script type="math/tex" id="MathJax-Element-1093">1100.11_2</script> or <script type="math/tex" id="MathJax-Element-1094">-3.25_{10}</script></p>
+\]<br>
+Which equates to \(1100.11_2\) or \(-3.25_{10}\)</p>
 <h4 id="converting-from-unsigned-decimal-numbers-to-unsigned-binary">Converting from unsigned decimal numbers to unsigned binary</h4>
-<p>With integers this is easy:<script type="math/tex; mode=display" id="MathJax-Element-1095">15_{10} \to 1111_2</script>And with some decimal:<br>
-<script type="math/tex; mode=display" id="MathJax-Element-1096">15.625_{10} \to 1111.101_2\ \ \ =\ \ \ .\overset{0.5}{1}\ \overset{0.25}{0}\ \overset{0.125}{0}</script>But with others:<br>
-<script type="math/tex; mode=display" id="MathJax-Element-1097">15.6_{10} \to 1111.1010\dots_2</script>Which has to be rounded and when converted back <script type="math/tex" id="MathJax-Element-1098">\neq15.6</script>.</p>
+<p>With integers this is easy:\[15_{10} \to 1111_2\]And with some decimal:<br>
+\[15.625_{10} \to 1111.101_2\ \ \ =\ \ \ .\overset{0.5}{1}\ \overset{0.25}{0}\ \overset{0.125}{0}\]But with others:<br>
+\[15.6_{10} \to 1111.1010\dots_2\]Which has to be rounded and when converted back \(\neq15.6\).</p>
 <blockquote>
 <p><strong>Note</strong><br>
 Converting decimal numbers to fixed point unsigned binary introduces errors.</p>
@@ -474,17 +474,17 @@ Converting decimal numbers to fixed point unsigned binary introduces errors.</p>
 <h3 id="error-checking-and-correction">Error checking and correction</h3>
 <dl>
 <dt>Parity Check:</dt>
-<dd>Data encoded in binary can be sent electronically. The quality of the electronic communication may not be perfect so there may be errors when the data is received. For example the letter “A” in ASCII is <script type="math/tex" id="MathJax-Element-1099">1000001_2</script>. An error may cause the data received to get corrupted to <script type="math/tex" id="MathJax-Element-1100">1100001_2</script> which has as different meaning (<script type="math/tex" id="MathJax-Element-1101">1100001_2</script> means “b”).<br><br><br>
+<dd>Data encoded in binary can be sent electronically. The quality of the electronic communication may not be perfect so there may be errors when the data is received. For example the letter “A” in ASCII is \(1000001_2\). An error may cause the data received to get corrupted to \(1100001_2\) which has as different meaning (\(1100001_2\) means “b”).<br><br><br>
 To help find errors in transmission, messages can be encoded using more bits and then using the extra bits to store values that allow parity checks to be carried out:<br>
-We decide whether we are going to use <strong>even parity</strong> or <strong>odd parity</strong>. Even parity means using a value for the parity bit that makes the total number of ones in the byte even. eg <script type="math/tex" id="MathJax-Element-1102">01000001_2</script> and <script type="math/tex" id="MathJax-Element-1103">11000011_2</script><br>
-If an error occurs and any one of the bits gets swapped, even parity will be broken and the recipient will know that the value is incorrect. eg <script type="math/tex" id="MathJax-Element-1104">11100011_2</script><br>
+We decide whether we are going to use <strong>even parity</strong> or <strong>odd parity</strong>. Even parity means using a value for the parity bit that makes the total number of ones in the byte even. eg \(01000001_2\) and \(11000011_2\)<br>
+If an error occurs and any one of the bits gets swapped, even parity will be broken and the recipient will know that the value is incorrect. eg \(11100011_2\)<br>
 Parity checks do <strong>not</strong> provide a means to correct errors but do highlight an error.<br>
-A parity check will only detect one error, not two. ie odd number of errors. eg <script type="math/tex" id="MathJax-Element-1105">11\color{red}{1}0\color{red}{1}011</script> where the red numbers that are incorrect are red. There is even parity but the number is wrong.</dd>
+A parity check will only detect one error, not two. ie odd number of errors. eg \(11\color{red}{1}0\color{red}{1}011\) where the red numbers that are incorrect are red. There is even parity but the number is wrong.</dd>
 <dt>Majority voting</dt>
 <dd>One other way to detect and correct errors in a transmission is to send a message 3 or more times:<br>
-<script type="math/tex" id="MathJax-Element-1106">\overset{\color{orange}{\downarrow}}{1}\overset{\color{red}{\downarrow}}{1}\overset{\color{purple}{\downarrow}}{1}\ \overset{\color{orange}{\downarrow}}{0}\overset{\color{red}{\downarrow}}{0}\overset{\color{purple}{\downarrow}}{0}\ \overset{\color{orange}{\downarrow}}{0}\overset{\color{red}{\downarrow}}{0}\overset{\color{purple}{\downarrow}}{0}\ \overset{\color{orange}{\downarrow}}{1}\overset{\color{red}{\downarrow}}{1}\overset{\color{purple}{\downarrow}}{1}</script><br>
+\(\overset{\color{orange}{\downarrow}}{1}\overset{\color{red}{\downarrow}}{1}\overset{\color{purple}{\downarrow}}{1}\ \overset{\color{orange}{\downarrow}}{0}\overset{\color{red}{\downarrow}}{0}\overset{\color{purple}{\downarrow}}{0}\ \overset{\color{orange}{\downarrow}}{0}\overset{\color{red}{\downarrow}}{0}\overset{\color{purple}{\downarrow}}{0}\ \overset{\color{orange}{\downarrow}}{1}\overset{\color{red}{\downarrow}}{1}\overset{\color{purple}{\downarrow}}{1}\)<br>
 where each colour arrow shows a different message. If an error occurs it looks like this:<br>
-<script type="math/tex" id="MathJax-Element-1107">\overset{\color{orange}{\downarrow}}{1}\overset{\color{red}{\downarrow}}{1}\overset{\color{purple}{\downarrow}}{1}\ \overset{\color{orange}{\downarrow}}{0}\overset{\color{red}{\downarrow}}{1}\overset{\color{purple}{\downarrow}}{0}\ \overset{\color{orange}{\downarrow}}{0}\overset{\color{red}{\downarrow}}{0}\overset{\color{purple}{\downarrow}}{0}\ \overset{\color{orange}{\downarrow}}{1}\overset{\color{red}{\downarrow}}{1}\overset{\color{purple}{\downarrow}}{1}</script><br>
+\(\overset{\color{orange}{\downarrow}}{1}\overset{\color{red}{\downarrow}}{1}\overset{\color{purple}{\downarrow}}{1}\ \overset{\color{orange}{\downarrow}}{0}\overset{\color{red}{\downarrow}}{1}\overset{\color{purple}{\downarrow}}{0}\ \overset{\color{orange}{\downarrow}}{0}\overset{\color{red}{\downarrow}}{0}\overset{\color{purple}{\downarrow}}{0}\ \overset{\color{orange}{\downarrow}}{1}\overset{\color{red}{\downarrow}}{1}\overset{\color{purple}{\downarrow}}{1}\)<br>
 The error has only occurred in copy 2 so copies 1 and 3 are can be assumed to be correct as they are in the majority.<br>
 Broken down into individual steps:
 <ol>
@@ -505,122 +505,15 @@ Grey scale</dd>
 <dd>Uses 8 bits to give 256 colours of grey, from black (0) to white (255)</dd>
 <dt>Colour</dt>
 <dd>Normally uses 24 bits to represent levels of red, green and blue:<br>
-<script type="math/tex; mode=display" id="MathJax-Element-1108">\color{red}{\overset{11111111}{\mathsf{Red}}}\ \ \color{green}{\overset{11111111}{\mathsf{Green}}}\ \ \color{Blue}{\overset{11111111}{\mathsf{Blue}}}</script><br>
+\[\color{red}{\overset{11111111}{\mathsf{Red}}}\ \ \color{green}{\overset{11111111}{\mathsf{Green}}}\ \ \color{Blue}{\overset{11111111}{\mathsf{Blue}}}\]<br>
 These values are often rtepresented as decimal or hex values such as <code>255,0,255</code> or <code>#FF00FF</code>.<br>
-24 bit colour allows for up to <script type="math/tex" id="MathJax-Element-1109">256\times256\times256</script>. ie <script type="math/tex" id="MathJax-Element-1110">16,777,216</script> different colours.<br>
+24 bit colour allows for up to \(256\times256\times256\). ie \(16,777,216\) different colours.<br>
 The number of bits used to represent colours in bit maps are called the <strong>bit depth</strong>.</dd>
 </dl>
 <blockquote>
 <p><strong>Note about printing</strong><br>
 Computer displays use (effectively) coloured lights to produce an image. 24-bit colour displays use RGB to represent as many colours as possible. Printers usually use 4 colours: Cyan, Magenta, Yellow and black. Accurate conversion from RGB to CMYK is difficult to achieve</p>
 </blockquote>
-<h2 id="pseudocode">Pseudocode</h2>
-<p>Variables: Storage for data.</p>
-<dl>
-<dt>eg:</dt>
-<dd>Number</dd>
-<dd>Name</dd>
-<dd>Colours</dd>
-</dl>
-<p>Values are assigned to variables.</p>
-<dl>
-<dt>eg:</dt>
-<dd>Number <script type="math/tex" id="MathJax-Element-1111">\gets</script> 16</dd>
-<dd>Name <script type="math/tex" id="MathJax-Element-1112">\gets</script> “Jack”</dd>
-<dd>Colour <script type="math/tex" id="MathJax-Element-1113">\gets</script> “Red”</dd>
-</dl>
-<p>"<script type="math/tex" id="MathJax-Element-1114">\gets</script>" is the pseudo code assignment operator.</p>
-<blockquote>
-<p>In real languages, an assignment operator is normally something like:<br>
-Pascal: <code>number := 16</code><br>
-Python : <code>number = 16</code><br>
-|||||||<br>
-|---------------|—:|—:|—:|—:|<br>
-|<strong>Memory Location</strong>|1001|1002|1003|1004|<br>
-|<strong>Variable name</strong>  |Number|Name|Colour|Guilty|<br>
-|<strong>Value</strong>|16|“Jack”|“Red”|TRUE|</p>
-</blockquote>
-<p>Variable names are labels for memory locations.</p>
-<p>Example pseudo code program:</p>
-<pre><code class="prism language-pseudocode">Number1 &lt;- 6
-Number2 &lt;- 9
-Answer &lt;- Number1 + Number2
-</code></pre>
-<table>
-<thead>
-<tr>
-<th></th>
-<th align="right"></th>
-<th align="right"></th>
-<th align="right"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Memory Location</strong></td>
-<td align="right">1000</td>
-<td align="right">1001</td>
-<td align="right">1002</td>
-</tr>
-<tr>
-<td><strong>Variable name</strong></td>
-<td align="right">Number1</td>
-<td align="right">Number2</td>
-<td align="right">Answer</td>
-</tr>
-<tr>
-<td><strong>Value</strong></td>
-<td align="right">6</td>
-<td align="right">9</td>
-<td align="right">15</td>
-</tr>
-</tbody>
-</table>
-<h3 id="variables-and-constants">Variables and CONSTANTS</h3>
-<ul>
-<li>The value of variables can be assigned during the running of the program.</li>
-<li>The value of a CONSTANT is fixed and cannot be changed.</li>
-<li>CONSTANTS are useful for storing values that shouldn’t be changed. eg:</li>
-</ul>
-<pre><code>CM_IN_A_METRE = 100
-METRES_IN_A_MILE = 1609
-</code></pre>
-<p>Constants should not be used for values that can change.<br>
-eg:</p>
-<pre><code>eurosToPounds = 1.44
-</code></pre>
-<h4 id="data-types."><strong>Data types.</strong></h4>
-<p>A data type determines what sort of data is being sorted and how it will be handled by the program. eg:</p>
-<ul>
-<li>Integer - Whole numbers</li>
-<li>Float - Numbers with a fractional part</li>
-<li>String - One or more chars to be treated as text.</li>
-<li>Boolean - True/False</li>
-<li>Character - Single chars</li>
-<li>Date/time - The date/time</li>
-</ul>
-<p>Examples in python:</p>
-<pre class=" language-python"><code class="prism  language-python"><span class="token comment" spellcheck="true"># String
-</span>string <span class="token operator">=</span> <span class="token string">"Hello world"</span>
-
-<span class="token comment" spellcheck="true"># Boolean
-</span>Boolean <span class="token operator">=</span> <span class="token boolean">True</span>
-
-<span class="token comment" spellcheck="true">#Integer
-</span>integer <span class="token operator">=</span> <span class="token number">17</span>
-
-<span class="token comment" spellcheck="true">#Float
-</span>float <span class="token operator">=</span> <span class="token number">12.78</span>
-
-<span class="token comment" spellcheck="true">#Character
-</span>char <span class="token operator">=</span> <span class="token string">"n"</span>
-
-<span class="token comment" spellcheck="true">#Date/Time
-</span><span class="token keyword">import</span> datetime
-t <span class="token operator">=</span> datetime<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
-</code></pre>
-<h4 id="naming-conventions"><strong>Naming conventions</strong></h4>
-<p>Variable names should be meaningful.</p>
 <h2 id="programming">Programming</h2>
 <h3 id="programming-basics">Programming basics</h3>
 <p>3 basic ideas:</p>
@@ -687,6 +580,142 @@ default<span class="token punctuation">:</span>
 </code></pre>
 <h4 id="procedure-vs-function"><strong>Procedure vs Function</strong></h4>
 <p>Quite simply, a function returns a value; A procedure doesn’t.</p>
+<h3 id="pseudocode">Pseudocode</h3>
+<p>Variables: Storage for data.</p>
+<dl>
+<dt>eg:</dt>
+<dd>Number</dd>
+<dd>Name</dd>
+<dd>Colours</dd>
+</dl>
+<p>Values are assigned to variables.</p>
+<dl>
+<dt>eg:</dt>
+<dd>Number \(\gets\) 16</dd>
+<dd>Name \(\gets\) “Jack”</dd>
+<dd>Colour \(\gets\) “Red”</dd>
+</dl>
+<p>“\(\gets\)” is the pseudo code assignment operator.</p>
+<blockquote>
+<p>In real languages, an assignment operator is normally something like:<br>
+Pascal: <code>number := 16</code><br>
+Python : <code>number = 16</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Memory Location</strong></td>
+<td align="right">1001</td>
+<td align="right">1002</td>
+<td align="right">1003</td>
+<td align="right">1004</td>
+</tr>
+<tr>
+<td><strong>Variable name</strong></td>
+<td align="right">Number</td>
+<td align="right">Name</td>
+<td align="right">Colour</td>
+<td align="right">Guilty</td>
+</tr>
+<tr>
+<td><strong>Value</strong></td>
+<td align="right">16</td>
+<td align="right">“Jack”</td>
+<td align="right">“Red”</td>
+<td align="right">TRUE</td>
+</tr>
+</tbody>
+</table>
+<p>Variable names are labels for memory locations.</p>
+<p>Example pseudo code program:</p>
+<pre><code class="prism language-pseudocode">Number1 &lt;- 6
+Number2 &lt;- 9
+Answer &lt;- Number1 + Number2
+</code></pre>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="right"></th>
+<th align="right"></th>
+<th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Memory Location</strong></td>
+<td align="right">1000</td>
+<td align="right">1001</td>
+<td align="right">1002</td>
+</tr>
+<tr>
+<td><strong>Variable name</strong></td>
+<td align="right">Number1</td>
+<td align="right">Number2</td>
+<td align="right">Answer</td>
+</tr>
+<tr>
+<td><strong>Value</strong></td>
+<td align="right">6</td>
+<td align="right">9</td>
+<td align="right">15</td>
+</tr>
+</tbody>
+</table>
+<h4 id="variables-and-constants">Variables and CONSTANTS</h4>
+<ul>
+<li>The value of variables can be assigned during the running of the program.</li>
+<li>The value of a CONSTANT is fixed and cannot be changed.</li>
+<li>CONSTANTS are useful for storing values that shouldn’t be changed. eg:</li>
+</ul>
+<pre><code>CM_IN_A_METRE = 100
+METRES_IN_A_MILE = 1609
+</code></pre>
+<p>Constants should not be used for values that can change.<br>
+eg:</p>
+<pre><code>eurosToPounds = 1.44
+</code></pre>
+<h4 id="data-types."><strong>Data types.</strong></h4>
+<p>A data type determines what sort of data is being sorted and how it will be handled by the program. eg:</p>
+<ul>
+<li>Integer - Whole numbers</li>
+<li>Float - Numbers with a fractional part</li>
+<li>String - One or more chars to be treated as text.</li>
+<li>Boolean - True/False</li>
+<li>Character - Single chars</li>
+<li>Date/time - The date/time</li>
+</ul>
+<p>Examples in python:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token comment" spellcheck="true"># String
+</span>string <span class="token operator">=</span> <span class="token string">"Hello world"</span>
+
+<span class="token comment" spellcheck="true"># Boolean
+</span>Boolean <span class="token operator">=</span> <span class="token boolean">True</span>
+
+<span class="token comment" spellcheck="true">#Integer
+</span>integer <span class="token operator">=</span> <span class="token number">17</span>
+
+<span class="token comment" spellcheck="true">#Float
+</span>float <span class="token operator">=</span> <span class="token number">12.78</span>
+
+<span class="token comment" spellcheck="true">#Character
+</span>char <span class="token operator">=</span> <span class="token string">"n"</span>
+
+<span class="token comment" spellcheck="true">#Date/Time
+</span><span class="token keyword">import</span> datetime
+t <span class="token operator">=</span> datetime<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+</code></pre>
+<h4 id="naming-conventions"><strong>Naming conventions</strong></h4>
+<p>Variable names should be meaningful.</p>
 <h3 id="data-structures">Data structures</h3>
 <p>Data can be stored in a variety of different forms:</p>
 <p><strong>Using variables of different data types.</strong><br>
@@ -748,25 +777,17 @@ As items are added and removed from the queue, items already in the queue are mo
 <img src="http://i.imgur.com/5BGdgp6.png?1" alt=""></p>
 <p>Queues can be used to buffer data. For example in a multi-user printer system, where print jobs are submitted to a networked printer and then printed in order of arrival.<br>
 Another example is a keyboard buffer. Keystrokes are stored in order until they are processed. Streamed video is also buffered (obviously).</p>
-<p><strong>Queue operations</strong></p>
-<ol>
-<li>
-<p>Enqueue<br>
+<p><strong>Queue operations</strong><br>
+Enqueue<br>
 : Add an item to a queue</p>
-</li>
-<li>
-<p>Dequeue<br>
-: Remove an item from a queue</p>
-</li>
-<li>
-<p>IsEmpty<br>
-: Check to see if the queue is empty</p>
-</li>
-<li>
-<p>Size<br>
-: Find the size of the queue</p>
-</li>
-</ol>
+<dl>
+<dt>Dequeue</dt>
+<dd>Remove an item from a queue</dd>
+<dt>IsEmpty</dt>
+<dd>Check to see if the queue is empty</dd>
+<dt>Size</dt>
+<dd>Find the size of the queue</dd>
+</dl>
 <p>Python definition of a queue:</p>
 <pre class=" language-python"><code class="prism  language-python"><span class="token keyword">class</span> Queue<span class="token punctuation">:</span>
     <span class="token keyword">def</span> __init__<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -910,12 +931,12 @@ Random number generation can be performed in a large number of different ways. N
 <td align="right"><code>if x != 6:</code></td>
 </tr>
 <tr>
-<td align="right"><code>&lt;=</code> or <script type="math/tex" id="MathJax-Element-1115">\leq</script></td>
+<td align="right"><code>&lt;=</code> or \(\leq\)</td>
 <td align="right">Less than or equal to</td>
 <td align="right"><code>if x &lt;= 6:</code></td>
 </tr>
 <tr>
-<td align="right"><code>&gt;=</code> or <script type="math/tex" id="MathJax-Element-1116">\geq</script></td>
+<td align="right"><code>&gt;=</code> or \(\geq\)</td>
 <td align="right">Greater than or equal to</td>
 <td align="right"><code>if x &gt;= 6:</code></td>
 </tr>
@@ -938,11 +959,11 @@ Random number generation can be performed in a large number of different ways. N
 	<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Example of a NOT operator"</span><span class="token punctuation">)</span>
 
 </code></pre>
-<h4 id="graphs"><strong>Graphs</strong></h4>
+<h3 id="graphs"><strong>Graphs</strong></h3>
 <p><img src="http://i.imgur.com/nwmEXoA.png" alt=""></p>
 <p>This can be used to display data such as a subway map.</p>
 <p>Metadata can be attached to the nodes. This is called weighting the edges. An example of this is distances on a metro map.</p>
-<h5 id="describing-graphs"><strong>Describing graphs</strong></h5>
+<h4 id="describing-graphs"><strong>Describing graphs</strong></h4>
 <p>A graph can be represented as a set of nodes:</p>
 <pre class=" language-python"><code class="prism  language-python">nodes <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"A"</span><span class="token punctuation">,</span><span class="token string">"B"</span><span class="token punctuation">,</span><span class="token string">"C"</span><span class="token punctuation">,</span><span class="token string">"D"</span><span class="token punctuation">}</span>
 </code></pre>
@@ -953,11 +974,11 @@ Random number generation can be performed in a large number of different ways. N
 <p><strong>Note</strong><br>
 Nodes are also called vertices and edges can be called arcs.</p>
 </blockquote>
-<h5 id="paths-and-cycles"><strong>Paths and cycles</strong></h5>
+<h4 id="paths-and-cycles"><strong>Paths and cycles</strong></h4>
 <p>A path is the description of the nodes and edges between a pair of nodes on a graph.<br>
 eg: The path between 2 nodes could be <code>("B","C",D")</code> and the edge sequence could be <code>{("C","D",5),("C","D",9)}</code>.<br>
 A cycle in a graph is where the path starts and ends in the same place. The graph above, however, is acyclic so this is not possible. In a graph where this is possible, there can be more than one possible cycle.</p>
-<h5 id="implementing-a-graph-as-an-abstract-data-type-or-structure"><strong>Implementing a Graph as an abstract data type (or structure)</strong></h5>
+<h4 id="implementing-a-graph-as-an-abstract-data-type-or-structure"><strong>Implementing a Graph as an abstract data type (or structure)</strong></h4>
 <p><code>Graph()</code> - Creates a new empty graph.<br>
 <code>addNode(node)</code> - Adds a new node.<br>
 <code>addEdge(from, to)</code> - Adds a new (directed) edge to the graph.<br>
@@ -965,32 +986,32 @@ A cycle in a graph is where the path starts and ends in the same place. The grap
 <code>getNode(nodeKey)</code> - Finds a particular node, called a nodeKey.<br>
 <code>getNodes()</code> - Returns a list of all nodes in the graph.<br>
 <code>inGraph()</code> - Returns a bool for whether a node is in a graph or not.</p>
-<p><script type="math/tex; mode=display" id="MathJax-Element-1117">
+<p>\[
 \begin{array}{|c|c|c|c|c|c|c|}
 \hline
-  & \mathbf{N_0 }& \mathbf{N_1 }& \mathbf{N_2} & \mathbf{N_3 }& \mathbf{N_4 }& \mathbf{N_5} \\ \hline
-  \mathbf{N_0 } &  & \bullet &  &  & &\bullet \\ \hline
-  \mathbf{N_1 } &  &  & \bullet &  & &\\ \hline
-  \mathbf{N_2 } &  &  &  & \bullet & &\\ \hline
-  \mathbf{N_3 } &  &  &  &  &\bullet &\bullet\\ \hline
-  \mathbf{N_4 } & \bullet &  &  &  & &\\ \hline
-  \mathbf{N_5 } &  &  &\bullet  &  & \bullet& \\ \hline
+  &amp; \mathbf{N_0 }&amp; \mathbf{N_1 }&amp; \mathbf{N_2} &amp; \mathbf{N_3 }&amp; \mathbf{N_4 }&amp; \mathbf{N_5} \\ \hline
+  \mathbf{N_0 } &amp;  &amp; \bullet &amp;  &amp;  &amp; &amp;\bullet \\ \hline
+  \mathbf{N_1 } &amp;  &amp;  &amp; \bullet &amp;  &amp; &amp;\\ \hline
+  \mathbf{N_2 } &amp;  &amp;  &amp;  &amp; \bullet &amp; &amp;\\ \hline
+  \mathbf{N_3 } &amp;  &amp;  &amp;  &amp;  &amp;\bullet &amp;\bullet\\ \hline
+  \mathbf{N_4 } &amp; \bullet &amp;  &amp;  &amp;  &amp; &amp;\\ \hline
+  \mathbf{N_5 } &amp;  &amp;  &amp;\bullet  &amp;  &amp; \bullet&amp; \\ \hline
 \end{array}
-</script><br>
+\]<br>
 With the rows being start nodes and the columns being end nodes.<br>
 The dots can be replaced with numbers to become weighed nodes:</p>
-<p><script type="math/tex; mode=display" id="MathJax-Element-1118">
+<p>\[
 \begin{array}{|c|c|c|c|c|c|c|}
 \hline
-  & \mathbf{N_0 }& \mathbf{N_1 }& \mathbf{N_2} & \mathbf{N_3 }& \mathbf{N_4 }& \mathbf{N_5} \\ \hline
-  \mathbf{N_0 } &  & 5&  &  & &2 \\ \hline
-  \mathbf{N_1 } &  &  & 4 &  & &\\ \hline
-  \mathbf{N_2 } &  &  &  & 9 & &\\ \hline
-  \mathbf{N_3 } &  &  &  &  &7 &3\\ \hline
-  \mathbf{N_4 } &1 &  &  &  & &\\ \hline
-  \mathbf{N_5 } &  &  &1 &  & 8& \\ \hline
+  &amp; \mathbf{N_0 }&amp; \mathbf{N_1 }&amp; \mathbf{N_2} &amp; \mathbf{N_3 }&amp; \mathbf{N_4 }&amp; \mathbf{N_5} \\ \hline
+  \mathbf{N_0 } &amp;  &amp; 5&amp;  &amp;  &amp; &amp;2 \\ \hline
+  \mathbf{N_1 } &amp;  &amp;  &amp; 4 &amp;  &amp; &amp;\\ \hline
+  \mathbf{N_2 } &amp;  &amp;  &amp;  &amp; 9 &amp; &amp;\\ \hline
+  \mathbf{N_3 } &amp;  &amp;  &amp;  &amp;  &amp;7 &amp;3\\ \hline
+  \mathbf{N_4 } &amp;1 &amp;  &amp;  &amp;  &amp; &amp;\\ \hline
+  \mathbf{N_5 } &amp;  &amp;  &amp;1 &amp;  &amp; 8&amp; \\ \hline
 \end{array}
-</script></p>
+\]</p>
 <blockquote>
 <p><strong>Note</strong><br>
 These graphs are described as being “sparsely connected”. ie, there are relatively few edges between the nodes.</p>
@@ -1037,9 +1058,9 @@ These graphs are described as being “sparsely connected”. ie, there are rela
     <span class="token keyword">def</span> __iter__<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> iter<span class="token punctuation">(</span>self<span class="token punctuation">.</span>nodeList<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 </code></pre>
-<h5 id="adjacency-list"><strong>Adjacency List</strong></h5>
-<p>In graph theory and computer science, an adjacency list is a collection of unordered lists used to represent a finite graph. Each list describes the set of neighbors of a vertex in the graph. This is one of several commonly used representations of graphs for use in computer programs.</p>
-<h5 id="trees"><strong>Trees</strong></h5>
+<h4 id="adjacency-list"><strong>Adjacency List</strong></h4>
+<p>In graph theory and computer science, an adjacency list is a collection of unordered lists used to represent a finite graph. Each list describes the set of  neighbours of a vertex in the graph. This is one of several commonly used representations of graphs for use in computer programs.</p>
+<h4 id="trees"><strong>Trees</strong></h4>
 <p><img src="http://i.imgur.com/ifxkTZj.png" alt=""></p>
 <blockquote>
 <p><strong>Note 1</strong>: All children of one node are independant of the children of every other node.<br>
@@ -1091,7 +1112,7 @@ These graphs are described as being “sparsely connected”. ie, there are rela
 </code></pre>
 <p>This HTML can be illustrated by the following tree:<br>
 <img src="http://i.imgur.com/7eiBbVk.png" alt=""></p>
-<h5 id="tree-terminology"><strong>Tree terminology</strong></h5>
+<h4 id="tree-terminology"><strong>Tree terminology</strong></h4>
 <p>Nodes and edges are the same as graphs.</p>
 <blockquote>
 <p><strong>Note</strong><br>
@@ -1099,7 +1120,7 @@ Each node (except the root node) has one incoming node but one or more outgoing 
 </blockquote>
 <dl>
 <dt>Root</dt>
-<dd>The only node that has no incomming edges.</dd>
+<dd>The only node that has no incoming edges.</dd>
 <dt>Path</dt>
 <dd>An ordered list of nodes connected by edges.</dd>
 <dt>Children</dt>
@@ -1117,15 +1138,15 @@ Each node (except the root node) has one incoming node but one or more outgoing 
 <dt>Height</dt>
 <dd>The height of a tree is equal to the maximum level of any node in the tree.</dd>
 </dl>
-<h5 id="definition-of-a-tree"><strong>Definition of a tree</strong></h5>
-<p>A tree consists of a set of nodes and a set of edges that connect pairs of nodes. A tree has the folowng properties:</p>
+<h4 id="definition-of-a-tree"><strong>Definition of a tree</strong></h4>
+<p>A tree consists of a set of nodes and a set of edges that connect pairs of nodes. A tree has the following properties:</p>
 <ul>
 <li>One node of a tree is designated as the root node.</li>
 <li>every node n, except the root node is connected by an edge to exactly one other node, where that node is the parent node.</li>
-<li>A unique path traverses from each node ot teh root.</li>
+<li>A unique path traverses from each node to the root.</li>
 <li>If each node has a maximum of 2 children, the tree is binary.</li>
 </ul>
-<h5 id="expressing-a-tree-in-code"><strong>Expressing a tree in code</strong></h5>
+<h4 id="expressing-a-tree-in-code"><strong>Expressing a tree in code</strong></h4>
 <p>Take the following tree:</p>
 <p><img src="http://i.imgur.com/CKp4sNn.png" alt=""></p>
 <p>You can express it using the following code</p>
@@ -1214,9 +1235,9 @@ hilary<span class="token punctuation">.</span>getRightChild<span class="token pu
 <span class="token keyword">print</span><span class="token punctuation">(</span>hilary<span class="token punctuation">.</span>getRightChild<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>getRootValue<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
 </code></pre>
-<h5 id="parse-trees"><strong>Parse Trees</strong></h5>
-<p>Parse trees can be used to depict many data types and objects. An example is the following mathmatical expression:<br>
-<script type="math/tex; mode=display" id="MathJax-Element-1119">(7+3)\times(5-2)</script></p>
+<h4 id="parse-trees"><strong>Parse Trees</strong></h4>
+<p>Parse trees can be used to depict many data types and objects. An example is the following mathematical expression:<br>
+\[(7+3)\times(5-2)\]</p>
 <p>It can be expresses as the following tree:<br>
 <img src="http://i.imgur.com/X0Kckqw.png" alt=""></p>
 <p>We need to:</p>
@@ -1225,7 +1246,7 @@ hilary<span class="token punctuation">.</span>getRightChild<span class="token pu
 <li>Evaluate the expression using the parse tree.</li>
 <li>Use the parse tree to recreate the original expression.</li>
 </ol>
-<h5 id="creating-the-parse-tree"><strong>Creating the parse tree</strong></h5>
+<h4 id="creating-the-parse-tree"><strong>Creating the parse tree</strong></h4>
 <ol>
 <li>Tokenise the expression.</li>
 <li>If the token is <code>(</code> make a new node as the left child of the current node.  Decend to the left child.</li>
@@ -1233,21 +1254,24 @@ hilary<span class="token punctuation">.</span>getRightChild<span class="token pu
 <li>If the current token is a number, set the root value of the current node to the number and return to the parent.</li>
 <li>If the token is <code>)</code> go to the parent of the current node.</li>
 </ol>
-<h4 id="string-operations"><strong>String Operations</strong></h4>
+<h4 id="binary-trees-and-pointers"><strong>Binary trees and pointers</strong></h4>
+<p>A generalised binary tree can be represented using the idea of nodes and pointers. A pointer is a reference to the location of a node below in the tree. Each node in a binary tree has a left pointer and a right pointer. These pointers will contain values if the node has an appropriate child node or null if it does not:</p>
+<p><img src="http://i.imgur.com/GLyMnyh.png?1" alt=""></p>
+<h3 id="string-operations"><strong>String Operations</strong></h3>
 <p>A string is a piece of text usually written using quotation marks. for example, <code>"Hello World"</code> is a string as well as <code>"322324"</code> and <code>"$%£%$£^£^%£$$%£"</code>. However, <code>11</code> or <code>True</code> aren’t strings.</p>
 <p>Strings are treated differently to numbers in programming languages. Take care not to use a string when you need to make calculations.<br>
 eg:</p>
-<pre><code>"6" * 4 → "6666"
+<pre class=" language-python"><code class="prism  language-python"><span class="token string">"6"</span> <span class="token operator">*</span> <span class="token number">4</span> → <span class="token string">"6666"</span>
 
-6 * 4 → 24
+<span class="token number">6</span> <span class="token operator">*</span> <span class="token number">4</span> → <span class="token number">24</span>
 </code></pre>
 <p>Strings can also be concatenated.<br>
 eg in Python:</p>
-<pre><code class="prism language-python3">&gt;&gt;&gt; a = "Hello"
-&gt;&gt;&gt; b = " world"
-&gt;&gt;&gt; c = a + b
-&gt;&gt;&gt; print(c)
-'Hello world'
+<pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span> <span class="token number">a</span> <span class="token operator">=</span> <span class="token string">"Hello"</span>
+<span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span> <span class="token number">b</span> <span class="token operator">=</span> <span class="token string">" world"</span>
+<span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span> <span class="token number">c</span> <span class="token operator">=</span> <span class="token number">a</span> <span class="token operator">+</span> <span class="token number">b</span>
+<span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">c</span><span class="token punctuation">)</span>
+<span class="token string">'Hello world'</span>
 </code></pre>
 <p>as well as split up:</p>
 <pre class=" language-python"><code class="prism  language-python"><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span> str <span class="token operator">=</span> <span class="token string">"HelloWorld"</span>
@@ -1260,7 +1284,7 @@ eg in Python:</p>
 <span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span> str<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
 <span class="token string">'HelloWorld'</span>
 </code></pre>
-<h4 id="type-conversion"><strong>Type conversion</strong></h4>
+<h3 id="type-conversion"><strong>Type conversion</strong></h3>
 <p>Data is stored using a variety of data types:<br>
 eg:</p>
 <ul>
@@ -1281,29 +1305,875 @@ eg:</p>
 <span class="token number">6</span>
 </code></pre>
 <p>In this example, <code>x</code> is declared as <code>6</code>. It is then converted to a string and stored as <code>y</code> which is then printed implicitly. It could be printed explicitly with a <code>print()</code> statement. It is then converted back to an integer and stored as <code>z</code> which is then printed implicitly.</p>
-<h4 id="algorithm-efficiency---big-o-notation"><strong>Algorithm efficiency - Big-O notation</strong></h4>
+<h4 id="algorithm-efficiency"><strong>Algorithm efficiency</strong></h4>
+<p>The topic of algorithms is a topic that is central to computer science. Measuring an algorithm’s efficiency is important because your choice of an algorithm for a given application often has a great impact. Word processors, ATMs, video games and life support systems all depend on efficient algorithms.</p>
+<p>Consider two searching algorithms. What does it mean to compare the algorithms and conclude that one is better than the other?</p>
+<p>The <strong>analysis of algorithms</strong> is the area of computer science that provides tools for contrasting the efficiency of different methods of solution. Notice the use of the term methods of solution rather than programs; it is important to emphasize that the analysis concerns itself primarily with significant differences in efficiency – differences that you can usually obtain only through superior methods of solution and rarely through clever tricks in coding.</p>
+<p>Although the efficient use of both time and space is important, inexpensive memory has reduced the significance of space efficiency. Thus, we will focus primarily on time efficiency. How do you compare the time efficiency of two algorithms that solve the same problem? One possible approach is to implement the two algorithms in C++ and run the programs. There are three difficulties with this approach:</p>
+<ol>
+<li>How are the algorithms coded? Does one algorithm run faster than another because of better programming? We should not compare implementations rather than the algorithms. Implementations are sensitive to factors such as programming style that cloud the issue.</li>
+<li>What computer should you use? The only fair way would be to use the same computer for both programs. But even then, the particular operations that one algorithm uses may be faster or slower than the other – and may be just the reverse on a different computer. In short, we should compare the efficiency of the algorithms independent of a particular computer.</li>
+<li>What data should the programs use? There is always a danger that we will select instances of the problem for which one of the algorithms runs uncharacteristically fast. For example, when comparing a sequential search and a binary search of a sorted array. If the test case happens to be that we are searching for an item that happens to be the smallest in the array, the sequential search will find the item more quickly than the binary search.</li>
+</ol>
+<p>To overcome these difficulties, computer scientists employ mathematical techniques that analyse algorithms independently of specific implementations, computers or data. You begin this analysis by counting the number of significant operations in a particular solution.</p>
+<p>As an example of calculating the time it takes to execute a piece of code, consider the nested for loops below:</p>
+<pre class=" language-js"><code class="prism  language-js"><span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> N<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span>j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> i<span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">)</span><span class="token punctuation">:</span>
+		<span class="token keyword">for</span> <span class="token punctuation">(</span>k <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> k <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> <span class="token operator">++</span>k<span class="token punctuation">)</span><span class="token punctuation">:</span>
+			Task T<span class="token punctuation">;</span>
+</code></pre>
+<p>If task \(T\) requires \(t\) time units, the innermost loop on \(K\) requires \(5t\) time units. We will discuss how to calculate the total time, which is: \(5\times t \times N\times (N+1)/2\) time units.</p>
+<p>This example derives an algorithm’s time requirements as a function of problem size. The way to measure a problem’s size depends on the application. The searches we have discussed depend on the size of the array we are searching. The most important thing to learn is how quickly the algorithm’s time requirement grows as a function of the problem size. A statement such as:</p>
+<p>Algorithm \(A\) requires time proportional to \(f(N)\)</p>
+<p>enables you to compare algorithm \(A\) with another algorithm \(B\) which requires \(g(N)\) time units. Algorithm A is said to be order \(f(N)\), which is denoted as \(O(f(N))\); \(f(N)\) is called the algorithm’s growth rate function. Because the notation uses the capital letter \(O\) to denote order, it is called Big O notation. If a problem of size \(N\) requires time that is directly proportional to \(N\), the problem is \(O(N)\) – that is, order \(N\). If the time requirement is directly proportional to \(N^2\), the problem is \(O(N^2)\), and so on.</p>
+<h5 id="big-o-notation"><strong>Big O Notation</strong></h5>
 <p>Big-O notation is used to express the efficiency of algorithms. It is need because different computers may process the same algorithm at different speeds, making direct comparisons of running time difficult.<br>
 <strong>eg:</strong><br>
-It may take computer A 0.3 seconds to perform a linear search on 100000 items and computer B 0.1 seconds to do the same task. These times compare the speed of the computer and not the efficiency of the algorithm.<br>
-Some examples of big-O notation are as follows:</p>
-<p><script type="math/tex" id="MathJax-Element-1120">O(1)\to</script> Pop from stack<br>
-<script type="math/tex" id="MathJax-Element-1121">O(n) \to</script> Search an array<br>
-<script type="math/tex" id="MathJax-Element-1122">O(\log n) \to</script> Skip List search<br>
-<script type="math/tex" id="MathJax-Element-1123">O(n^2) \to</script> Bubble sort<br>
-<script type="math/tex" id="MathJax-Element-1124">O(2n) = O(n)</script> as they are both linear<br>
-<script type="math/tex" id="MathJax-Element-1125">O(2^n) \to</script> Recursive computation of Fibonacci numbers<br>
-<script type="math/tex" id="MathJax-Element-1126">O(2!) \to</script> Generate all the permutations of a list</p>
+It may take computer A 0.3 seconds to perform a linear search on 100000 items and computer B 0.1 seconds to do the same task. These times compare the speed of the computer and not the efficiency of the algorithm. Some examples of big-O notation are as follows:</p>
+<p>\(O(1)\to\) Pop from stack<br>
+\(O(n) \to\) Search an array<br>
+\(O(\log n) \to\) Skip List search<br>
+\(O(n^2) \to\) Bubble sort<br>
+\(O(2n) = O(n)\) as they are both linear<br>
+\(O(2^n) \to\) Recursive computation of Fibonacci numbers<br>
+\(O(2!) \to\) Generate all the permutations of a list</p>
 <dl>
 <dt>Linear search</dt>
 <dd><code>["Smith", "Jones",...,"Mallard", "Brown", "Green"]</code></dd>
-<dd>The list is searched from the left to the right and each item is examined until the item required is found.  In the best case, the item will be the first one examined, so using the best case to describe the efficiency of a linear search isn’t very helpful either. The sequence has <script type="math/tex" id="MathJax-Element-1127">n</script> items so on average it will be found in <script type="math/tex" id="MathJax-Element-1128">^n/_2</script> searches. In the worst case <script type="math/tex" id="MathJax-Element-1129">n</script> items will be searched and so the time taken will be proportional to <script type="math/tex" id="MathJax-Element-1130">n</script>. This can be expressed as <script type="math/tex" id="MathJax-Element-1131">O(n)</script>.</dd>
+<dd>The list is searched from the left to the right and each item is examined until the item required is found.  In the best case, the item will be the first one examined, so using the best case to describe the efficiency of a linear search isn’t very helpful either. The sequence has \(n\) items so on average it will be found in \(^n/_2\) searches. In the worst case \(n\) items will be searched and so the time taken will be proportional to \(n\). This can be expressed as \(O(n)\).</dd>
 <dt>Binary search</dt>
-<dd>A binary search of the same list won’t be possible but if the list is sorted into order, binary search divides the list in half repeatedly until the item is found. This means that it is quicker than the linear algorithm with an efficiency of <script type="math/tex" id="MathJax-Element-1132">O(\log _2 n)</script>.</dd>
+<dd>A binary search of the same list won’t be possible but if the list is sorted into order, binary search divides the list in half repeatedly until the item is found. This means that it is quicker than the linear algorithm with an efficiency of \(O(\log _2 n)\).</dd>
 </dl>
 <blockquote>
 <p><strong>Note</strong><br>
-In a binary search, it is much more efficient to use <script type="math/tex" id="MathJax-Element-1133">O(\log _2 n)</script> than <script type="math/tex" id="MathJax-Element-1134">O(n)</script> but the time taken to sort must be considered.</p>
+In a binary search, it is much more efficient to use \(O(\log _2 n)\) than \(O(n)\) but the time taken to sort must be considered.</p>
 <p><strong>Another note</strong><br>
-in big-O notation, only the most significant term is important. For example, an algorithm that has a running time dependant on <script type="math/tex" id="MathJax-Element-1135">n^2 + n</script> would be considered <script type="math/tex" id="MathJax-Element-1136">O(n^2)</script>. An algorithm that was dependant on <script type="math/tex" id="MathJax-Element-1137">n^2 +n!</script> would usually be considered <script type="math/tex" id="MathJax-Element-1138">O(n!)</script> unless <script type="math/tex" id="MathJax-Element-1139">n</script> was very small.</p>
-</blockquote></div></body>
+in big-O notation, only the most significant term is important. For example, an algorithm that has a running time dependant on \(n^2 + n\) would be considered \(O(n^2)\). An algorithm that was dependant on \(n^2 +n!\) would usually be considered \(O(n!)\) unless \(n\) was very small.</p>
+</blockquote>
+<h2 id="data-representation">Data representation</h2>
+<h4 id="vector-graphics">Vector graphics</h4>
+<p>A vector image consists of a series of lines with shading in between them. A vector image can be represented as a list of commands that reference geometric objects. An example of these commands may be as follows:</p>
+<pre><code>newpath
+moveto 100 300
+lineto 200 250
+tineto 200 200
+setlinewidth 2
+stroke
+showpage
+</code></pre>
+<p>There is as series of commands with some having one or more operands. For this data to be displayed on a monitor, it must be rasterised. This means it is turned into pixels. This makes a vector image <strong>resolution-independent</strong> as it can be rasterised into any resolution.</p>
+<p>A common example of vector graphics is with SVGs. This type of vector is a web standard and is therefore commonly used. Here is an example of an SVG:</p>
+<pre class=" language-html"><code class="prism  language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>svg</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>400<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>110<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rect</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>300<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>100<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">fill</span><span class="token punctuation">:</span><span class="token function">rgb</span>(<span class="token number">0</span>,<span class="token number">0</span>,<span class="token number">255</span>)<span class="token punctuation">;</span><span class="token property">stroke-width</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">;</span><span class="token property">stroke</span><span class="token punctuation">:</span><span class="token function">rgb</span>(<span class="token number">0</span>,<span class="token number">0</span>,<span class="token number">0</span>)</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>This rasterises as a blue rectangle with a black border.</p>
+<h4 id="representing-sound"><strong>Representing sound</strong></h4>
+<p>When recording sounds, their waveforms are graphed against time. When the pattern of the graph repeats, we call it periodic oscillation. Humans perceive this as a pitch. Music is the changing of this pitch to produce a melody. A non-repeating pattern is known as aperiodic oscillation and is perceived by humans as white noise.</p>
+<p>Periodic waveforms can be divided into</p>
+<ul>
+<li>Sinusodial (simple)</li>
+<li>Non-sinusodial (complex)</li>
+</ul>
+<p>Non-sinusodial waveforms are comprised of different frequencies added together. This means non-sinusoidal can be made by adding sinusoidals together.</p>
+<p>Aperiodic waveforms can be divided into impulsive (occur once) and noise (continuous but random).</p>
+<h5 id="sampling"><strong>Sampling</strong></h5>
+<p>Sampling is when a digital copy of a sound is made every set period of time. The frequency of this sample is called the sample rate. The number of bits used for each sample is known as the bit depth. Therefore the greater the sample rate and bit rate, the more similar the digital sound was to the analogue.</p>
+<p>There is a lower limit to the sampling rate. Nyquist’s theorem states that when sampling a periodic waveform, one must sample at least twice the highest frequency if all frequencies are to be preserved.</p>
+<h5 id="midi"><strong>MIDI</strong></h5>
+<ul>
+<li>
+<p>Musical protocal.</p>
+</li>
+<li>
+<p>MIDI note 60 corresponds to middle C.</p>
+</li>
+<li>
+<p>MIDI itself doesn’t make sound. It sends messages to software that generates the sound.</p>
+</li>
+<li>
+<p>There are several common messages such as voice channel messages.</p>
+</li>
+<li>
+<p>MIDI is extremely compact.</p>
+</li>
+<li>
+<p>It is easy to modify.</p>
+</li>
+<li>
+<p>It is easy to change instruments.</p>
+</li>
+<li>
+<p>It is simple for a computer to write.</p>
+</li>
+<li>
+<p>MIDI is normally 8 bits but can be 10 bits if it id for serial hardware. These 2 extra bits are start and end bits.<br>
+<img src="https://cdn.sparkfun.com/assets/learn_tutorials/4/0/8/byte-status-bit2.png" alt=""></p>
+</li>
+<li>
+<p>The standard hardware interface is 31,250 bits per second.</p>
+</li>
+</ul>
+<h4 id="data-compression"><strong>Data Compression</strong></h4>
+<p>Data is normally compressed for one of two reasons:</p>
+<ul>
+<li>To reduce storage space</li>
+<li>To reduce transmission times</li>
+</ul>
+<p>There are many ways to compress a file and different methods are usually used for different types of file. The 2 main types of compression are as follows:</p>
+<dl>
+<dt>Lossless</dt>
+<dd>No data is lost in compression, however the compression ratios are less. An example of this is Run Length Encoding (RLE), where a run of \(x\) amount of bytes (\(y\)) is expressed as \(xy\). To stop confusion between \(x\) and an actual value, a flag value can be used (normally 256 but in this case \(z\)) so the new compressed file would read \(zxy\) instead of \(y_1,\ y_2\ y_3\dots y_x\). Other methods involve a dictionary based method which decodes values into known words. This is useful for transferring data such as the date.</dd>
+<dt>Lossy</dt>
+<dd>There is some data loss however the compression ratios are better.</dd>
+</dl>
+<h3 id="logic-gates">Logic Gates</h3>
+<h3 id="logic-gates-1">Logic Gates</h3>
+<h4 id="boolean-variables">Boolean Variables</h4>
+<p>In 1847 George Boole introduced a notation system for system logic. A boolean variable can only have one of 2 values, either <code>true</code> or <code>false</code>. For example, if the statement “It is sunny” is represented as \(x\) and it is indeed sunny, then \(x\) is <code>true</code>. This can be represented by the following table:</p>
+<table>
+<thead>
+<tr>
+<th align="left">\(x\)</th>
+<th align="right">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">False</td>
+<td align="right">It is not sunny</td>
+</tr>
+<tr>
+<td align="left">True</td>
+<td align="right">It is sunny</td>
+</tr>
+</tbody>
+</table>
+<h4 id="logical-or">Logical OR</h4>
+<p>Take the following circuit:</p>
+<p><img src="https://i.imgur.com/QhvZOrN.png" alt="Logical OR"></p>
+<p>The lamp on this circuit will light up if either \(X\), \(Y\) or both of the switches are closed.  This is very similar to how the OR gate works in computer.</p>
+<table>
+<thead>
+<tr>
+<th align="right">\(X\)</th>
+<th align="right">\(Y\)</th>
+<th align="right">\(Q\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>The OR operator can be represented by \(A + B\).</p>
+<h4 id="logical-and">Logical AND</h4>
+<p>An AND gate is an example of the following circuit:</p>
+<p><img src="https://i.imgur.com/DyLlMrZ.png" alt="Logical AND"></p>
+<p>The lamp on this circuit will light up if both \(X\) and \(Y\) are closed. It can be represented as \(A + B\).</p>
+<table>
+<thead>
+<tr>
+<th align="right">\(X\)</th>
+<th align="right">\(Y\)</th>
+<th align="right">\(Q\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<h4 id="logical-not">Logical NOT</h4>
+<p>It is convention to use Boolean value 1 for the active state (e.g. lamp on) and the Boolean value 0 for the inactive state (e.g. lamp off).  Another weay of expressing lamp off is NOT lamp on. It can be expressed as an overline: \(\overline{a}\). This insight leads to:</p>
+<table>
+<thead>
+<tr>
+<th align="left">\(X\)</th>
+<th align="left">\(Q\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">0</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">0</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://i.imgur.com/KMonP9x.png" alt="Logical NOT"></p>
+<h4 id="logical-nand">Logical NAND</h4>
+<p>This is simply the output of an AND gate and the output is inverted. it can be expressed as \(\overline{X \cdot Y}\)</p>
+<p><img src="https://i.imgur.com/58uStGQ.png" alt="Logical NAND"></p>
+<h4 id="logical-nor">Logical NOR</h4>
+<p>If the output of the OR operation is inverted, you get a logical NOR operation. It can be expressed as \(\overline{X + Y}\)</p>
+<p><img src="https://i.imgur.com/qiUhU2u.png" alt="Logical NOR"></p>
+<h4 id="logical-xor">Logical XOR</h4>
+<p>This is similar to an OR but if both inputs are 1, then \(q\) is 0. It can be represented in boolean algebra as \(A \oplus B\).</p>
+<p><img src="https://i.imgur.com/xvss4JK.png" alt="Logical XOR"></p>
+<table>
+<thead>
+<tr>
+<th align="right">\(X\)</th>
+<th align="right">\(Y\)</th>
+<th align="right">\(Q\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<h4 id="drawing-logic-gates">Drawing Logic Gates</h4>
+<p>Each logical operation above can be implemented in electronic circuits as logic gates.  The circuit symbols for these logic gates are shown below:</p>
+<p><img src="https://i.imgur.com/MgxuqxR.png" alt="Logic Gates"></p>
+<p>Logic gates may be connected together to perform a variety of logical operations, these are done by connecting them with horizontal and vertical lines.</p>
+<h4 id="truth-table-of-logic-gate-circuits">Truth Table of Logic Gate Circuits</h4>
+<p>A series of logic gates can be expressed in a truth table.  Take the following example:</p>
+<p><img src="https://i.imgur.com/p7qLFDX.png" alt="Multiple Logic Gate Circuit"></p>
+<p>This can easily be represented as a truth table by representing it as having two inputs, two intermediate steps and a single output.  The truth table for this is:</p>
+<table>
+<thead>
+<tr>
+<th align="center">A</th>
+<th align="center">B</th>
+<th align="center">C</th>
+<th align="center">D</th>
+<th align="center">Q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<h4 id="boolean-expression-equivalent-of-a-logic-gate-circuit">Boolean expression equivalent of a logic gate circuit</h4>
+<p>A logic gate can be expressed using boolean algebra. Take the following example:</p>
+<p><img src="https://i.imgur.com/FyeOVDN.png" alt=""></p>
+<p>\(C=\overline{A}\) and \(D = \overline{B}\)<br>
+As \(Q=\overline{C+D}\), \(Q=\overline{\overline{A}+\overline{B}}\)</p>
+<h4 id="logic-gate-circuit-equivalent-of-a-given-boolean-expression">Logic gate circuit equivalent of a given Boolean expression</h4>
+<p>To turn a Boolean expression into a logic gate circuit, we must first consider the inner-most items.  Take the following example:<br>
+\(\overline{\overline{A} \cdot \overline{B}}\)<br>
+The innermost items in this example are \(A\) and \(B\), which both have had a \(not\) applied to them.</p>
+<p><img src="https://i.imgur.com/X1scu3l.png" alt=""></p>
+<p>Then, we apply the next operation of \(and\) to get:</p>
+<p><img src="https://i.imgur.com/nEhVzp7.png" alt=""></p>
+<p>Before we apply the final \(not\) to get the final answer of \(\overline{\overline{A} \cdot \overline{B}}\):</p>
+<p><img src="https://i.imgur.com/CLOeVaN.png" alt=""></p>
+<h4 id="half-adder">Half adder</h4>
+<p>Logic gates can be used to add 2 bits together. The possible additions are shown below:</p>
+<table>
+<thead>
+<tr>
+<th align="center">A</th>
+<th align="center">+</th>
+<th align="center">B</th>
+<th align="center">=</th>
+<th align="center">Sum</th>
+<th align="center">and</th>
+<th align="center">Carry</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">+</td>
+<td align="center">0</td>
+<td align="center">=</td>
+<td align="center">0</td>
+<td align="center">and</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">+</td>
+<td align="center">1</td>
+<td align="center">=</td>
+<td align="center">1</td>
+<td align="center">and</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">+</td>
+<td align="center">0</td>
+<td align="center">=</td>
+<td align="center">1</td>
+<td align="center">and</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">+</td>
+<td align="center">1</td>
+<td align="center">=</td>
+<td align="center">0</td>
+<td align="center">and</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://i.imgur.com/9iT8Twu.png" alt=""></p>
+<p>As you can see in the truth table, the sum is quite simply an XOR gate and the carry is just an AND gate. This makes the logic circuit very simple.</p>
+<h4 id="full-adder">Full adder</h4>
+<p>A pair of binary numbers, \(A\) and \(B\) can be added digit by digit from right to left, by the simple rules of artihmetic.  First, the two right-most digits, also called the least significant bits (LSB) of the two binary numbers, are added.</p>
+<p>Next, the resulting carry bit (either 0, or 1) is added to the sum of the next pair, and so on and so forth until every number in the sequence has been added together.  Take the following examples:</p>
+<table>
+<thead>
+<tr>
+<th align="center">\(\mathsf{\color{red}0}\)</th>
+<th align="center">\(\mathsf{\color{red}0}\)</th>
+<th align="center">\(\mathsf{\color{red}0}\)</th>
+<th align="center">\(\mathsf{\color{red}1}\)</th>
+<th align="center"></th>
+<th align="center">\(\mathsf{\color{red}{Carry}}\)</th>
+<th align="center">\(\mathsf{\color{red}1}\)</th>
+<th align="center">\(\mathsf{\color{red}1}\)</th>
+<th align="center">\(\mathsf{\color{red}1}\)</th>
+<th align="center">\(\mathsf{\color{red}1}\)</th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">\(\mathsf{\color{green}A}\)</td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">+</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">\(\mathsf{\color{green}B}\)</td>
+<td align="center">+</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">\(\mathsf{\color{green}{A+B}}\)</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+</tbody>
+</table>
+<p>In the left example, there is no overflow, in the right example there is overflow.</p>
+<p>Computer hardware for binary addition of two n-bit numbers can be built from logic gates designed to calculate the sum of three bits.  The transfer of the resulting carry bit forward to the addition of the next significant pair of bits can be easily accomplished by appropriate wiring of logic gates.  The logic gate circuit that does this is called a full-adder.</p>
+<p><img src="https://i.imgur.com/SKZAt6A.png" alt=""></p>
+<h4 id="edge-triggered-d-type-flip-flop">Edge triggered D-type flip flop</h4>
+<p>As well as calculation, logic circuits need to be able to store data. They do this in circuits called flip flops. These can mentain their state.</p>
+<p><img src="https://i.imgur.com/Rn4251r.png" alt="Advancing time one..."></p>
+<p>A signal from the clock triggers the flip flop to update its “memory”. It is triggered by either a rising edge or a falling edge. A D-type flip flop has as single bit input and output.</p>
+<h3 id="boolean-algebra">Boolean Algebra</h3>
+<h4 id="boolean-algebra-1">Boolean Algebra</h4>
+<dl>
+<dt>OR</dt>
+<dd>\(A+B\)</dd>
+<dt>AND</dt>
+<dd>\(A \cdot B\)</dd>
+<dt>XOR</dt>
+<dd>\(A\oplus B\)</dd>
+<dt>NOT</dt>
+<dd>\(\overline{A}\)</dd>
+<dt>NAND</dt>
+<dd>\(\overline{A \cdot B}\)</dd>
+<dt>NOR</dt>
+<dd>\(\overline{A + B}\)</dd>
+<dt>Not A or not B</dt>
+<dd>\(\overline{A}+\overline{B}\)</dd>
+</dl>
+<p><strong>Truth table for NOT A AND NOT B</strong></p>
+<table>
+<thead>
+<tr>
+<th align="right">A</th>
+<th align="right">B</th>
+<th align="right">Q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Truth table for NOR</strong></p>
+<table>
+<thead>
+<tr>
+<th align="right">A</th>
+<th align="right">B</th>
+<th align="right">Q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<p>From this we can see that \(\overline{A}\cdot \overline{B} = \overline{A+B}\) and \(\overline{A} + \overline{B} = \overline{A \cdot B}\). This is important as NAND gates are much cheaper than equivalent gates. These are called De Morgan’s Laws.</p>
+<h4 id="boolean-identities"><strong>Boolean Identities</strong></h4>
+<p>Some inputs to logic gates can be fixed (Either 1 or 0).</p>
+<table>
+<thead>
+<tr>
+<th>\(A\)</th>
+<th>\(0\)</th>
+<th>\(A \cdot 0\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>\(\therefore A \cdot 0 = 0\)</p>
+<table>
+<thead>
+<tr>
+<th>\(A\)</th>
+<th>\(0\)</th>
+<th>\(A + 0\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>\(\therefore A+0=A\)</p>
+<table>
+<thead>
+<tr>
+<th>\(A\)</th>
+<th>\(0\)</th>
+<th>\(A + 1\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>\(\therefore A+1=1\)</p>
+<table>
+<thead>
+<tr>
+<th>\(A\)</th>
+<th>\(A\)</th>
+<th>\(A \cdot A\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>\(\therefore A\cdot A=A\)</p>
+<table>
+<thead>
+<tr>
+<th>\(A\)</th>
+<th>\(A\)</th>
+<th>\(A + A\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>\(\therefore A+ A=A\)</p>
+<table>
+<thead>
+<tr>
+<th>\(A\)</th>
+<th>\(\overline{A}\)</th>
+<th>\(A \cdot \overline{A}\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>\(\therefore A \cdot \overline{A}=0\)</p>
+<table>
+<thead>
+<tr>
+<th>\(A\)</th>
+<th>\(\overline{A}\)</th>
+<th>\(A + \overline{A}\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>\(\therefore A + \overline{A}=1\)</p>
+<blockquote>
+<p><strong>Note</strong><br>
+\[
+\begin{align}
+\overline{A}&amp;=\overline{A} \\
+&amp;\downarrow \\
+A&amp;=\overline{\overline{A}} \\
+&amp;\downarrow \\
+A&amp;=A
+\end{align}
+\]<br>
+2 identical over-bars cancel.</p>
+</blockquote>
+<h4 id="laws-of-boolean-algebra">Laws of Boolean Algebra</h4>
+<h5 id="commutative-law">Commutative Law</h5>
+<p>It does not matter in which order inputs \(A\) and \(B\) are presented to an OR-gate or an AND-gate.  Similarly, it does not matter in which order they are placed in Boolean algebra.  This means that both the \(+\) and the \(\cdot\) operators are commutative.</p>
+<p><img src="https://i.imgur.com/MPMiP1w.png" alt=""></p>
+<h5 id="associative-law">Associative Law</h5>
+<p>It does not matter whether a single operator is applied to B and C first or A and B.  This means that Boolean algebra is associative.  Take care beacuse this means only equations with a single opeartor are associative, not ones with multiple ones.</p>
+<p><img src="https://i.imgur.com/7yadTwW.png" alt=""></p>
+<h5 id="distributive-law">Distributive Law</h5>
+<p>If two terms have been bracketed, can the two terms be split and the result be the same?  In Boolean algebra, you can.</p>
+<p><img src="https://i.imgur.com/f76Kf3X.png" alt=""></p>
+<p>In such an example, these can be split up and they mean the same thing.</p>
+<h4 id="de-morgans-laws">De Morgan’s Laws</h4>
+<p>De Morgan’s laws expressed in a form that is useful for designing logic circuits are as follows:</p>
+<p>\(A + B = \overline{\overline{A} \cdot \overline{B}}\)</p>
+<p>\(A \cdot B = \overline{\overline{A} + \overline{B}}\)</p>
+<h4 id="universality">Universality</h4>
+<p>Any logic circuit can be implemented using only NOR and NAND gates:</p>
+<p><strong>NAND Gates</strong><br>
+NAND(A,B) = \(\overline{A \cdot B}\)<br>
+NOT(A) = NAND(A,A) = \(\overline{A \cdot A}\) = \(\overline{A}\)<br>
+AND(A,B) = NOT(NAND(A,B)) = \(\overline{\overline{A \cdot B}}\)<br>
+OR(A,B) = NAND(NOT(A),NOT(B)) = \(\overline{\overline{A} \cdot \overline{B}}\)<br>
+NOR = NOT(NAND(NOT(A),NOT(B))) = \(\overline{\overline{\overline{A} \cdot \overline{B}}}\)</p>
+<p><strong>NOR Gates</strong><br>
+NOR(A,B) = \(\overline{A+B}\)<br>
+NOT(A) = NOR(A,A) = \(\overline{A+A}\) = \(\overline{A}\)<br>
+OR(A,B) = NOT(NOR(A,B)) = \(\overline{\overline{A+B}}\)<br>
+AND(A,B) = NOT(NOT(A),NOT(B)) = \(\overline{\overline{A}+\overline{B}}\)<br>
+NAND(A,B)=NOT(NOR(NOT(A),NOT(B))) = \(\overline{\overline{\overline{A}+\overline{B}}}\)</p>
+<h2 id="computers">Computers</h2>
+<h3 id="simple-computer-concept">Simple Computer Concept</h3>
+<p><img src="http://i.imgur.com/rKoDmn9.png" alt=""></p>
+<h3 id="central-processing-unit-concepts">Central processing Unit Concepts</h3>
+<ul>
+<li>Addressable memory</li>
+<li>Bus</li>
+<li>Registers</li>
+<li>Control unit</li>
+<li>Clock</li>
+<li>Bit/Byte/Word</li>
+</ul>
+<h4 id="addressable-memory">Addressable memory</h4>
+<p><img src="http://i.imgur.com/6gU2ROr.png" alt=""></p>
+<p>Memory is considered to be a labelled collection of locations where data can be stored. This data can be <strong>read</strong> and <strong>written</strong> by the CPU. The address of the memory location can be used by the CPU to keep track of data.</p>
+<h4 id="bus">Bus</h4>
+<p>A bus is a collection of wires used to transport data, memory locations or control signals around the CPU. In the conceptual computer there are 3 buses:</p>
+<dl>
+<dt>Address bus</dt>
+<dd>Carries the addresses of the locations in memory</dd>
+<dt>Data bus</dt>
+<dd>Carries data</dd>
+<dt>Control bus</dt>
+<dd>Carries control signals</dd>
+</dl>
+<h4 id="registers">Registers</h4>
+<p>Special memory locations in the CPU used to perform CPU operations.</p>
+<p>Registers are small sections of temporary storage within the CPU. Four registers are part of the fetch execute cycle.</p>
+<dl>
+<dt>Current Instruction Register (CIR)</dt>
+<dd>Stores the instruction currently being decoded/executed.</dd>
+<dt>Memory Data Register (MDR)</dt>
+<dd>Holds data that has just been read from memory or is about to be written to memory.</dd>
+<dt>Memory Address Register (MAR)</dt>
+<dd>Stores the memory location where the data in the MDR is about to be read from or written to.</dd>
+<dt>Program Counter (PC)</dt>
+<dd>Stores the memory location of the next instruction that ill be needed by the CPU.</dd>
+<dt>Status Register (SR)</dt>
+<dd>This keeps track of the functions of the CPU. eg: The last calculation performed.</dd>
+</dl>
+<h4 id="io-controllers">I/O controllers</h4>
+<p>I/O controllers receive signals from of send signals to peripheral devices via <strong>ports</strong>.</p>
+<p><strong>Examples of peripherals:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Keyboard</td>
+<td>Visual display unit</td>
+</tr>
+<tr>
+<td>Mouse</td>
+<td>Printer</td>
+</tr>
+<tr>
+<td>Touch-pad</td>
+<td>Speaker</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples of ports</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>External</th>
+<th>Internal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Serial (RS232)</td>
+<td>PATA</td>
+</tr>
+<tr>
+<td>Parallel</td>
+<td>PCI</td>
+</tr>
+<tr>
+<td>PS/2</td>
+<td>PCI-E</td>
+</tr>
+<tr>
+<td>USB</td>
+<td>Phono</td>
+</tr>
+<tr>
+<td>VGA</td>
+<td>USB-header</td>
+</tr>
+<tr>
+<td>DVI</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The processor needs to communicate with the peripheral devices. The interface between the device and the processor is called the I/O controller. This allows the processor to address peripherals as if it was a memory location.</p>
+<h4 id="buffer">Buffer</h4>
+<p>I/O controllers will usually respond more slowly than a processor can process data. This might be because the output device cannot handle data at high speed or it might be because the controller its self takes time to process the data. To avoid this problem, a buffer is used. This is a tempory storage space where data can be stored while waiting to be processed.</p>
+<blockquote>
+<p><strong>What is a program?</strong><br>
+A program is a sequence of instructions for the processor to carry out. Programs require data on which to operate.</p>
+</blockquote>
+<h4 id="computer-architecture---von-neumann-vs.-harvard">Computer architecture - von Neumann vs. Harvard</h4>
+<p><img src="http://i.imgur.com/V3FymBT.png" alt=""></p>
+<h4 id="schematic-layout-of-the-cpu">Schematic layout of the CPU</h4>
+<p><img src="http://i.imgur.com/whkUWKt.png" alt="CPU schematic"></p>
+<h4 id="fetch-execute-cycle">Fetch execute cycle</h4>
+<p>When a program is running on a CPU, the instructions and the data are stored in in memory. The CPU processes the instructions by going through a cycle of <strong>fetching</strong> the data from memory, <strong>decoding</strong> it and <strong>executing</strong> it.</p>
+<blockquote>
+<p><strong>Note:</strong><br>
+The concept of having instructions and data stored in in memory is called the ‘stored program concept’.</p>
+</blockquote>
+<h4 id="cpu-components">CPU Components</h4>
+<dl>
+<dt>System Clock (CLK)</dt>
+<dd>It is essentially an oscillator that provides timed electrical pulses that are used to synchronise operations in the CPU.</dd>
+<dt>Control Unit (CU)</dt>
+<dd>Manages the execution of instructions.</dd>
+<dt>Arithmetic and Logic unit (ALU)</dt>
+<dd>Processed arithmetical and logical operations on data.</dd>
+</dl></div>
+</body>
+
 </html>
